@@ -1,11 +1,8 @@
 [tool.poetry]
-name = "lobio"
-version = "0.5.6"
-description = "Extra utilities for BioPython"
+name = "aqbt"
+version = "0.0.1"
+description = "Aquarium strain builder tools"
 authors = ["Justin Vrana <justin.vrana@gmail.com>"]
-homepage = "https://www.github.com/jvrana/LoBio"
-repository = "https://www.github.com/jvrana/LoBio"
-documentation = "https://www.github.com/jvrana/LoBio"
 readme = 'README.md'
 
 [tool.poetry.dependencies]

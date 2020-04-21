@@ -2,6 +2,7 @@ init:
 	pip install pip -U
 	curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 	poetry install
+	poetry run pyblast install
 	poetry run pre-commit install
 
 
