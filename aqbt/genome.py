@@ -14,10 +14,7 @@ from pydent.models import Sample
 
 from aqbt import biopython
 from aqbt.bioadapter import convert
-from lobio.klavinslab import KlavinsLabRegistry
-from lobio.klavinslab.registry import RetrievalPriorities
-from lobio.klavinslab import pydent_utils
-from lobio.logger import logger
+from aqbt.logger import logger
 from pydent import AqSession
 from pydent.models import Sample
 

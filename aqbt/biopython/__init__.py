@@ -20,11 +20,11 @@ from Bio.SeqRecord import SeqRecord
 from Bio import Restriction
 from primer3plus.design import primer3
 
-from lobio.sequence import anneal
-from lobio.sequence import rc, random_sequence
-from lobio.utils import format_float, sort_cycle
-from lobio.utils import random_color, random_slices
-from lobio.utils.region import Span
+from aqbt.sequence import anneal
+from aqbt.sequence import rc, random_sequence
+from aqbt.utils import format_float, sort_cycle
+from aqbt.utils import random_color, random_slices
+from aqbt.utils.region import Span
 
 from copy import deepcopy
 import re
