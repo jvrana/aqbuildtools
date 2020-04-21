@@ -5,14 +5,11 @@ from aqbt.genome import GenomeIntegrator
 import pytest
 from aqbt import biopython
 
-here = dirname(abspath(__file__))
-
-record_list = list(GFF.parse([join(here, "cenpk.gff")]))
 
 
 @pytest.fixture(scope="function")
-def records():
-    return record_list[:]
+def records(fixtures_path):
+    return list(GFF.parse([join(fixtures_path, "cenpk.gff")]))
 
 
 @pytest.mark.parametrize("locus", [(9500, 10000, 11000, 11500)])

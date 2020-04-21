@@ -15,3 +15,7 @@ def config_path():
 def sessions(config_path):
     with open(config_path, 'r') as f:
         return config_to_sessions(parse_config(toml.load(f)))
+
+@pytest.fixture(scope='session')
+def fixtures_path():
+    return join(here, 'fixtures')
