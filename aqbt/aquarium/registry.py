@@ -2,18 +2,18 @@ from benchlingapi.models import DNASequence
 from pydent import AqSession
 from abc import ABC
 from pydent.models import Sample
-from lobio import bioadapter
-from lobio import sequence
-from lobio import biopython
+from aqbt import bioadapter
+from aqbt import sequence
+from aqbt import biopython
 from functools import partial
 from Bio.SeqRecord import SeqRecord
 from typing import Union, Tuple
 from benchlingapi.exceptions import InvalidRegistryId
-from lobio.logger import logger
+from aqbt.logger import logger
 from copy import deepcopy
 from typing import List
 import validators
-from lobio.klavinslab.pydent_utils import Constants as C
+from aqbt.aquarium.pydent_utils import Constants as C
 import re
 import random
 from uuid import uuid4

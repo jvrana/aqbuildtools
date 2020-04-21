@@ -1,6 +1,6 @@
 from pydent.models import Sample
 from primer3plus.design import primer3
-from lobio import biopython
+from aqbt import biopython
 import itertools
 from typing import List
 

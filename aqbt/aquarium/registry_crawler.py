@@ -2,10 +2,10 @@ import networkx as nx
 from pydent.base import ModelBase
 from pydent.models import Sample
 
-from lobio.klavinslab.pydent_utils import is_keystone_op
-from .linter import Linter
-from lobio.logger import logger
-from lobio.klavinslab.pydent_utils import Constants as C
+from aqbt.aquarium.pydent_utils import is_keystone_op
+from aqbt.aquarium.linter import Linter
+from aqbt.logger import logger
+from aqbt.aquarium.pydent_utils import Constants as C
 
 
 class RegistryCrawler(object):

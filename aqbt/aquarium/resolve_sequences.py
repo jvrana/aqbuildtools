@@ -1,8 +1,8 @@
 import networkx as nx
-from lobio.klavinslab import pydent_utils
-from lobio import biopython
+from aqbt.aquarium import pydent_utils
+from aqbt import biopython
 from pydent.models import Sample
-from lobio.klavinslab.pydent_utils import Constants as C
+from aqbt.aquarium.pydent_utils import Constants as C
 
 
 class Resolver(object):

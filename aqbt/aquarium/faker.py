@@ -4,13 +4,12 @@
 """
 
 from pydent import AqSession
-from lobio.klavinslab.pydent_utils import Constants
+from aqbt.aquarium.pydent_utils import Constants
 from pydent.models import SampleType, Sample
 from uuid import uuid4
-from lobio import biopython
 from typing import Tuple
 import random
-from lobio.biopython import SeqRecord, make_linear, make_cyclic
+from aqbt import biopython
 import primer3
 import primer3plus
 
@@ -54,7 +53,7 @@ class FakeSampleGenerator(object):
         self,
         id: int = None,
         name: str = None,
-        record: SeqRecord = None,
+        record: biopython.SeqRecord = None,
         length_range: Tuple[int, int] = (4000, 10000),
     ) -> Sample:
         name = name or self.new_name()
@@ -69,14 +68,14 @@ class FakeSampleGenerator(object):
             self.plasmid_type, id=id, name=name, properties=properties
         )
         new_sample.record = record
-        make_cyclic([record])
+        biopython.make_cyclic([record])
         return new_sample
 
     def fake_primer(
         self,
         id: int = None,
         name: str = None,
-        record: SeqRecord = None,
+        record: biopython.SeqRecord = None,
         anneal_len_range: Tuple[int, int] = (15, 30),
         overhang_len_range: Tuple[int, int] = (0, 30),
     ) -> Sample:
@@ -105,14 +104,14 @@ class FakeSampleGenerator(object):
             self.primer_type, id=id, name=name, properties=properties
         )
         new_sample.record = record
-        make_linear([record])
+        biopython.make_linear([record])
         return new_sample
 
     def fake_fragment(
         self,
         id: str = None,
         name: str = None,
-        template_record: SeqRecord = None,
+        template_record: biopython.SeqRecord = None,
         length_range: Tuple[int, int] = (200, 4000),
     ) -> Sample:
         name = name or self.new_name()
@@ -141,12 +140,12 @@ class FakeSampleGenerator(object):
         ]
         assert len(record.seq) == size
         sample.record = record
-        make_linear([record])
+        biopython.make_linear([record])
         return sample
 
     def make_fake_library(
         self, n_plasmids: int, n_fragments: int, n_primers: int
-    ) -> Tuple[Sample, SeqRecord]:
+    ) -> Tuple[Sample, biopython.SeqRecord]:
         """
         Generate a list of fake samples (and their SeqRecords)
 

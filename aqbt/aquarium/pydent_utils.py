@@ -1,9 +1,8 @@
 from pydent import AqSession, Planner
-from pydent.models import Sample, Operation, FieldValue, FieldType, SampleType
+from pydent.models import Sample, Operation, FieldValue, FieldType
 from typing import List
 import networkx as nx
 from typing import Tuple
-from uuid import uuid4
 
 
 class Constants:
