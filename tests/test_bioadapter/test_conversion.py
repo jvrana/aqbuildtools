@@ -52,7 +52,6 @@ def aquarium_sample(aquarium_sample_list):
 
 def parametrize_paths(src):
     edges = list(edge_iter(src))
-    # ids = [str(x[0]) + " -> " + str(x[1]) for x in edges]
     ids = [str(bioadapter.path(x[0], x[1])) for x in edges]
     return pytest.mark.parametrize("edge", edges, ids=ids)
 
