@@ -11,8 +11,8 @@ loss.
 """
 
 from importlib import import_module as _import_module
-from .registry import convert
-from .registry import bioadapter
+from ._bioadapter import convert
+from ._bioadapter import bioadapter
 
 
 _import_module("aqbt.bioadapter.conversion", "bioadapter")

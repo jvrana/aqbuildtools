@@ -8,7 +8,7 @@ import hashlib
 import itertools
 import tempfile
 from itertools import chain
-from typing import List, Tuple, Union
+from typing import List, Tuple, Union, Iterable
 from uuid import uuid4
 
 import networkx as nx
@@ -101,7 +101,7 @@ def new_compound_location(
     return CompoundLocation(locations)
 
 
-def clean_features(record: SeqRecord):
+def remove_duplicate_features(record: SeqRecord):
     """Remove redundant features"""
     features_by_hash = {}
     for f in record.features:
@@ -315,19 +315,35 @@ def randomly_annotate(
 
 
 def pcr_amplify(
-    fwd: SeqRecord,
-    rev: SeqRecord,
+    primers: Iterable[SeqRecord],
     template: SeqRecord,
     cyclic: bool,
     cyclic_buffer: int = 100,
     name: str = None,
     return_matches: bool = False,
-):
+    annotate_product: bool = False,
+    annotate_primers: bool = False
+) -> Union[List[SeqRecord], Tuple[List[SeqRecord], List[dict], List[dict]]]:
+    """
+
+    :param primers: list of primers to use for the amplification. Typically, a tuple of two SeqRecords (fwd and rev)
+    :param template: template sequence as a SeqRecord
+    :param cyclic: whether to treat the template sequence as a cyclic sequence
+    :param cyclic_buffer: number of bases to consider for the wrap around origin sequence. This buffer allows primers
+        to bind to the sequences near the origin. (default: 100)
+    :param name: optional name of the new amplicons
+    :param return_matches: if True, also return information on the forward and reverse matches (default: False)
+    :param annotate_product: whether to annotate the final product with the provided name
+    :param annotate_primers: whether to annotate the final product with the primer names at their binding sites
+    :return: either list of amplicons as SeqRecords. If return_matches == True, also return the forward and reverse
+        primer matches.
+    """
+    assert isinstance(primers, list) or isinstance(primers, tuple)
     template_name = template.name or template.id or template.description
     original_template = template
     if cyclic:
         template = template + template + template[:cyclic_buffer]
-    fwd_matches, rev_matches = anneal(str(template.seq), [str(fwd.seq), str(rev.seq)])
+    fwd_matches, rev_matches = anneal(str(template.seq), [str(x.seq) for x in primers])
 
     products_by_sequence = {}
     for f, r in itertools.product(fwd_matches, rev_matches):
@@ -344,11 +360,13 @@ def pcr_amplify(
             else:
                 raise e
 
+        fwd = primers[f['primer_index']]
+        rev = primers[r['primer_index']]
         f_rec = new_sequence(
-            f["overhang"], name=fwd.name + "_overhang", auto_annotate=True
+            f["overhang"], name=fwd.name + "_overhang", auto_annotate=annotate_primers
         )
         r_rec = new_sequence(
-            rc(r["overhang"]), name=rev.name + "_overhang", auto_annotate=True
+            rc(r["overhang"]), name=rev.name + "_overhang", auto_annotate=annotate_primers
         )
 
         product = span.get_slice(original_template)
@@ -361,7 +379,8 @@ def pcr_amplify(
         if not name:
             name = original_template.name or original_template.id
             name += "[{}:{}]".format(span.a, span.b)
-        # annotate(product, name=name)
+        if annotate_product:
+            annotate(product, name=name)
         if len(product) <= len(original_template.seq):
             products_by_sequence[str(product.seq)] = (product, span.a, span.b)
     product_list = list(products_by_sequence.values())
@@ -522,7 +541,7 @@ class GibsonAssembler(object):
                 )
 
         cls._restore_features(stored_features, record, cyclic=True)
-        clean_features(record)
+        remove_duplicate_features(record)
         return record
 
     @classmethod
@@ -647,6 +666,13 @@ def to_gff(
     with open(out_path, "w") as f:
         GFF.write(to_gff_recs, f, include_fasta=include_fasta)
     return out_path
+
+
+def from_gffs(
+    paths: List[str]
+) -> List[SeqRecord]:
+    records = list(GFF.parse(paths))
+    return records
 
 
 make_cyclic_assemblies = GibsonAssembler.make_cyclic_assemblies

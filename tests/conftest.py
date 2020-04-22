@@ -16,6 +16,23 @@ def sessions(config_path):
     with open(config_path, 'r') as f:
         return config_to_sessions(parse_config(toml.load(f)))
 
+
 @pytest.fixture(scope='session')
 def fixtures_path():
     return join(here, 'fixtures')
+
+
+@pytest.fixture(scope='session')
+def registry(sessions):
+    return sessions['default']['registry']
+
+
+@pytest.fixture(scope='session')
+def benchling(sessions):
+    return sessions['default']['benchling']
+
+
+@pytest.fixture(scope='session')
+def aquarium(sessions):
+    return sessions['default']['aquarium']
+

@@ -10,7 +10,7 @@ from Bio.SeqFeature import FeatureLocation
 from Bio.SeqFeature import SeqFeature
 from Bio.SeqRecord import SeqRecord
 from pydent.models import Sample
-from .registry import bioadapter
+from ._bioadapter import bioadapter
 from BCBio import GFF
 
 ################################################
@@ -189,7 +189,9 @@ def seqrecord_to_fasta(record: SeqRecord, path: str) -> str:
 
 @bioadapter("fasta", "SeqRecord", weight=15)
 def fasta_to_seqrecord(path: str) -> SeqRecord:
-    return SeqIO.read(path, format="fasta")
+    record = SeqIO.read(path, format="fasta")
+    record.seq.alphabet = generic_dna
+    return record
 
 
 @bioadapter("list(fasta)", "list(SeqRecord)", weight=15)

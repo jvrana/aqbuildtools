@@ -36,11 +36,11 @@ def test_pcr_amplify():
     template = biopython.random_record(1000, name="template")
     primer1 = template[0:20]
     primer2 = template[200:220].reverse_complement()
-
-    products = biopython.pcr_amplify(primer1, primer2, template, False)
+    products = biopython.pcr_amplify((primer1, primer2), template, cyclic=False,
+                                     return_matches=False, annotate_primers=True, annotate_product=True)
     assert products
     assert len(products) == 1
-    assert len(products[0][0].features) == 4
+    assert len(products[0][0].features) == 1
 
 
 def test_no_pcr_amplify():
@@ -48,7 +48,7 @@ def test_no_pcr_amplify():
     primer1 = template[0:20]
     primer2 = template[200:220]
 
-    products = biopython.pcr_amplify(primer1, primer2, template, False)
+    products = biopython.pcr_amplify((primer1, primer2), template, False)
     assert len(products) == 0
 
 
@@ -57,7 +57,7 @@ def test_no_pcr_amplify_over_origin():
     primer1 = template[800:820]
     primer2 = template[200:220].reverse_complement()
 
-    products = biopython.pcr_amplify(primer1, primer2, template, False)
+    products = biopython.pcr_amplify((primer1, primer2), template, False)
     assert len(products) == 0
 
 
@@ -66,7 +66,7 @@ def test_pcr_amplify_over_origin():
     primer1 = template[800:820]
     primer2 = template[200:220].reverse_complement()
 
-    products = biopython.pcr_amplify(primer1, primer2, template, True)
+    products = biopython.pcr_amplify((primer1, primer2), template, True)
     assert len(products) == 1
 
 

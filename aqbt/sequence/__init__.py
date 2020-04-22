@@ -42,9 +42,39 @@ def dna_like(seqstr: str, letters: str = "AGTCagctnNuU", min_length: int = 10):
 
 
 def anneal(
-    template: str, primers: List[str], ignore_case: bool = True
+    template: str, primers: List[str], ignore_case: bool = True, n_bases: int = 10
 ) -> Tuple[List[dict], List[dict]]:
+    """
+    Anneal primers to a template.
+
+    Example output.
+
+    .. code-block:: python
+
+        [{
+            'name': None,
+            'anneal': 'GTTTGCCCGGATCATCAACG',
+            'overhang': '',
+            'primer': 'GTTTGCCCGGATCATCAACG',
+            'primer_index': 1,
+            'start': 219,
+            'length': 20,
+            'top_strand_slice': (200, 220),
+            'strand': -1
+        }]
+
+    :param template: template sequence as a string
+    :param primers: list of primer sequences as a list of strings
+    :param ignore_case: whether to ignore case of the primers
+    :param n_bases: min num of bases to consider for annealing.
+    :return: list of dictionary results
+    """
     assert isinstance(template, str)
     for p in primers:
         assert isinstance(p, str)
-    return p3panneal(template, primers, ignore_case=ignore_case)
+
+    seq_to_index = {p.upper(): i for i, p in enumerate(primers)}
+    results = p3panneal(template, primers, ignore_case=ignore_case, n_bases=n_bases)
+    for r in results[0] + results[1]:
+        r['primer_index'] = seq_to_index[r['primer'].upper()]
+    return results
