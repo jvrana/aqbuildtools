@@ -11,7 +11,6 @@ This repo contains many Aquarium-related tools for constructing new engineered s
 * Aquarium <-> Benchling integration
 * Aquarium <-> SynBioHub integration (coming soon)
 
-
 ## Usage
 
 ### Installation
@@ -66,3 +65,12 @@ aqbt = AquariumBuildTools.from_toml('credentials.toml')
 #### Strain construction
 
 ##### Generating GFFs
+
+## Related repos
+
+[trident](https://github.com/klavinslab/trident),
+[DASi](https://github.com/jvrana/DASi-DNA-Design),
+[Benchling API](https://github.com/klavinslab/benchling-api),
+[Terrarium](https://github.com/jvrana/Terrarium),
+[pyblast](https://github.com/jvrana/pyblast),
+[primer3-py-plus](https://github.com/jvrana/primer3-py-plus)
