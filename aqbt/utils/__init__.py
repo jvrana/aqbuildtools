@@ -1,18 +1,19 @@
-"""
-Utils
+"""Utils.
 
 Utilities for lobio.
 """
-
 import random
 from itertools import tee
-from typing import Generator, TypeVar, Iterable, List
+from typing import Generator
+from typing import Iterable
+from typing import List
+from typing import TypeVar
 
 T = TypeVar("T")
 
 
 def random_color():
-    """Make a random color"""
+    """Make a random color."""
     random_number = random.randint(0, 16777215)
     hex_number = str(hex(random_number))[2:]
     if len(hex_number) < 6:
@@ -35,14 +36,12 @@ def remove_none_values(data: dict):
 
 
 def random_slices(mn: int, mx: int, total_length: int):
-    """
-    Yield random slices whose lengths sum to the provided
-    total length
-    
+    """Yield random slices whose lengths sum to the provided total length.
+
     :param mn: minimum slice size
     :param mx: maximum slice size
     :param total_length: total length of the slices
-    :return: 
+    :return:
     """
     n = total_length
     j = 0

@@ -224,7 +224,7 @@ description = "Automated DNA assembly planner for Python"
 name = "dasi"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "0.0.15"
+version = "0.0.20"
 
 [package.dependencies]
 biopython = ">=1.74,<2.0"
@@ -240,7 +240,7 @@ nest_asyncio = ">=1.0,<2.0"
 networkx = ">=2.3,<3.0"
 numpy = ">=1.17,<2.0"
 pandas = ">=0.25.1,<0.26.0"
-primer3plus = ">=1.0.5,<2.0.0"
+primer3plus = ">=1.0.8,<2.0.0"
 pyblastbio = ">=0.6.3,<0.7.0"
 seaborn = ">=0.9.0,<0.10.0"
 sortedcontainers = ">=2.1,<3.0"
@@ -1143,7 +1143,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "1ad604ae5ea677884678751d54efce317198f502940ae2c7fa23099c521fec5b"
+content-hash = "066efe9c2d7dbb3368a9d0b3f29697fea87d3e52342be5961caa319432379915"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -1250,8 +1250,8 @@ cycler = [
     {file = "cycler-0.10.0.tar.gz", hash = "sha256:cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"},
 ]
 dasi = [
-    {file = "dasi-0.0.15-py3-none-any.whl", hash = "sha256:1c30555bfc88bce11ab4f4b6903eb0a22299dd869424455ce966646592524217"},
-    {file = "dasi-0.0.15.tar.gz", hash = "sha256:682c9e743bc46d6ae87bdc20279c037c5f5900fd2e0276184631c3e2b9428fd1"},
+    {file = "dasi-0.0.20-py3-none-any.whl", hash = "sha256:b1f82b9ad2117c5fdc5595b9b084b187d6b443dd57f64062bd99c7273e9322f5"},
+    {file = "dasi-0.0.20.tar.gz", hash = "sha256:a8af4ce140922cf46da85c81dbc921a4beb96e4b8220108bc0defdb247306de9"},
 ]
 decorator = [
     {file = "decorator-4.4.2-py2.py3-none-any.whl", hash = "sha256:41fa54c2a0cc4ba648be4fd43cff00aedf5b9465c9bf18d64325bc225f08f760"},

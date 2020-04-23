@@ -1,9 +1,12 @@
-from dasi import cost
-import pytest
+import hashlib
 import os
 from glob import glob
-import hashlib
-from os.path import join, dirname, abspath
+from os.path import abspath
+from os.path import dirname
+from os.path import join
+
+import pytest
+from dasi import cost
 
 ##############################
 # Cost Fixtures

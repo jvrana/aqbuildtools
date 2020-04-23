@@ -1,38 +1,42 @@
+from os.path import abspath
+from os.path import dirname
+from os.path import join
+
 import pytest
-from os.path import abspath, dirname, join
-from aqbt.cli import parse_config, config_to_sessions
 import toml
+
+from aqbt.cli import config_to_sessions
+from aqbt.cli import parse_config
 
 here = abspath(dirname(__file__))
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def config_path():
-    return join(here, 'secrets', 'test_config.toml')
+    return join(here, "secrets", "test_config.toml")
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def sessions(config_path):
-    with open(config_path, 'r') as f:
+    with open(config_path, "r") as f:
         return config_to_sessions(parse_config(toml.load(f)))
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def fixtures_path():
-    return join(here, 'fixtures')
+    return join(here, "fixtures")
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def registry(sessions):
-    return sessions['default']['registry']
+    return sessions["default"]["registry"]
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def benchling(sessions):
-    return sessions['default']['benchling']
+    return sessions["default"]["benchling"]
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def aquarium(sessions):
-    return sessions['default']['aquarium']
-
+    return sessions["default"]["aquarium"]

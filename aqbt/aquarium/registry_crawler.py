@@ -2,13 +2,13 @@ import networkx as nx
 from pydent.base import ModelBase
 from pydent.models import Sample
 
-from aqbt.aquarium.pydent_utils import is_keystone_op
 from aqbt.aquarium.linter import Linter
-from aqbt.logger import logger
 from aqbt.aquarium.pydent_utils import Constants as C
+from aqbt.aquarium.pydent_utils import is_keystone_op
+from aqbt.logger import logger
 
 
-class RegistryCrawler(object):
+class RegistryCrawler:
     OP_SAMPLES_KEY = "op_samples"
     OP_KEY = "operation"
 

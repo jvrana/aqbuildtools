@@ -1,12 +1,19 @@
+from os.path import abspath
+from os.path import dirname
+from os.path import join
+
 import pytest
+from Bio import SeqIO
+
 from aqbt import biopython
-from os.path import join, abspath, dirname
-from aqbt.aquarium.genome_builder import integration, mating
+from aqbt.aquarium.genome_builder import aq_to_gff
+from aqbt.aquarium.genome_builder import integration
+from aqbt.aquarium.genome_builder import mating
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope="function")
 def cenpk(fixtures_path):
-    return biopython.from_gffs([join(fixtures_path, 'cenpk.gff')])
+    return biopython.from_gffs([join(fixtures_path, "cenpk.gff")])
 
 
 @pytest.mark.parametrize(
@@ -32,9 +39,7 @@ def test_integrations(sample_id, cenpk, registry, tmp_path):
     d = {22800: {"genome": records[:]}, 22801: {"genome": records[:]}}
     session = registry.session
 
-    genome_dict = integration(
-        registry, session.Sample.find(sample_id), d, "PmeI"
-    )
+    genome_dict = integration(registry, session.Sample.find(sample_id), d, "PmeI")
 
     for sid, genome in genome_dict.items():
         name = "UWBF_{}.gff".format(sid)
@@ -45,7 +50,8 @@ def test_mating(cenpk):
     mata = cenpk[:]
     alpha = cenpk[1:]
     records = mating(mata, alpha)
-    assert len(records) == 2*len(mata) - 1
+    assert len(records) == 2 * len(mata) - 1
+
 
 @pytest.mark.parametrize(
     "sample_id",
@@ -64,12 +70,10 @@ def test_mating(cenpk):
         33181,
     ],
 )
-def test_aq_to_gff(sample_id):
-    records = list(GFF.parse([join(here, "cenpk.gff")]))
-
+def test_aq_to_gff(sample_id, registry, cenpk):
+    records = cenpk
     d = {22800: {"genome": records[:]}, 22801: {"genome": records[:]}}
 
-    registry = sessions.klregistry
     session = registry.session
 
     path, genome_dict, trace = aq_to_gff(
@@ -77,12 +81,11 @@ def test_aq_to_gff(sample_id):
     )
 
 
-def test_aq_to_gff_example():
-    records = list(GFF.parse([join(here, "cenpk.gff")]))
+def test_aq_to_gff_example(registry, cenpk, tmp_path):
+    records = cenpk
 
     d = {22800: {"genome": records[:]}, 22801: {"genome": records[:]}}
 
-    registry = sessions.klregistry
     session = registry.session
 
     sample = session.Sample.find(34018)
@@ -102,9 +105,7 @@ def test_aq_to_gff_example():
             s.name = short_name
             s.id = short_name
             SeqIO.write(
-                [s],
-                handle=join(abspath(dirname(__file__)), "{}.gb".format(long_name)),
-                format="genbank",
+                [s], handle=join(tmp_path, "{}.gb".format(long_name)), format="genbank",
             )
             print(
                 {
@@ -116,12 +117,11 @@ def test_aq_to_gff_example():
 
 
 @pytest.mark.parametrize("sample_id", [27674])
-def test_aq_to_gff_diploid(sample_id):
-    records = list(GFF.parse([join(here, "cenpk.gff")]))
+def test_aq_to_gff_diploid(sample_id, cenpk, registry):
+    records = cenpk
 
     d = {22800: {"genome": records[:]}, 22801: {"genome": records[:]}}
 
-    registry = sessions.klregistry
     session = registry.session
 
     path, genome_dict = aq_to_gff(

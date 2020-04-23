@@ -1,8 +1,13 @@
-from pydent import AqSession, Planner
-from pydent.models import Sample, Operation, FieldValue, FieldType
 from typing import List
-import networkx as nx
 from typing import Tuple
+
+import networkx as nx
+from pydent import AqSession
+from pydent import Planner
+from pydent.models import FieldType
+from pydent.models import FieldValue
+from pydent.models import Operation
+from pydent.models import Sample
 
 
 class Constants:
@@ -142,7 +147,7 @@ class Status:
 
     @staticmethod
     def production_status(session: AqSession, samples: List[Sample]) -> dict:
-        """Get the per plan sample production status"""
+        """Get the per plan sample production status."""
         with session.with_cache() as sess:
             ops_by_sample = ops_using_samples(
                 sess, samples, role="output", group_by_sample=True
@@ -274,7 +279,7 @@ def get_parent(sample: Sample) -> Sample:
 
 
 def _a_alpha_or_neither(
-    samples: List[Sample]
+    samples: List[Sample],
 ) -> Tuple[List[Sample], List[Sample], List[Sample]]:
     a, alpha, neither = [], [], []
     for s in samples:
@@ -288,7 +293,7 @@ def _a_alpha_or_neither(
 
 
 def _get_haploid_by_mating_types(
-    sample: Sample
+    sample: Sample,
 ) -> Tuple[List[Sample], List[Sample], List[Sample]]:
     assert is_yeast(sample)
     if not is_diploid(sample):

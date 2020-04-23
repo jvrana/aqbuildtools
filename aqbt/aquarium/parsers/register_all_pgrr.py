@@ -1,5 +1,7 @@
-from tqdm import tqdm_notebook as tqdm
 from json.decoder import JSONDecodeError
+
+from tqdm import tqdm_notebook as tqdm
+
 from aqbt.aquarium.parsers.pgrr_plasmid import parse_name
 from aqbt.bioadapter import convert
 

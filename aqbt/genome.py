@@ -1,8 +1,13 @@
 import itertools
 from copy import deepcopy
-from os.path import join, abspath, dirname
-from typing import Dict, List
-from typing import Tuple, Any, Callable
+from os.path import abspath
+from os.path import dirname
+from os.path import join
+from typing import Any
+from typing import Callable
+from typing import Dict
+from typing import List
+from typing import Tuple
 
 import networkx as nx
 from Bio.Seq import Seq
@@ -10,17 +15,16 @@ from Bio.SeqRecord import SeqRecord
 from dasi.utils.region import Span
 from pyblast import BioBlast
 from pyblast.utils import make_linear
+from pydent import AqSession
 from pydent.models import Sample
 
 from aqbt import biopython
 from aqbt.bioadapter import convert
 from aqbt.logger import logger
-from pydent import AqSession
-from pydent.models import Sample
 
 
 class IntegrationError(Exception):
-    """Generic exceptions for integration events"""
+    """Generic exceptions for integration events."""
 
 
 def _generate_integration_graph(
@@ -28,8 +32,8 @@ def _generate_integration_graph(
     sample: Sample,
     field_names: Tuple[str, ...] = ("Integrant", "Parent"),
 ) -> nx.DiGraph:
-    """
-    Generate a DAG from the integrant and parent of the provided aquarium sample.
+    """Generate a DAG from the integrant and parent of the provided aquarium
+    sample.
 
     :param sess: AqSession instance
     :param sample: Aquarium sample
@@ -158,9 +162,8 @@ def _get_integration_fragments(plasmid_record, restriction_enzyme: str) -> List[
 
 
 def get_span_info(result_entry: Dict) -> Tuple[int, int, int]:
-    """
-    Return the start, stop, and strand information. Start and stop is
-    in reference to the top strand.
+    """Return the start, stop, and strand information. Start and stop is in
+    reference to the top strand.
 
     e.g.::
 
@@ -181,8 +184,8 @@ def get_span_info(result_entry: Dict) -> Tuple[int, int, int]:
 
 def get_strand(result: Dict) -> int:
     strand = result["query"]["strand"] * result["subject"]["strand"]
-    if not strand in [1, -1]:
-        raise ValueError("Strand must be in {1, -1}, not {}".format(strand))
+    if strand not in [1, -1]:
+        raise ValueError(r"Strand must be in (1, -1), not {}".format(strand))
     return strand
 
 
@@ -258,7 +261,7 @@ def simplify_result(result: Dict) -> Tuple[int, int, int]:
 #     }
 
 
-class Alignment(object):
+class Alignment:
     def __init__(self, subject: Span, query: Span, direction: int):
         self.subject = subject
         self.query = query
@@ -304,7 +307,7 @@ def parse_result_to_span(data, inclusive=True, input_index=1, output_index=None)
     return span
 
 
-class GenomeIntegrator(object):
+class GenomeIntegrator:
     def __init__(
         self,
         e_value_threshold: float = 1e-10,
@@ -402,8 +405,7 @@ class GenomeIntegrator(object):
     def _group_possible_integration_loci(
         self, blast_results: Dict, group_by_func: Callable = None
     ) -> Dict[Tuple[str, str, int], List[Dict[str, Any]]]:
-        """
-        Given a list of subject SeqRecords and a list of query SeqRecords,
+        """Given a list of subject SeqRecords and a list of query SeqRecords,
         group *possible* regions an integration cassette could be.
 
         This groups blast results by their origin id and direction.
@@ -438,8 +440,7 @@ class GenomeIntegrator(object):
     def get_valid_integration_sites(
         self, subjects: List[SeqRecord], integrants: List[SeqRecord]
     ) -> List[Dict[str, Any]]:
-        """
-        Generate a list of valid integration sites
+        """Generate a list of valid integration sites.
 
         :param subjects:
         :param integrants:
@@ -517,8 +518,8 @@ class GenomeIntegrator(object):
     def integrate(
         self, chromosomes: List[SeqRecord], integrants: List[SeqRecord]
     ) -> List[Dict[str, Any]]:
-        """
-        From a list of chromosomes and list of integrants, generate a new engineered genome.
+        """From a list of chromosomes and list of integrants, generate a new
+        engineered genome.
 
         :param chromosomes: list of chromosomes as SeqRecords
         :param integrants: list of integrants as SeqRecords
@@ -556,8 +557,8 @@ class GenomeIntegrator(object):
         result["integration"] = site
         result[
             "note"
-        ] = "{l}bp integration cassette integrated into {chr} at {locus} (direction={dir}).'".format(
-            l=len(site["cassette"]),
+        ] = "{len}bp integration cassette integrated into {chr} at {locus} (direction={dir}).'".format(
+            len=len(site["cassette"]),
             chr=site["chr_id"],
             locus=(site["chr_delete_span"].a, site["chr_delete_span"].b),
             dir=site["direction"],

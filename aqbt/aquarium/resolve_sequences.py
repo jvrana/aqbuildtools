@@ -1,11 +1,12 @@
 import networkx as nx
-from aqbt.aquarium import pydent_utils
-from aqbt import biopython
 from pydent.models import Sample
+
+from aqbt import biopython
+from aqbt.aquarium import pydent_utils
 from aqbt.aquarium.pydent_utils import Constants as C
 
 
-class Resolver(object):
+class Resolver:
     def __init__(self, session, registry):
         self.registry = registry.copy()
         self.registry.using_cache = True
@@ -173,7 +174,7 @@ class Resolver(object):
         template_record = self.registry.connector.convert(template, to="SeqRecord")
 
         product_records = biopython.pcr_amplify(
-            fwd, rev, template_record, cyclic=template.is_circular, name=fragment.name
+            (fwd, rev), template_record, cyclic=template.is_circular, name=fragment.name
         )
         return product_records
 

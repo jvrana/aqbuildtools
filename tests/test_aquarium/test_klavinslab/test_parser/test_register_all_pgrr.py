@@ -1,11 +1,12 @@
 from json.decoder import JSONDecodeError
 from typing import Union
 
-from tqdm import tqdm_notebook, tqdm_gui, tqdm
+from tqdm import tqdm
+from tqdm import tqdm_gui
+from tqdm import tqdm_notebook
 
-from lobio.bioadapter import convert
-from lobio.klavinslab.parser.pgrr_plasmid import parse_name
-from lobio.klavinslab import sessions
+from aqbt.aquarium.parsers.pgrr_plasmid import parse_name
+from aqbt.bioadapter import convert
 
 
 def register_all(

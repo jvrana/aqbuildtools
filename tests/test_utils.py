@@ -1,5 +1,6 @@
-from aqbt import utils
 from colour import Color
+
+from aqbt import utils
 
 
 def test_random_color():

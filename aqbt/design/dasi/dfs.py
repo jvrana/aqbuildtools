@@ -1,26 +1,40 @@
-from aqbt.aquarium.registry import KlavinsLabRegistry
-from typing import List, Union
-from aqbt.aquarium.pydent_utils import Constants as C
-from Bio.SeqRecord import SeqRecord
-from tqdm import tqdm
-from aqbt import bioadapter
-import pandas as pd
-from pydent import models
-from aqbt.utils import chunkify
-from benchlingapi.models import DNASequence
 import hashlib
-import inflection
+from typing import List
+from typing import Union
 from uuid import uuid4
+
+import inflection
+import pandas as pd
+from benchlingapi.models import DNASequence
+from Bio.SeqRecord import SeqRecord
+from pydent import models
+from tqdm import tqdm
+
+from aqbt import bioadapter
 from aqbt import biopython
 from aqbt.aquarium.faker import FakeSampleGenerator
+from aqbt.aquarium.pydent_utils import Constants as C
+from aqbt.utils import chunkify
 
 
 def seq_sha1(seq: str) -> str:
-    """Convert sequence string into a hash"""
+    """Convert sequence string into a hash."""
     return hashlib.sha1(seq.strip().upper().encode()).hexdigest()
 
 
-class KlavinsLabDnaDb(object):
+config = {
+    "plasmid_sample_type": "Plasmid",
+    "fragment_sample_type": "Fragment",
+    "primer_sample_type": "Primer",
+    "fragment_object_types": ["Fragment Stock"],
+    "plasmid_object_types": ["Plasmid Glycerol Stock"],
+    "linear_types": ["Primer", "Fragment"],
+    "cyclic_types": ["Plasmid"],
+}
+
+
+# TODO: use Aquarium config to determine connections
+class KlavinsLabDnaDb:
 
     DASI_DEFAULT_AQ_TIMEOUT = 120  #: timout (s) for Aquarium API
     LIMS_ID = "LIMS_ID"  #: lims id key
@@ -127,8 +141,7 @@ class KlavinsLabDnaDb(object):
     def build_fake_inventory_df(
         self, n_plasmid: int, n_fragment: int, n_primers: int
     ) -> pd.DataFrame:
-        """
-        Build a faked inventory df for testing / debugging purposes.
+        """Build a faked inventory df for testing / debugging purposes.
 
         :param registry: klavins lab registry
         :param n_plasmid: number of plasmids to generate
@@ -226,12 +239,11 @@ class KlavinsLabDnaDb(object):
 
     @classmethod
     def annotate_record_with_lims_id(cls, record: SeqRecord, lims_id: Union[str, int]):
-        """Adds a LIMS_ID to the record annotations dictionary"""
+        """Adds a LIMS_ID to the record annotations dictionary."""
         record.annotations[cls.LIMS_ID] = lims_id
 
     def post_process_df(self, df: pd.DataFrame):
-        """
-        Post processing for inventory dataframes.
+        """Post processing for inventory dataframes.
 
         :param df:
         :return:
@@ -298,9 +310,7 @@ class KlavinsLabDnaDb(object):
         return df
 
     def build_primer_df(self, limit: int = None) -> pd.DataFrame:
-        """
-        Build primer df
-        """
+        """Build primer df."""
 
         list_of_series = []
         columns = self.ALL_COLUMNS[:]
@@ -360,8 +370,7 @@ class KlavinsLabDnaDb(object):
         return pd.DataFrame(list_of_series, columns=columns)
 
     def build_inventory_df(self, limit: int = None) -> pd.DataFrame:
-        """
-        Construct a pd.DataFrame with the following columns
+        """Construct a pd.DataFrame with the following columns.
 
         sample_id | benchling_sequence | record | entity_registry_id | is_circular |
         is_available | sample | sample_type
@@ -388,8 +397,7 @@ class KlavinsLabDnaDb(object):
         return seq_sha1(str(record.seq))
 
     def _build_record_df(self, dnas: List[DNASequence]) -> pd.DataFrame:
-        """
-        Construct a DataFrame of all dna sequences from Benchling.
+        """Construct a DataFrame of all dna sequences from Benchling.
 
         :param registry:
         :param dnas:
@@ -454,7 +462,7 @@ class KlavinsLabDnaDb(object):
         return ok_items
 
     def dna_is_available(self, sample: models.Sample):
-        """Checks if there the sample has 'available items'"""
+        """Checks if there the sample has 'available items'."""
         if sample is None:
             raise ValueError()
         if sample.sample_type_id == self.plasmid_type.id:
@@ -467,9 +475,8 @@ class KlavinsLabDnaDb(object):
         return [sid for sid in sample_ids if sid and 0 < sid < cls.MAX_AQ_ID]
 
     def _build_sample_df(self, sample_ids: List[int]):
-        """
-        Construct the 'Sample' DataFrame with columns
-        `["sample_id", "sample", "sample_type", "is_available"]`
+        """Construct the 'Sample' DataFrame with columns `["sample_id",
+        "sample", "sample_type", "is_available"]`
 
         DataFrame Keys:
 

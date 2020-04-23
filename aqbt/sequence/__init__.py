@@ -1,18 +1,18 @@
-"""
-sequence
+"""sequence.
 
 Methods for DNA/RNA sequence manipulation.
 """
+from typing import List
+from typing import Tuple
 
-from typing import Tuple, List
-from primer3plus.utils import anneal as p3panneal
 import numpy as np
+from primer3plus.utils import anneal as p3panneal
 
 BASES = "AGCT"
 
 
 def random_sequence(size: int, letters=BASES) -> str:
-    """Generate a random sequence string"""
+    """Generate a random sequence string."""
     NP_BASES = np.array(list(letters))
     indices = np.random.randint(0, 4, size=size)
     bases = NP_BASES[indices]
@@ -20,13 +20,13 @@ def random_sequence(size: int, letters=BASES) -> str:
 
 
 def c(seq: str):
-    """Return complement a dna string"""
+    """Return complement a dna string."""
     d = dict(zip("AGCTagct", "TCGAtcga"))
     return "".join([d[x] for x in seq])
 
 
 def rc(seq: str):
-    """Return a reverse complement a dna string"""
+    """Return a reverse complement a dna string."""
     return c(seq)[::-1]
 
 
@@ -44,8 +44,7 @@ def dna_like(seqstr: str, letters: str = "AGTCagctnNuU", min_length: int = 10):
 def anneal(
     template: str, primers: List[str], ignore_case: bool = True, n_bases: int = 10
 ) -> Tuple[List[dict], List[dict]]:
-    """
-    Anneal primers to a template.
+    """Anneal primers to a template.
 
     Example output.
 
@@ -76,5 +75,5 @@ def anneal(
     seq_to_index = {p.upper(): i for i, p in enumerate(primers)}
     results = p3panneal(template, primers, ignore_case=ignore_case, n_bases=n_bases)
     for r in results[0] + results[1]:
-        r['primer_index'] = seq_to_index[r['primer'].upper()]
+        r["primer_index"] = seq_to_index[r["primer"].upper()]
     return results

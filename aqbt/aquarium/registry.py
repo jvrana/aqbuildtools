@@ -1,23 +1,26 @@
-from benchlingapi.models import DNASequence
-from pydent import AqSession
-from abc import ABC
-from pydent.models import Sample
-from aqbt import bioadapter
-from aqbt import sequence
-from aqbt import biopython
-from functools import partial
-from Bio.SeqRecord import SeqRecord
-from typing import Union, Tuple
-from benchlingapi.exceptions import InvalidRegistryId
-from aqbt.logger import logger
-from copy import deepcopy
-from typing import List
-import validators
-from aqbt.aquarium.pydent_utils import Constants as C
-import re
 import random
+import re
+from abc import ABC
+from copy import deepcopy
+from functools import partial
+from typing import List
+from typing import Tuple
+from typing import Union
 from uuid import uuid4
+
+import validators
 from benchlingapi.exceptions import BenchlingAPIException
+from benchlingapi.exceptions import InvalidRegistryId
+from benchlingapi.models import DNASequence
+from Bio.SeqRecord import SeqRecord
+from pydent import AqSession
+from pydent.models import Sample
+
+from aqbt import bioadapter
+from aqbt import biopython
+from aqbt import sequence
+from aqbt.aquarium.pydent_utils import Constants as C
+from aqbt.logger import logger
 
 
 class KlavinsLabRegistryException(Exception):
@@ -41,8 +44,7 @@ class RegistryConnector(ABC):
         self.logger = logger(self)
 
     def format_registry_id(self, uid: str) -> str:
-        """
-        Format a unique id to a Benchling registry id
+        """Format a unique id to a Benchling registry id.
 
         :param uid: unique id
         :return: Bencling registry id
@@ -62,8 +64,7 @@ class RegistryConnector(ABC):
             return int(m.group(1))
 
     def find_by_url(self, url: str) -> Union[None, DNASequence]:
-        """
-        Find a DNASequence by its url or sharelink
+        """Find a DNASequence by its url or sharelink.
 
         :param url: url or share link
         :return: DNASequence or None
@@ -79,9 +80,8 @@ class RegistryConnector(ABC):
         return dna
 
     def find(self, uid: str) -> Union[None, DNASequence]:
-        """
-        Find a DNASequence in the Benchling registry by its unique id,
-        which will get converted to a Benchling registry id
+        """Find a DNASequence in the Benchling registry by its unique id, which
+        will get converted to a Benchling registry id.
 
         :param uid: unique id
         :return: DNASequence or None
@@ -89,7 +89,7 @@ class RegistryConnector(ABC):
         rid = self.format_registry_id(uid)
         try:
             return self.api.DNASequence.find_in_registry(rid)
-        except InvalidRegistryId as e:
+        except InvalidRegistryId:
             self.logger.debug("Could not find '{}' in registry".format(rid))
             return None
 
@@ -101,8 +101,7 @@ class RegistryConnector(ABC):
     def register_sequence(
         self, seq: DNASequence, uid: str, overwrite: bool = True, do_raise=False
     ):
-        """
-        Register a DNASequence to Benchling.
+        """Register a DNASequence to Benchling.
 
         :param seq: the DNASequence to register
         :param uid: the unique id (will be converted to benchling registry id)
@@ -166,7 +165,7 @@ class RetrievalPriorities:
     VALID_PROPERTIES = [PRIMER, CACHE, REGISTRY, URL, UNANNOTATED_PROPERTY]
 
 
-class KlavinsLabRegistry(object):
+class KlavinsLabRegistry:
     def __init__(self, connector: RegistryConnector, aqsession: AqSession):
         self.session = aqsession
 
@@ -271,9 +270,8 @@ class KlavinsLabRegistry(object):
     def find_by_url(
         self, sample: Sample, keys: Tuple[str] = ("Sequence",)
     ) -> Union[None, DNASequence]:
-        """
-        Find a DNASequence from an Aquarium Sample a url located
-        int its property keys. By default 'Sequence' is the only key used.
+        """Find a DNASequence from an Aquarium Sample a url located int its
+        property keys. By default 'Sequence' is the only key used.
 
         :param sample: the Aquarium sample
         :param keys: list of keys to find the url
@@ -285,9 +283,8 @@ class KlavinsLabRegistry(object):
     def find_by_property(
         self, sample: Sample, keys: Tuple[str] = ("Sequence",)
     ) -> Union[None, DNASequence]:
-        """
-        Find a DNASequence from an Aquarium Sample its sequence located
-        int its property keys. By default 'Sequence' is the only key used.
+        """Find a DNASequence from an Aquarium Sample its sequence located int
+        its property keys. By default 'Sequence' is the only key used.
 
         :param sample: the Aquarium sample
         :param keys: list of keys to find the sequence str
@@ -307,8 +304,7 @@ class KlavinsLabRegistry(object):
             ("Anneal Sequence", "anneal"),
         ),
     ) -> SeqRecord:
-        """
-        Return the primer sequence as a SeqRecord sequence from an Aquarium
+        """Return the primer sequence as a SeqRecord sequence from an Aquarium
         sample using its properties.
 
         :param sample: the Aquarium sample
@@ -458,9 +454,7 @@ class KlavinsLabRegistry(object):
         overwrite=True,
         do_raise=True,
     ):
-        """
-        Register an Aquarium sequence sample
-        """
+        """Register an Aquarium sequence sample."""
         if not sample.id:
             raise KlavinsLabRegistryException(
                 "Cannot registry sample because" " it has not been saved in Aquarium."

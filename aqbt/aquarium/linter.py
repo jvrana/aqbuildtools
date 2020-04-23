@@ -1,11 +1,13 @@
-from pydent.models import Sample
-from primer3plus.design import primer3
-from aqbt import biopython
 import itertools
 from typing import List
 
+from primer3plus.design import primer3
+from pydent.models import Sample
 
-class LintError(object):
+from aqbt import biopython
+
+
+class LintError:
 
     WARNING = "warning"
     ERROR = "error"
@@ -34,7 +36,7 @@ class LintError(object):
         )
 
 
-class Linter(object):
+class Linter:
     def __init__(self):
         self.PRIMER_TM_FWD_REV_DIFF_THRESHOLD = 5
         self.PRIMER_TA_TO_TM = 3
@@ -63,7 +65,7 @@ class Linter(object):
 
     def lint_primer(self, sample):
         anneal = sample.properties["Anneal Sequence"] or ""
-        overhang = sample.properties["Overhang Sequence"] or ""
+        # overhang = sample.properties["Overhang Sequence"] or ""
         ta = sample.properties["T Anneal"]
 
         errors = []
@@ -133,8 +135,7 @@ class Linter(object):
         template_record = registry.connector.convert(template, to="SeqRecord")
 
         products, fwd_matches, rev_matches = biopython.pcr_amplify(
-            fwd,
-            rev,
+            (fwd, rev),
             template_record,
             cyclic=template.is_circular,
             name=fragment.name,
@@ -198,7 +199,7 @@ class Linter(object):
                 ),
             )
         elif len(products) == 0:
-            self.error(fragment, "There are no products".format(len(products)))
+            self.error(fragment, "There are no products")
             return
 
         intended_product = products[0][0]

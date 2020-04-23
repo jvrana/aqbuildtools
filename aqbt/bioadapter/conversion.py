@@ -1,5 +1,7 @@
 from copy import deepcopy
 from typing import List
+
+from BCBio import GFF
 from benchlingapi.models import Annotation
 from benchlingapi.models import DNASequence
 from Bio import SeqIO
@@ -10,8 +12,8 @@ from Bio.SeqFeature import FeatureLocation
 from Bio.SeqFeature import SeqFeature
 from Bio.SeqRecord import SeqRecord
 from pydent.models import Sample
+
 from ._bioadapter import bioadapter
-from BCBio import GFF
 
 ################################################
 # BioPython Adapter

@@ -1,5 +1,6 @@
 import pytest
-from lobio.klavinslab.parser.pgrr_plasmid import parse_name
+
+from aqbt.aquarium.parsers.pgrr_plasmid import parse_name
 
 
 TEST_NAMES = [

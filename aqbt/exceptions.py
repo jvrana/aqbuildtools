@@ -1,2 +1,2 @@
 class LoBioException(Exception):
-    """Generic exception"""
+    """Generic exception."""

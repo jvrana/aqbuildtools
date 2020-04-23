@@ -1,6 +1,7 @@
+import pytest
+
 from aqbt import biopython
 from aqbt.sequence import rc
-import pytest
 
 
 def test_new_sequence():
@@ -36,8 +37,14 @@ def test_pcr_amplify():
     template = biopython.random_record(1000, name="template")
     primer1 = template[0:20]
     primer2 = template[200:220].reverse_complement()
-    products = biopython.pcr_amplify((primer1, primer2), template, cyclic=False,
-                                     return_matches=False, annotate_primers=True, annotate_product=True)
+    products = biopython.pcr_amplify(
+        (primer1, primer2),
+        template,
+        cyclic=False,
+        return_matches=False,
+        annotate_primers=True,
+        annotate_product=True,
+    )
     assert products
     assert len(products) == 1
     assert len(products[0][0].features) == 1

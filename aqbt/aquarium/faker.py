@@ -1,20 +1,19 @@
-"""faker.py
-
-
-"""
-
-from pydent import AqSession
-from aqbt.aquarium.pydent_utils import Constants
-from pydent.models import SampleType, Sample
-from uuid import uuid4
-from typing import Tuple
+"""faker.py."""
 import random
-from aqbt import biopython
+from typing import Tuple
+from uuid import uuid4
+
 import primer3
 import primer3plus
+from pydent import AqSession
+from pydent.models import Sample
+from pydent.models import SampleType
+
+from aqbt import biopython
+from aqbt.aquarium.pydent_utils import Constants
 
 
-class FakeSampleGenerator(object):
+class FakeSampleGenerator:
     def __init__(self, session: AqSession):
         self.session = session
         self.plasmid_type = session.SampleType.find_by_name(Constants.PLASMID)
@@ -146,8 +145,7 @@ class FakeSampleGenerator(object):
     def make_fake_library(
         self, n_plasmids: int, n_fragments: int, n_primers: int
     ) -> Tuple[Sample, biopython.SeqRecord]:
-        """
-        Generate a list of fake samples (and their SeqRecords)
+        """Generate a list of fake samples (and their SeqRecords)
 
         :param n_plasmids:
         :param n_fragments:

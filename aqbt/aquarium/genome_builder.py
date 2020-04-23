@@ -1,17 +1,28 @@
-from aqbt.aquarium.registry import KlavinsLabRegistry
-from pydent.models import Sample
-from typing import Dict, List, Any, Tuple
-from Bio.SeqRecord import SeqRecord
-from aqbt.genome import GenomeIntegrator, _generate_integration_graph, _get_integration_fragments, IntegrationError
-from aqbt.aquarium.registry import RetrievalPriorities
 from copy import deepcopy
-from aqbt.bioadapter import convert
-import networkx as nx
-from os.path import join, dirname, abspath
-from aqbt.biopython import make_linear, to_gff
-from aqbt.aquarium import pydent_utils
+from os.path import abspath
+from os.path import dirname
+from os.path import join
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Tuple
 
+import networkx as nx
+from Bio.SeqRecord import SeqRecord
+from pydent.models import Sample
+
+from aqbt.aquarium import pydent_utils
+from aqbt.aquarium.registry import KlavinsLabRegistry
+from aqbt.aquarium.registry import RetrievalPriorities
+from aqbt.bioadapter import convert
+from aqbt.biopython import make_linear
+from aqbt.biopython import to_gff
+from aqbt.genome import _generate_integration_graph
+from aqbt.genome import _get_integration_fragments
+from aqbt.genome import GenomeIntegrator
+from aqbt.genome import IntegrationError
 from aqbt.logger import logger
+
 
 # TODO: generic register interface? e.g. SBOL
 def integration(
@@ -101,7 +112,8 @@ def integration(
 def mating(
     mat_a_records: List[SeqRecord], mat_alpha_records: List[SeqRecord]
 ) -> List[SeqRecord]:
-    """Make a new list of 'mated' records by combining the two list of records."""
+    """Make a new list of 'mated' records by combining the two list of
+    records."""
     records = []
 
     for r in mat_a_records:
@@ -127,8 +139,7 @@ def aq_to_gff(
     out_dir: str = None,
     do_save: bool = True,
 ) -> Tuple[str, Dict[int, List[SeqRecord]]]:
-    """
-    Produce a GFF from an Aquarium sample
+    """Produce a GFF from an Aquarium sample.
 
     :param registry: klavins lab registry
     :param yeast_strain: yeast strain

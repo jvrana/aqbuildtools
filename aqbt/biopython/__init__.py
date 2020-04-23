@@ -1,36 +1,42 @@
-"""
-biopython.py
+"""biopython.py.
 
 Helper functions for BioPython
 """
-
 import hashlib
 import itertools
+import random
+import re
 import tempfile
+from copy import deepcopy
 from itertools import chain
-from typing import List, Tuple, Union, Iterable
+from typing import Iterable
+from typing import List
+from typing import Tuple
+from typing import Union
 from uuid import uuid4
 
+import inflection
 import networkx as nx
+from BCBio import GFF
+from Bio import Restriction
 from Bio import SeqIO
 from Bio.Alphabet import generic_dna
 from Bio.Seq import Seq
-from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation, ExactPosition
+from Bio.SeqFeature import CompoundLocation
+from Bio.SeqFeature import ExactPosition
+from Bio.SeqFeature import FeatureLocation
+from Bio.SeqFeature import SeqFeature
 from Bio.SeqRecord import SeqRecord
-from Bio import Restriction
 from primer3plus.design import primer3
 
 from aqbt.sequence import anneal
-from aqbt.sequence import rc, random_sequence
-from aqbt.utils import format_float, sort_cycle
-from aqbt.utils import random_color, random_slices
+from aqbt.sequence import random_sequence
+from aqbt.sequence import rc
+from aqbt.utils import format_float
+from aqbt.utils import random_color
+from aqbt.utils import random_slices
+from aqbt.utils import sort_cycle
 from aqbt.utils.region import Span
-
-from copy import deepcopy
-import re
-from BCBio import GFF
-import random
-import inflection
 
 
 FWD_COLOR = "ApEinfo_fwdcolor"
@@ -102,7 +108,7 @@ def new_compound_location(
 
 
 def remove_duplicate_features(record: SeqRecord):
-    """Remove redundant features"""
+    """Remove redundant features."""
     features_by_hash = {}
     for f in record.features:
         fhash = "*".join([str(f.qualifiers["label"]), f.type, str(f.location)])
@@ -122,8 +128,8 @@ def new_compound_feature(
 
 
 def feature_qualifiers_to_snake_case(feature: SeqFeature) -> SeqFeature:
-    """
-    Convert the attribute names of feature qualifiers to snake case (lower-case, underscore)
+    """Convert the attribute names of feature qualifiers to snake case (lower-
+    case, underscore)
 
     :param feature: BioPython SeqFeature instance
     :return: the same BioPython SeqFeature instance with qualifiers as a new dictionary
@@ -185,9 +191,7 @@ def annotate(
     cyclic: bool = False,
     annotation_type: str = None,
 ):
-    """
-    Annotate a SeqRecord
-    """
+    """Annotate a SeqRecord."""
     if not name:
         raise ValueError("Cannot annotate record with no name.")
     if annotation_type is None:
@@ -322,24 +326,29 @@ def pcr_amplify(
     name: str = None,
     return_matches: bool = False,
     annotate_product: bool = False,
-    annotate_primers: bool = False
+    annotate_primers: bool = False,
 ) -> Union[List[SeqRecord], Tuple[List[SeqRecord], List[dict], List[dict]]]:
     """
 
-    :param primers: list of primers to use for the amplification. Typically, a tuple of two SeqRecords (fwd and rev)
+    :param primers: list of primers to use for the amplification. Typically, a
+        tuple of two SeqRecords (fwd and rev)
     :param template: template sequence as a SeqRecord
     :param cyclic: whether to treat the template sequence as a cyclic sequence
-    :param cyclic_buffer: number of bases to consider for the wrap around origin sequence. This buffer allows primers
+    :param cyclic_buffer: number of bases to consider for the wrap around origin
+        sequence. This buffer allows primers
         to bind to the sequences near the origin. (default: 100)
     :param name: optional name of the new amplicons
-    :param return_matches: if True, also return information on the forward and reverse matches (default: False)
+    :param return_matches: if True, also return information on the forward and
+        reverse matches (default: False)
     :param annotate_product: whether to annotate the final product with the provided name
-    :param annotate_primers: whether to annotate the final product with the primer names at their binding sites
-    :return: either list of amplicons as SeqRecords. If return_matches == True, also return the forward and reverse
+    :param annotate_primers: whether to annotate the final product with the primer
+        names at their binding sites
+    :return: either list of amplicons as SeqRecords. If return_matches == True, also
+        return the forward and reverse
         primer matches.
     """
     assert isinstance(primers, list) or isinstance(primers, tuple)
-    template_name = template.name or template.id or template.description
+    # template_name = template.name or template.id or template.description
     original_template = template
     if cyclic:
         template = template + template + template[:cyclic_buffer]
@@ -352,7 +361,7 @@ def pcr_amplify(
 
         try:
             span = Span(
-                i, j, l=len(original_template.seq), cyclic=cyclic, ignore_wrap=True
+                i, j, len(original_template.seq), cyclic=cyclic, ignore_wrap=True
             )
         except IndexError as e:
             if not cyclic:
@@ -360,13 +369,15 @@ def pcr_amplify(
             else:
                 raise e
 
-        fwd = primers[f['primer_index']]
-        rev = primers[r['primer_index']]
+        fwd = primers[f["primer_index"]]
+        rev = primers[r["primer_index"]]
         f_rec = new_sequence(
             f["overhang"], name=fwd.name + "_overhang", auto_annotate=annotate_primers
         )
         r_rec = new_sequence(
-            rc(r["overhang"]), name=rev.name + "_overhang", auto_annotate=annotate_primers
+            rc(r["overhang"]),
+            name=rev.name + "_overhang",
+            auto_annotate=annotate_primers,
         )
 
         product = span.get_slice(original_template)
@@ -412,7 +423,7 @@ def write_tmp_records(records: List[SeqRecord], format: str) -> List[SeqRecord]:
     return tmp_path_handle
 
 
-class GibsonAssembler(object):
+class GibsonAssembler:
     @staticmethod
     def make_hash(s: str):
         return hashlib.sha1(s.encode("utf-8")).hexdigest()
@@ -574,8 +585,7 @@ class GibsonAssembler(object):
 
 
 def digest(record: SeqRecord, restriction_enzyme: str):
-    """
-    Digest a SeqRecord with an enzyme.
+    """Digest a SeqRecord with an enzyme.
 
     :param record: record to digest
     :param restriction_enzyme: name of restriction enzyme
@@ -602,9 +612,8 @@ def _feature_qualifiers_to_snake_case(feature: SeqFeature) -> SeqFeature:
 
 
 def _correct_phase(feature: SeqFeature):
-    """
-    Corrects the 'phase' attribute for SeqFeatures. Some parsers produce invalid phases (must be 0, 1, or 2).
-    Invalid phases are delected.
+    """Corrects the 'phase' attribute for SeqFeatures. Some parsers produce
+    invalid phases (must be 0, 1, or 2). Invalid phases are delected.
 
     :param feature:
     :return:
@@ -616,8 +625,7 @@ def _correct_phase(feature: SeqFeature):
 
 
 def prepare_record_for_gff(record: SeqRecord, in_place: bool = True):
-    """
-    Prepare a SeqRecord for GFF conversion.
+    """Prepare a SeqRecord for GFF conversion.
 
     1. Converts feature.qualifier['label'] to 'ID' and 'Name'
     :param record:
@@ -650,8 +658,7 @@ def to_gff(
     include_fasta: bool = True,
     in_place: bool = False,
 ):
-    """
-    Convert a list of SeqRecords to an annotated GFF file.
+    """Convert a list of SeqRecords to an annotated GFF file.
 
     :param records: list of SeqRecords.
     :param out_path: where to save the GFF file.
@@ -668,9 +675,7 @@ def to_gff(
     return out_path
 
 
-def from_gffs(
-    paths: List[str]
-) -> List[SeqRecord]:
+def from_gffs(paths: List[str]) -> List[SeqRecord]:
     records = list(GFF.parse(paths))
     return records
 

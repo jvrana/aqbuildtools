@@ -1,10 +1,12 @@
-from os.path import join, dirname, abspath
+from os.path import abspath
+from os.path import dirname
+from os.path import join
 
-from BCBio import GFF
-from aqbt.genome import GenomeIntegrator
 import pytest
-from aqbt import biopython
+from BCBio import GFF
 
+from aqbt import biopython
+from aqbt.genome import GenomeIntegrator
 
 
 @pytest.fixture(scope="function")

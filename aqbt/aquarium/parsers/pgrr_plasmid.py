@@ -1,22 +1,24 @@
 # pgrr_plasmid.py
 #
 # specialized parser function for Gander 2017 style plasmid names
-
 import functools
 import json
 import os
 import re
-from lobio import biopython
-from Bio.SeqRecord import SeqRecord
 from copy import deepcopy
-from pydent import AqSession
+from typing import Any
+from typing import List
+from typing import Union
+
+import pandas as pd
 from Bio import SeqIO
+from Bio.SeqRecord import SeqRecord
+from pydent import AqSession
+
+from aqbt import biopython
 
 # import jdna
-import pandas as pd
-
 # from colorhash import ColorHash
-from typing import Union, List, Any
 
 here = os.path.abspath(os.path.dirname(__file__))
 data_dir = os.path.join(here, "data")
@@ -55,7 +57,7 @@ def parts_by_name_and_cat():
 _parts_dict, _parts_by_category_dict = parts_by_name_and_cat()
 
 
-class Null(object):
+class Null:
     pass
 
 
@@ -69,8 +71,8 @@ def get_part(part: Union[str, SeqRecord], default: Any = Null):
 
 
 def wsetdict():
-    """
-    Return a dictionary converting w-set to r-set notation
+    """Return a dictionary converting w-set to r-set notation.
+
     :return:
     """
     path = os.path.join(data_dir, "wset_conversion.json")
@@ -80,7 +82,8 @@ def wsetdict():
 
 
 def concat_parts(parts: List[Union[str, SeqRecord]]) -> SeqRecord:
-    """Concatenates a list of Coral.DNA objects or looks for parts by name in the parts dictionary"""
+    """Concatenates a list of Coral.DNA objects or looks for parts by name in
+    the parts dictionary."""
     record = biopython.new_sequence("", name="")
     for p in parts:
         if p is None:
@@ -106,7 +109,7 @@ def generate_gRNA_cassette(
     termlink: Union[str, SeqRecord] = None,
     term: Union[str, SeqRecord] = None,
 ):
-    """Generates gRNA cassette DNA sequence using Coral"""
+    """Generates gRNA cassette DNA sequence using Coral."""
     parts = [
         prom,
         promlink,
@@ -175,7 +178,7 @@ pGRR_irgr = functools.partial(
 
 
 def pGRR(i: str, j: str) -> SeqRecord:
-    """Generates a new pGRR promoter from inputs 'i' and 'j'"""
+    """Generates a new pGRR promoter from inputs 'i' and 'j'."""
     i = get_part(i, default=None)
     j = get_part(j, default=None)
     if i is not None:
@@ -189,8 +192,11 @@ def pGRR(i: str, j: str) -> SeqRecord:
 
 
 def pMOD(homology: str, cassette: SeqRecord, marker=None):
-    """Generates new pMOD vector with a new cassette. Cassette should include
-    the promoter, gene, and terminator (no assembly linkers)."""
+    """Generates new pMOD vector with a new cassette.
+
+    Cassette should include the promoter, gene, and terminator (no
+    assembly linkers).
+    """
 
     homology_dict = {
         "URA": [["URA3 Promoter", "URA3", "tADH1"], ["URA3 3'UTR"]],
@@ -219,8 +225,8 @@ def pMOD(homology: str, cassette: SeqRecord, marker=None):
 
 def parse_NOR_gate(name: str) -> re.Match:
     # {'marker': '8', 'prom': 'A', 'i': None, 'j': None, 'grna': 'URGR', 'k': 'W10'}
-    imatch = "(?P<i>[WF]\d+)"
-    jmatch = "(?P<j>[WF]\d+)"
+    imatch = r"(?P<i>[WF]\d+)"
+    jmatch = r"(?P<j>[WF]\d+)"
 
     pgrr_match = r"(pGRR(-{i})?(-?{j})?)".format(i=imatch, j=jmatch)
     promoter_match = r"p\w+|{pgrr_match}|[GA]".format(pgrr_match=pgrr_match)
@@ -250,7 +256,8 @@ def parse_nor_gate_name_to_sequence(name: str) -> Union[SeqRecord, None]:
     promoter_dict = {"A": "pADH1", "G": "pGPD"}
     irgr_dict = {"pADH1": padh1_irgr, "pGALZ4": pgalz4_irgr, "pGRR": pGRR_irgr}
 
-    get_target = lambda x: wsetdict().get(x, x)
+    def get_target(x):
+        return wsetdict().get(x, x)
 
     i = get_target(parsed["i"])
     j = get_target(parsed["j"])
@@ -315,7 +322,7 @@ def parse_nor_gate_name_to_sequence(name: str) -> Union[SeqRecord, None]:
     record.name = name
 
     record = record + amp_ori
-    biopython.clean_features(record)
+    biopython.remove_duplicate_features(record)
 
     return record
 

@@ -1,43 +1,36 @@
-from aqbt.aquarium import RegistryCrawler, sessions
-from aqbt.aquarium import Linter, pydent_utils
+from aqbt.aquarium import Linter
 
 
-def test_registry_connector_find():
-    registry = sessions.klregistry
-    production = sessions.aqproduction
-    sample = production.Sample.find(26889)
+def test_registry_connector_find(registry, aquarium):
+    sample = aquarium.Sample.find(26889)
     seq = registry.connector.find(26889)
     assert seq
 
 
-def test_registry():
-    registry = sessions.klregistry
-    production = sessions.aqproduction
-    sample = production.Sample.find(26889)
+def test_registry(registry, aquarium):
+    sample = aquarium.Sample.find(26889)
     seq = registry.get_sequence(sample)
     assert seq
 
 
-def test_fake_registry():
-    registry = sessions.klregistry
+def test_fake_registry(registry):
     registry.use_fake_cache(100)
 
 
-def test_make_pcr_fragment():
-    registry = sessions.klregistry
-    production = sessions.aqproduction
+def test_make_pcr_fragment(registry):
+    production = registry.session
     fragment = production.Sample.find(32717)
     linter = Linter()
     linter.lint_fragment(registry, fragment)
     print(linter.report())
 
 
-def test_find():
-    assert sessions.benchling.DNASequence.find("seq_Kzxlbux9")
+def test_find(benchling):
+    assert benchling.DNASequence.find("seq_Kzxlbux9")
 
 
-def test_find_by_share_link():
-    assert sessions.benchling.DNASequence.from_share_link(
+def test_find_by_share_link(benchling):
+    assert benchling.DNASequence.from_share_link(
         "https://benchling.com/s/seq-wyfPJ9kHBicShLrsQfzX"
     )
 

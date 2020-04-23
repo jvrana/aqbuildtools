@@ -1,5 +1,6 @@
 from aqbt.aquarium.faker import FakeSampleGenerator
 
+
 def test_fake_primer(aquarium):
     gen = FakeSampleGenerator(aquarium)
     sample = gen.fake_primer()
