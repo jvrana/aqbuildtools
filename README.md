@@ -54,3 +54,15 @@ from aqbt import AquariumBuildTools
 
 aqbt = AquariumBuildTools.from_toml('credentials.toml')
 ```
+
+### Examples
+
+#### Querying the Aquarium server
+
+#### Connecting to Benchling and Synbiohub
+
+#### Plasmid construction
+
+#### Strain construction
+
+##### Generating GFFs
