@@ -10,6 +10,8 @@ This repo contains many Aquarium-related tools for constructing new engineered s
 * JSON-schema validated serialization of Aquarium models
 * Aquarium <-> Benchling integration
 * Aquarium <-> SynBioHub integration (coming soon)
+* Common file type conversions GFF <> FASTA <> Genbank <> JSON <> Benchling <> Aq <> SBOL (planned)
+* Aquarium database faker for unit testing
 
 ## Usage
 
