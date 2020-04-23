@@ -9,13 +9,16 @@ from typing import Union, Dict, List
 
 DataType = Dict[str, Union[str, int, dict]]
 
+
 def _url_join(*x):
     sep = '/'
     return sep.join([str(_x).strip(sep) for _x in x])
 
+
 def uri(model: ModelBase):
     session = model.session
     return _url_join(session.url, model.get_tableized_name(), model._primary_key)
+
 
 def model_serializer(model, only: Union[str, tuple, dict, list] = None,
                      include: Union[str, tuple, dict, list] = None) -> DataType:
@@ -69,6 +72,7 @@ def sample_serializer(sample: Sample,
     data['properties'] = _field_value_properties_serializer(sample)
     data['sample_type'] = model_serializer(sample.sample_type, only=('id', 'name'))
     return data
+
 
 # TODO: rename
 # TODO: sample_type

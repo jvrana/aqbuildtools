@@ -1,6 +1,20 @@
 # Aquarium-SD2 Strain Builder Tools (aqbt)
 
-**Installation**
+This repo contains many Aquarium-related tools for constructing new engineered strains.
+
+**Features**
+
+* Automated design and Aquarium workflow submission of plasmid assemblies
+* Automated design and Aquarium workflow submission of yeast constructions
+* Conversion of Aquarium strain definitions to engineered GFF with FASTA.
+* JSON-schema validated serialization of Aquarium models
+* Aquarium <-> Benchling integration
+* Aquarium <-> SynBioHub integration (coming soon)
+
+
+## Usage
+
+### Installation
 
 ```
 pip install .
@@ -12,12 +26,31 @@ Install BLAST locally using the following:
 pyblast install
 ```
 
-**Planned features and functions**
+### Credentials
 
-* Automated design and Aquarium workflow submission of plasmid assemblies
-* Automated design and Aquarium workflow submission of yeast constructions
-* Conversion of Aquarium sample definitions to engineered GFF with FASTA.
+AqBuildTools (aqbt) requires a `credentials.toml` file to connect with 
+Aquarium, Benchling and SynBioHub (coming soon). The following 
+creates the `default` scope for a aqbt session:
+```
+[aquarium.production]
+login = 'mylogin'
+password = 'mypass'
+url = 'http://aquarium.org'
 
-**Usage**
+[benchling.production]
+apikey = 'sk_398dfg983nsdfsdflksj'
+initials = 'UWBF'
+schema = 'Aquarium DNA'
+prefix = 'aq'
+folder_id = 'lib_ILUNzz6N'
+id = 'src_KE6uFvex'
 
-coming soon.
+[session.default]
+aquarium = 'production'
+```
+
+```python
+from aqbt import AquariumBuildTools
+
+aqbt = AquariumBuildTools.from_toml('credentials.toml')
+```
