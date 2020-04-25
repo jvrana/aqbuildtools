@@ -14,6 +14,7 @@ from aqbt import bioadapter
 from aqbt import biopython
 from aqbt.aquarium.faker import FakeSampleGenerator
 from aqbt.aquarium.pydent_utils import Constants as C
+from aqbt.aquarium.registry import LabDNARegistry
 from aqbt.utils import chunkify
 
 
@@ -22,7 +23,8 @@ def seq_sha1(seq: str) -> str:
     return hashlib.sha1(seq.strip().upper().encode()).hexdigest()
 
 
-config = {
+# TODO: initialize with config
+CONFIG = {
     "plasmid_sample_type": "Plasmid",
     "fragment_sample_type": "Fragment",
     "primer_sample_type": "Primer",
@@ -35,6 +37,7 @@ config = {
 
 # TODO: use Aquarium config to determine connections
 class KlavinsLabDnaDb:
+    """Generates the inventory database for DASi."""
 
     DASI_DEFAULT_AQ_TIMEOUT = 120  #: timout (s) for Aquarium API
     LIMS_ID = "LIMS_ID"  #: lims id key
@@ -62,26 +65,34 @@ class KlavinsLabDnaDb:
         "record_uuid",  # the unique ID for the record / sample
     ]
 
-    def __init__(self, registry):
+    def __init__(self, registry: LabDNARegistry):
         self.registry = registry
 
-        self.plasmid_type = self.session.SampleType.find_by_name(C.PLASMID)
-        self.fragment_type = self.session.SampleType.find_by_name(C.FRAGMENT)
-        self.primer_type = self.session.SampleType.find_by_name(C.PRIMER)
+        self.plasmid_type = self.session.SampleType.find_by_name(
+            CONFIG["plasmid_sample_type"]
+        )
+        self.fragment_type = self.session.SampleType.find_by_name(
+            CONFIG["fragment_sample_type"]
+        )
+        self.primer_type = self.session.SampleType.find_by_name(
+            CONFIG["primer_sample_type"]
+        )
 
         assert self.plasmid_type
         assert self.fragment_type
         assert self.primer_type
 
         self.valid_fragment_object_ids = [
-            self.session.ObjectType.find_by_name(C.FRAGMENT_STOCK).id
+            self.session.ObjectType.find_by_name(n).id
+            for n in CONFIG["fragment_object_types"]
         ]
         self.valid_plasmid_object_ids = [
-            self.session.ObjectType.find_by_name(C.PLASMID_GLYCEROL_STOCK).id
+            self.session.ObjectType.find_by_name(n).id
+            for n in CONFIG["plasmid_object_types"]
         ]
 
-        self.valid_linear_types = [C.PRIMER, C.FRAGMENT]
-        self.valid_cyclic_types = [C.PLASMID]
+        self.valid_linear_types = CONFIG["linear_types"]
+        self.valid_cyclic_types = CONFIG["cyclic_types"]
 
         self.df = None
 

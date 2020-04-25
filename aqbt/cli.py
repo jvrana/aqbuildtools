@@ -5,7 +5,7 @@ import toml
 from benchlingapi import Session as BenchlingSession
 from pydent import AqSession
 
-from aqbt.aquarium.registry import KlavinsLabRegistry
+from aqbt.aquarium.registry import LabDNARegistry
 from aqbt.aquarium.registry import RegistryConnector
 
 
@@ -90,7 +90,7 @@ def config_to_sessions(config: Dict[str, Dict[str, str]]):
             registry_id=session_info["benchling"]["id"],
         )  #: klavins lab Benchling registry connector
 
-        sessions[session_name]["registry"] = KlavinsLabRegistry(
+        sessions[session_name]["registry"] = LabDNARegistry(
             connector=registry_connector, aqsession=sessions[session_name]["aquarium"],
         )  #: klavins lab Benchling registry
     return sessions

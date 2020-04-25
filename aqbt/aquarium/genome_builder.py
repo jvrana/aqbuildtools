@@ -12,7 +12,7 @@ from Bio.SeqRecord import SeqRecord
 from pydent.models import Sample
 
 from aqbt.aquarium import pydent_utils
-from aqbt.aquarium.registry import KlavinsLabRegistry
+from aqbt.aquarium.registry import LabDNARegistry
 from aqbt.aquarium.registry import RetrievalPriorities
 from aqbt.bioadapter import convert
 from aqbt.biopython import make_linear
@@ -26,7 +26,7 @@ from aqbt.logger import logger
 
 # TODO: generic register interface? e.g. SBOL
 def integration(
-    registry: KlavinsLabRegistry,
+    registry: LabDNARegistry,
     sample: Sample,
     genome_dictionary: Dict[int, List[SeqRecord]],
     restriction_enzyme: str,
@@ -131,7 +131,7 @@ def mating(
 
 
 def aq_to_gff(
-    registry: KlavinsLabRegistry,
+    registry: LabDNARegistry,
     yeast_strain: Sample,
     starting_dictionary: Dict[int, List[SeqRecord]],
     restriction_enzyme="PmeI",

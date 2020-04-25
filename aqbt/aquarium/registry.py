@@ -19,11 +19,10 @@ from pydent.models import Sample
 from aqbt import bioadapter
 from aqbt import biopython
 from aqbt import sequence
-from aqbt.aquarium.pydent_utils import Constants as C
 from aqbt.logger import logger
 
 
-class KlavinsLabRegistryException(Exception):
+class LabRegistryException(Exception):
     pass
 
 
@@ -165,13 +164,31 @@ class RetrievalPriorities:
     VALID_PROPERTIES = [PRIMER, CACHE, REGISTRY, URL, UNANNOTATED_PROPERTY]
 
 
-class KlavinsLabRegistry:
+# TODO: move config to init
+CONFIG = {
+    "primer_sample_type": "Primer",
+    "fragment_sample_type": "Fragment",
+    "plasmid_sample_type": "Plasmid",
+    "default_sequence_field_names": ["Sequence"],
+    "primer_sequence_field_names": ["Overhang Sequence", "Anneal Sequence"],
+    "fragment_template_field_name": "Template",
+    "fragment_primer_field_names": ["Forward Primer", "Reverse Primer"],
+}
+
+
+class LabDNARegistry:
     def __init__(self, connector: RegistryConnector, aqsession: AqSession):
         self.session = aqsession
 
-        self._primer_type = self.session.SampleType.find_by_name(C.PRIMER)
-        self._fragment_type = self.session.SampleType.find_by_name(C.FRAGMENT)
-        self._plasmid_type = self.session.SampleType.find_by_name("Plasmid")
+        self._primer_type = self.session.SampleType.find_by_name(
+            CONFIG["primer_sample_type"]
+        )
+        self._fragment_type = self.session.SampleType.find_by_name(
+            CONFIG["fragment_sample_type"]
+        )
+        self._plasmid_type = self.session.SampleType.find_by_name(
+            CONFIG["plasmid_sample_type"]
+        )
         assert self._primer_type
         assert self._fragment_type
         assert self._plasmid_type
@@ -268,7 +285,7 @@ class KlavinsLabRegistry:
         return property
 
     def find_by_url(
-        self, sample: Sample, keys: Tuple[str] = ("Sequence",)
+        self, sample: Sample, keys: Tuple[str] = None
     ) -> Union[None, DNASequence]:
         """Find a DNASequence from an Aquarium Sample a url located int its
         property keys. By default 'Sequence' is the only key used.
@@ -277,11 +294,13 @@ class KlavinsLabRegistry:
         :param keys: list of keys to find the url
         :return: DNASequence or None
         """
+        if keys is None:
+            keys = (CONFIG["default_sequence_field_names"],)
         url = self._safe_get_sample_property(sample, keys)
         return self.connector.find_by_url(url)
 
     def find_by_property(
-        self, sample: Sample, keys: Tuple[str] = ("Sequence",)
+        self, sample: Sample, keys: Tuple[str] = None
     ) -> Union[None, DNASequence]:
         """Find a DNASequence from an Aquarium Sample its sequence located int
         its property keys. By default 'Sequence' is the only key used.
@@ -290,6 +309,8 @@ class KlavinsLabRegistry:
         :param keys: list of keys to find the sequence str
         :return: DNASequence or None
         """
+        if keys is None:
+            keys = (CONFIG["default_sequence_field_names"],)
         sequence_str = self._safe_get_sample_property(sample, keys)
         if sequence.dna_like(sequence_str):
             return biopython.new_sequence(
@@ -297,12 +318,7 @@ class KlavinsLabRegistry:
             )
 
     def get_primer_sequence(
-        self,
-        sample: Sample,
-        keys: Tuple[Union[str, Tuple[str, str]]] = (
-            ("Overhang Sequence", "overhang"),
-            ("Anneal Sequence", "anneal"),
-        ),
+        self, sample: Sample, keys: Tuple[Union[str, Tuple[str, str]]] = None,
     ) -> SeqRecord:
         """Return the primer sequence as a SeqRecord sequence from an Aquarium
         sample using its properties.
@@ -314,7 +330,8 @@ class KlavinsLabRegistry:
             from the second entry ((key1, name1), (key2, name2), ...).
         :return: the SeqRecord
         """
-        assert keys
+        if keys is None:
+            keys = CONFIG["primer_sequence_field_names"]
         if sample.sample_type_id == self._primer_type.id:
             record = None
             for key in keys:
@@ -348,22 +365,19 @@ class KlavinsLabRegistry:
         ignore_registry: bool = False,
         priority: List[str] = None,
     ):
-        """
-
-        :param sample: Aquarium Sample to get the sequence
-        :param return_type: type to convert (default Benchling style DNASequence)
-        :param ignore_registry: if True, will ignore retrieving from the registry
-        :param priority:
-        :return:
-        """
-        """
-        Return the Aquarium sequence as a DNASequence (or specified type).
+        """Return the Aquarium sequence as a DNASequence (or specified type).
 
         1. look for 'seq' attribute
         2. look sequence from the Benchling Registry using its entity registry id
         3. look for str in sample.properties['Sequence']. Try to convert the string
             into a SeqRecord. Else, use the string as a weburl for finding the sequence.
         4. Convert the sequence to the specified type.
+
+        :param sample: Aquarium Sample to get the sequence
+        :param return_type: type to convert (default Benchling style DNASequence)
+        :param ignore_registry: if True, will ignore retrieving from the registry
+        :param priority:
+        :return:
         """
 
         if priority is None:
@@ -456,13 +470,13 @@ class KlavinsLabRegistry:
     ):
         """Register an Aquarium sequence sample."""
         if not sample.id:
-            raise KlavinsLabRegistryException(
+            raise LabRegistryException(
                 "Cannot registry sample because" " it has not been saved in Aquarium."
             )
         if seq is None:
             seq = self.get_sequence(sample, return_type="DNASequence")
         if not seq:
-            raise KlavinsLabRegistryException(
+            raise LabRegistryException(
                 "Cannot registry sample because it has no sequence attached."
             )
         if isinstance(seq, SeqRecord):
@@ -476,19 +490,23 @@ class KlavinsLabRegistry:
             self.add_to_cache(registered)
         return registered
 
-    def copy(self) -> "KlavinsLabRegistry":
+    def copy(self) -> "LabDNARegistry":
         copied = self.__class__(connector=self.connector, aqsession=self.session())
         copied._registry_cache = deepcopy(self._registry_cache)
         copied._using_cache = self._using_cache
         return copied
 
     def pcr_products(self, fragment: Sample) -> List[SeqRecord]:
-        fwd = self.get_primer_sequence(fragment.properties["Forward Primer"])
-        rev = self.get_primer_sequence(fragment.properties["Reverse Primer"])
-        template = self.get_sequence(fragment.properties["Template"])
+        primers = [
+            self.get_primer_sequence(fvname)
+            for fvname in CONFIG["fragment_primer_field_names"]
+        ]
+        template = self.get_sequence(
+            fragment.properties[CONFIG["fragment_template_field_name"]]
+        )
         template_record = self.connector.convert(template, to="DNASequence")
 
         product_records = biopython.pcr_amplify(
-            fwd, rev, template_record, cyclic=template.is_circular, name=fragment.name
+            primers, template_record, cyclic=template.is_circular, name=fragment.name
         )
         return product_records
