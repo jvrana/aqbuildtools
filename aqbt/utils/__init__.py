@@ -3,7 +3,10 @@
 Utilities for lobio.
 """
 import random
+from copy import deepcopy
 from itertools import tee
+from typing import Any
+from typing import Dict
 from typing import Generator
 from typing import Iterable
 from typing import List
@@ -76,3 +79,71 @@ def chunkify(arr: Iterable[T], chunk_size: int) -> Generator[List[T], None, None
             new_list.append(x)
             counter += 1
     yield new_list
+
+
+def merge_left(
+    left_dict: List[Dict[str, Any]],
+    right_dict: List[Dict[str, Any]],
+    left_key: str,
+    right_key: str,
+    new_key: str,
+    inplace: bool = True,
+    default: Any = None,
+    merged_only: bool = False,
+) -> List[Dict[str, Any]]:
+    """Merge the list of dictionaries with another list of dictionaries on the
+    provided keys by matching `left_key` and `right_key` keys and creating a
+    new attribute `new_key`
+
+    .. code-block:: python
+        new_key = "new_key"
+
+        left = {
+            "key1": 1
+            "left_key": 3
+        }
+
+        right = {
+            "key2": 2,
+            "right_key": 3
+        }
+
+        merged = merge_left(left, right, "left_key", "right_key", "new_key")
+
+        assert merged == {
+            "key1": 1,
+            "left_key": 3,
+            "new_key": {
+                "key2": 2,
+                "right_key": 3
+            }
+        }
+
+    :param left_dict: left dict to merge
+    :param right_dict: right dict to merge
+    :param left_key: key of the left dict to merge
+    :param right_key: key of the right dict to merge
+    :param new_key: new attribute
+    :param inplace: if False, return copy of the dictionary
+    :param default: default value to add if merge
+    :param merged_only: return only the merged di
+    :return: merged list of dictionaries
+    """
+    if not inplace:
+        left_dict = deepcopy(left_dict)
+    d1_key_dict = {entry[left_key]: entry for entry in left_dict}
+    d2_key_dict = {entry[right_key]: entry for entry in right_dict}
+    for k, v in d1_key_dict.items():
+        d1_key_dict[k][new_key] = default
+    if merged_only:
+        merged = []
+    for k, v in d2_key_dict.items():
+        if k in d1_key_dict:
+            if merged_only:
+                merged.append(d1_key_dict[k])
+                merged[-1][new_key] = v
+            else:
+                d1_key_dict[k][new_key] = v
+    if merged_only:
+        return merged
+    return left_dict

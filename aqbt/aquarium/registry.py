@@ -23,7 +23,7 @@ from aqbt.logger import logger
 
 
 class LabRegistryException(Exception):
-    pass
+    """Generic LabRegistry exceptions."""
 
 
 class RegistryConnector(ABC):
@@ -177,6 +177,8 @@ CONFIG = {
 
 
 class LabDNARegistry:
+    """Establishes connection between Aquarium and a DNA Registry."""
+
     def __init__(self, connector: RegistryConnector, aqsession: AqSession):
         self.session = aqsession
 
@@ -197,6 +199,7 @@ class LabDNARegistry:
         self._registry_cache = {}
         self.logger = logger(self)
 
+    # TODO: this is specific for benchling
     @property
     def benchling(self):
         return self.connector.api
@@ -222,6 +225,7 @@ class LabDNARegistry:
             if dna.entity_registry_id:
                 self.add_to_cache(dna)
 
+    # TODO: this is specific for benchling
     def _make_fake_benchling_sequence(
         self,
         mn_bases: int = 500,
