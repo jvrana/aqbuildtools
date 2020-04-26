@@ -799,11 +799,12 @@ description = "Aquarium's Python API for planning, executing, and analyzing scie
 name = "pydent"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "0.1.5a18"
+version = "0.1.5a19"
 
 [package.dependencies]
 colorlog = ">=4.0,<5.0"
 inflection = ">=0.3.1,<0.4.0"
+jsonschema = ">=3.2.0,<4.0.0"
 nest-asyncio = ">=1.0,<2.0"
 networkx = ">=2.3,<3.0"
 requests = ">=2.22,<3.0"
@@ -1143,7 +1144,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "066efe9c2d7dbb3368a9d0b3f29697fea87d3e52342be5961caa319432379915"
+content-hash = "322119c10c25f08dc185add4887d9b3a31a7648cd2b944343d0e69f61f556043"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -1549,8 +1550,8 @@ pyblastbio = [
     {file = "pyblastbio-0.6.3.tar.gz", hash = "sha256:ebd37dcfeb8563d55342be3a0f020694d1c794e321c754678bf2ab00a4de017a"},
 ]
 pydent = [
-    {file = "pydent-0.1.5a18-py3-none-any.whl", hash = "sha256:24431552c1a0bf9645c7eca05d07728a03b558d6e2b1356c1efe87dda400234d"},
-    {file = "pydent-0.1.5a18.tar.gz", hash = "sha256:9c98c0d81737b546f99741af268cf66d4609fc55bfa7cf4263bcca02f7bd0f03"},
+    {file = "pydent-0.1.5a19-py3-none-any.whl", hash = "sha256:0d6319ab50e52434074625dae85a6594fa8549315161aaef6faff7b82a4a3d3f"},
+    {file = "pydent-0.1.5a19.tar.gz", hash = "sha256:d35887d818e46a8e0c4afd9ca6fe733e7ac32aa7e0be292cefd28430e5c40045"},
 ]
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
