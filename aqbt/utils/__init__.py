@@ -113,10 +113,10 @@ def merge_left(
         assert merged == {
             "key1": 1,
             "left_key": 3,
-            "new_key": {
+            "new_key": [{
                 "key2": 2,
                 "right_key": 3
-            }
+            }]
         }
 
     :param left_dict: left dict to merge
@@ -139,11 +139,13 @@ def merge_left(
         merged = []
     for k, v in d2_key_dict.items():
         if k in d1_key_dict:
+            x = d1_key_dict[k]
             if merged_only:
-                merged.append(d1_key_dict[k])
-                merged[-1][new_key] = v
-            else:
-                d1_key_dict[k][new_key] = v
+                merged.append(x)
+            x.setdefault(new_key, list())
+            if x[new_key] is None:
+                x[new_key] = []
+            x[new_key].append(v)
     if merged_only:
         return merged
     return left_dict

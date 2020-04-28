@@ -6,7 +6,7 @@ from benchlingapi import Session as BenchlingSession
 from pydent import AqSession
 
 from aqbt.aquarium.registry import LabDNARegistry
-from aqbt.aquarium.registry import RegistryConnector
+from aqbt.aquarium.registry import BenchlingRegistryConnector
 
 
 class ConfigParsingException(Exception):
@@ -81,7 +81,7 @@ def config_to_sessions(config: Dict[str, Dict[str, str]]):
             api_key=session_info["benchling"]["apikey"]
         )
 
-        registry_connector = RegistryConnector(
+        registry_connector = BenchlingRegistryConnector(
             api=sessions[session_name]["benchling"],
             initials=session_info["benchling"]["initials"],
             schema=session_info["benchling"]["schema"],

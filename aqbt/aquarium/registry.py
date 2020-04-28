@@ -1,11 +1,11 @@
 import random
 import re
-from abc import ABC
+from abc import ABC, abstractmethod, abstractproperty
 from copy import deepcopy
 from functools import partial
 from typing import List
 from typing import Tuple
-from typing import Union
+from typing import Union, Type
 from uuid import uuid4
 
 import validators
@@ -20,13 +20,122 @@ from aqbt import bioadapter
 from aqbt import biopython
 from aqbt import sequence
 from aqbt.logger import logger
+from aqbt.bioadapter.conversion import seqrecord_to_json
+
+import random
+
+# TODO: move connector and registry to new module? This isn't specific to aquarium
 
 
 class LabRegistryException(Exception):
     """Generic LabRegistry exceptions."""
 
 
-class RegistryConnector(ABC):
+class RegistryConnectorABC(ABC):
+
+    @abstractmethod
+    def expected_return_type(self) -> Type:
+        pass
+
+    @abstractmethod
+    def format_registry_id(self, uid: str) -> str:
+        pass
+
+    @abstractmethod
+    def formatted_registry_id_to_uid(
+        self, entity_registry_id: str, uid_pattern: str = r"\d+"
+    ):
+        pass
+
+    @abstractmethod
+    def find_by_url(self, url: str) -> Union[None, DNASequence]:
+        pass
+
+    @abstractmethod
+    def find(self, uid: str) -> Union[None, DNASequence]:
+        pass
+
+    @abstractmethod
+    def all(self, limit: int):
+        pass
+
+
+class FakeRegistryConnector(RegistryConnectorABC):
+    """Generate a faked DNA registry."""
+
+    def __init__(self, seq_size_range: Tuple[int, int], feature_length_range: Tuple[int, int],
+                 name: str = 'FakeRegistry'):
+        """
+        Constructor for a connector to a faked DNA registry.
+
+        Usage:
+
+        .. code-block::
+
+            registry = FakeRegistry((1000,5000), (100,2000), name='FakeRegistry')
+            registry.all(500)  # generate 500 random sequences
+            registry.find("FakeRegistry2")  # get a sequence
+            registry.find("FakeRegistry1000", always_return=True)  # generate new seq if it doesn't exist.
+
+        :param seq_size_range:
+        :param feature_length_range:
+        """
+        self.seq_size_range = seq_size_range
+        self.feature_length_range = feature_length_range
+        self.cache = {}
+        self._last_id = 0
+        self.name = 'FakeRegistry'
+
+    @property
+    def expected_return_type(self):
+        return dict
+
+    def format_registry_id(self, uid: str) -> str:
+        return self.name + str(uid)
+
+    def formatted_registry_id_to_uid(
+        self, entity_registry_id: str, uid_pattern: str = r"\d+"
+    ):
+        pattern = "{name}({uid_pattern})".format(
+            name=self.name, uid_pattern=uid_pattern
+        )
+        m = re.match(pattern, entity_registry_id)
+        if m:
+            return int(m.group(1))
+
+    def find(self, uid: str, always_return: bool = False) -> Union[None, DNASequence]:
+        seq = self.cache.get(uid, None)
+        if always_return and seq is None:
+            return self._random_seq()
+        return seq
+
+    def find_by_url(self, url: str, always_return: bool = False) -> Union[None, DNASequence]:
+        url_to_seq = {seq['url'] for seq in self.cache.values()}
+        seq = url_to_seq.get(url, None)
+        if always_return and seq is None:
+            return self._random_seq()
+
+    def _random_seq(self):
+        length = random.randint(self.seq_size_range[0], self.seq_size_range[1])
+        seq = biopython.random_record(length, 'AGCT', cyclic=[True, False][random.randint(0, 1)])
+        biopython.randomly_annotate(seq,
+                                    feature_length_range=self.feature_length_range)
+        self._last_id += 1
+        seq = seqrecord_to_json(seq)
+        seq['entityRegistryId'] = self.format_registry_id(self._last_id)
+        seq['url'] = 'www.fakeregistry.org/sequences/{}'.format(seq['entityRegistryId'])
+        self.cache[seq['entityRegistryId']] = seq
+        return seq
+
+    def all(self, limit: int):
+        seqs = []
+        for _ in range(limit):
+            seqs.append(self._random_seq())
+        return seqs
+
+
+class BenchlingRegistryConnector(RegistryConnectorABC):
+
     def __init__(self, api, initials, schema, prefix, folder_id, registry_id):
         self.api = api
         self.organization_initials = initials
@@ -41,6 +150,10 @@ class RegistryConnector(ABC):
             benchling_session=self.api,
         )
         self.logger = logger(self)
+
+    @property
+    def expected_return_type(self):
+        return DNASequence
 
     def format_registry_id(self, uid: str) -> str:
         """Format a unique id to a Benchling registry id.
@@ -179,7 +292,7 @@ CONFIG = {
 class LabDNARegistry:
     """Establishes connection between Aquarium and a DNA Registry."""
 
-    def __init__(self, connector: RegistryConnector, aqsession: AqSession):
+    def __init__(self, connector: BenchlingRegistryConnector, aqsession: AqSession):
         self.session = aqsession
 
         self._primer_type = self.session.SampleType.find_by_name(
