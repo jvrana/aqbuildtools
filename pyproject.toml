@@ -24,7 +24,6 @@ toml = "^0.10.0"
 dasi = "^0.0.20"
 pydent = "^1.0.1"
 
-
 [tool.poetry.dev-dependencies]
 black = { version = "^19.3b0", python = "^3.6" }
 pytest = "^5.2"

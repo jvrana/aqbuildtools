@@ -289,7 +289,7 @@ class KlavinsLabDnaDb:
             if row["is_circular"]:
                 if not row["sample_type"] == C.PLASMID:
                     raise ValueError(
-                        "{} must be {}".format(row["sampleP_type"], C.PLASMID)
+                        "{} must be {}".format(row["sample_type"], C.PLASMID)
                     )
             else:
                 if not row["sample_type"].strip() in [C.PRIMER, C.FRAGMENT]:

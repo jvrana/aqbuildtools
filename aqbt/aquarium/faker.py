@@ -12,7 +12,7 @@ from pydent.models import SampleType
 from aqbt import biopython
 from aqbt.aquarium.pydent_utils import Constants
 
-
+# TODO: config should be used here
 class FakeSampleGenerator:
     def __init__(self, session: AqSession):
         self.session = session
