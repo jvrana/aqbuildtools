@@ -22,7 +22,7 @@ google-auth-httplib2 = "^0.0.3"
 google-auth-oauthlib = "^0.4.1"
 toml = "^0.10.0"
 dasi = "^0.0.20"
-pydent = "0.1.5a19"
+pydent = "^1.0.1"
 
 
 [tool.poetry.dev-dependencies]
