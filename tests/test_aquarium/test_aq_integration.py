@@ -10,6 +10,20 @@ from aqbt.aquarium.genome_builder import aq_to_gff
 from aqbt.aquarium.genome_builder import integration
 from aqbt.aquarium.genome_builder import mating
 
+class TestValidIntegrationSites:
+
+    def test_get_valid_integration_sites(self):
+        lhom = biopython.random_record(500)
+        rhom = biopython.random_record(500)
+        left_flank = biopython.random_record(5000)
+        right_flank = biopython.random_record(5000)
+        excision = biopython.random_record(1000)
+        chr = left_flank + lhom + excision + rhom + right_flank
+
+        cassette = biopython.random_record(2500)
+        plasmid = biopython.random_record(1000) + lhom + cassette + rhom + biopython.random_record(1000)
+
+
 
 @pytest.fixture(scope="function")
 def cenpk(fixtures_path):
@@ -126,4 +140,23 @@ def test_aq_to_gff_diploid(sample_id, cenpk, registry):
 
     path, genome_dict = aq_to_gff(
         registry, session.Sample.find(sample_id), d, "PmeI", do_save=False
+    )
+
+
+@pytest.mark.parametrize(
+    "sample_id",
+    [
+        27351,
+        27673,
+        27674,
+    ],
+)
+def test_aq_to_gff(sample_id, registry, cenpk):
+    records = cenpk
+    d = {22800: {"genome": records[:]}, 22801: {"genome": records[:]}}
+
+    session = registry.session
+
+    path, genome_dict, trace = aq_to_gff(
+        registry, session.Sample.find(sample_id), d, "PmeI", do_save=True
     )

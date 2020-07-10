@@ -5,8 +5,8 @@ from os.path import join
 import pytest
 import toml
 
-from aqbt.cli import config_to_sessions
-from aqbt.cli import parse_config
+from aqbt.tools import config_to_sessions
+from aqbt.tools import parse_config
 
 here = abspath(dirname(__file__))
 

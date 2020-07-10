@@ -307,6 +307,36 @@ def parse_result_to_span(data, inclusive=True, input_index=1, output_index=None)
     return span
 
 
+class IntegrationSite(object):
+
+    def __init__(self,
+                 chr: SeqRecord,
+                 integrative_dna: SeqRecord,
+                 direction: int,
+                 chr_five_prime_flanking_region_span: Span,
+                 chr_three_prime_flanking_region_span: Span,
+                 chr_excision_region_span: Span,
+                 chr_five_prime_homology_arm_span: Span,
+                 chr_three_prime_homology_arm_span: Span,
+                 chr_integration_cassette_span: Span,
+                 insert_five_prime_homology_arm_span: Span,
+                 insert_three_prime_homology_arm_span: Span,
+                 insert_integration_cassette_span: Span,
+        ):
+        self.chr = chr
+        self.integrative_dna = integrative_dna
+        self.direction = direction
+        self.chr_five_prime_flanking_region_span = chr_five_prime_flanking_region_span
+        self.chr_three_prime_flanking_region_span = chr_three_prime_flanking_region_span
+        self.chr_excision_region_span = chr_excision_region_span
+        self.chr_five_prime_homology_arm_span = chr_five_prime_homology_arm_span
+        self.chr_three_prime_homology_arm_span = chr_three_prime_homology_arm_span
+        self.chr_integration_cassette_span = chr_integration_cassette_span
+        self.insert_five_prime_homology_arm_span = insert_five_prime_homology_arm_span
+        self.insert_three_prime_homology_arm_span = insert_three_prime_homology_arm_span
+        self.insert_integration_cassette_span = insert_integration_cassette_span
+
+
 class GenomeIntegrator:
     def __init__(
         self,
@@ -439,8 +469,55 @@ class GenomeIntegrator:
 
     def get_valid_integration_sites(
         self, subjects: List[SeqRecord], integrants: List[SeqRecord]
-    ) -> List[Dict[str, Any]]:
+    ) -> List[IntegrationSite]:
         """Generate a list of valid integration sites.
+
+        Result keys:
+
+        .. code-block:: python
+
+            {
+                # the region from the beginning of the chromosome to
+                # the 5' homology region
+                "chr_five_prime_flanking_region_span"
+
+                # the region from the end of the 3' homology region to
+                # the end of the chromosome
+                "chr_three_prime_flanking_region_span"
+
+                # the region of the original chromosome that was removed
+                # by the integration
+                "chr_excision_region_span"
+
+                # the region of the 5' homology
+                "chr_five_prime_homology_arm_span"
+
+                # the region of the 3' homology
+                "chr_three_prime_homology_arm_span"
+
+                # the region from the end of the 5' homology to the start
+                # of the 3' homology
+                "integration_cassette_span"
+
+                # the region on the integration cassette, including the homology
+                # arms, on the integrative plasmid or fragment
+                "cassette_span"
+
+                # SeqRecord of the cassette
+                "cassette"
+
+                # id of the chromosome
+                "chr_id"
+
+                # direction of the integration
+                "direction"
+
+                # SeqRecord of the left flank
+                "left_flank"
+
+                # SeqRecord of the right flank
+                "right_flank"
+            }
 
         :param subjects:
         :param integrants:
@@ -477,9 +554,14 @@ class GenomeIntegrator:
                         if left.direction == 1:
                             left_flank_span = get_left_flank_span(left.subject)
                             right_flank_span = get_right_flank_span(right.subject)
+                            left_hom_span = left.subject
+                            right_hom_span = right.subject
                         elif left.direction == -1:
                             left_flank_span = get_left_flank_span(right.subject)
                             right_flank_span = get_right_flank_span(left.subject)
+                            left_hom_span = right.subject
+                            right_hom_span = left.subject
+
                         else:
                             raise ValueError("Direction not understood.")
                         gap_span = is_valid["gap"]
@@ -498,25 +580,85 @@ class GenomeIntegrator:
                         # cassette_span.get_slice = Span.get_slice
 
                         integration_sites.append(
-                            {
-                                "chr_left_flank_span": left_flank_span,
-                                "chr_right_flank_span": right_flank_span,
-                                "chr_delete_span": gap_span,
-                                "cassette_span": cassette_span,
-                                "left_flank": left_flank_span.get_slice(chr),
-                                "right_flank": right_flank_span.get_slice(chr),
-                                "cassette": cassette_span.get_slice(cassette),
-                                "chr_id": blast.seq_db.get_origin(
-                                    left_result["subject"]["origin_key"]
-                                ).id,
-                                "direction": left.direction,
-                            }
+                            IntegrationSite(
+                                chr=chr,
+                                integrative_dna=cassette,
+                                direction=left.direction,
+                                chr_five_prime_flanking_region_span=left_flank_span,
+                                chr_three_prime_flanking_region_span=right_flank_span,
+                                chr_excision_region_span=gap_span,
+                                chr_five_prime_homology_arm_span=left_hom_span,
+                                chr_three_prime_homology_arm_span=right_hom_span,
+                                chr_integration_cassette_span=left.subject.new(left_flank_span.b, right_flank_span.a),
+                                insert_five_prime_homology_arm_span=left.query,
+                                insert_three_prime_homology_arm_span=right.query,
+                                insert_integration_cassette_span=left.query.new(left.query.b, right.query.a)
+                            )
                         )
+                        # integration_sites.append(
+                        #     {
+                        #         # the region from the beginning of the chromosome to
+                        #         # the 5' homology region
+                        #         "chr_five_prime_flanking_region_span": left_flank_span,
+                        #
+                        #         # the region from the end of the 3' homology region to
+                        #         # the end of the chromosome
+                        #         "chr_three_prime_flanking_region_span": right_flank_span,
+                        #
+                        #         # the region of the original chromosome that was removed
+                        #         # by the integration
+                        #         "chr_excision_region_span": gap_span,
+                        #
+                        #         # the region of the 5' homology
+                        #         "chr_five_prime_homology_arm_span": left.subject,
+                        #
+                        #         # the region of the 3' homology
+                        #         "chr_three_prime_homology_arm_span": right.subject,
+                        #
+                        #         # the region from the end of the 5' homology to the start
+                        #         # of the 3' homology
+                        #         "chr_integration_cassette_span": left.subject.new(left.query.b, right.query.a),
+                        #
+                        #         # the region on the integrative DNA from the end of its
+                        #         # 5' homology arm to the start of the 3' homology region
+                        #         "insert_integration_cassette_span": left.query.new(left.query.b, right.query.a),
+                        #
+                        #         # the region on the integrative DNA from the beginning of its
+                        #         # 5' homology region to the end of the 5' homology region
+                        #         "insert_five_prime_homology_arm_span": left.query.copy(),
+                        #
+                        #         # the region on the integrative DNA from the beginning of its
+                        #         # 3' homology region to the end of the 3' homology region
+                        #         "insert_three_prime_homology_arm_span": right.query.copy(),
+                        #
+                        #         # the region on the integration cassette, including the homology
+                        #         # arms, on the integrative plasmid or fragment
+                        #         "cassette_span": cassette_span,
+                        #
+                        #         # SeqRecord of the cassette
+                        #         "cassette": cassette_span.get_slice(cassette),
+                        #
+                        #         # id of the chromosome
+                        #         "chr_id": blast.seq_db.get_origin(
+                        #             left_result["subject"]["origin_key"]
+                        #         ).id,
+                        #
+                        #         # direction of the integration
+                        #         "direction": left.direction,
+                        #
+                        #         # SeqRecord of the left flank
+                        #         "left_flank": left_flank_span.get_slice(chr),
+                        #
+                        #         # SeqRecord of the right flank
+                        #         "right_flank": right_flank_span.get_slice(chr),
+                        #     }
+                        # )
 
         return integration_sites
 
     def integrate(
-        self, chromosomes: List[SeqRecord], integrants: List[SeqRecord]
+        self, chromosomes: List[SeqRecord], integrants: List[SeqRecord],
+
     ) -> List[Dict[str, Any]]:
         """From a list of chromosomes and list of integrants, generate a new
         engineered genome.
@@ -540,13 +682,18 @@ class GenomeIntegrator:
 
         new_genome = []
         for chr in chromosomes:
-            if chr.id == site["chr_id"]:
-                cassette = site["cassette"]
-
-                if site["direction"] == -1:
+            if chr.id == site.chr.id:
+                cassette = site.integrative_dna
+                if site.direction == -1:
                     cassette = cassette.reverse_complement()
+                left_flank = site.chr_five_prime_flanking_region_span.get_slice(chr)
+                left_hom = site.insert_five_prime_homology_arm_span.get_slice(cassette)
+                insert = site.insert_integration_cassette_span.get_slice(cassette)
+                right_hom = site.insert_three_prime_homology_arm_span.get_slice(cassette)
+                right_flank = site.chr_three_prime_flanking_region_span.get_slice(chr)
 
-                new_chr = site["left_flank"] + cassette + site["right_flank"]
+                new_chr = left_flank + left_hom + insert + right_hom + right_flank
+
                 new_chr.id = chr.id
                 new_chr.name = chr.name
                 new_genome.append(new_chr)
@@ -558,9 +705,9 @@ class GenomeIntegrator:
         result[
             "note"
         ] = "{len}bp integration cassette integrated into {chr} at {locus} (direction={dir}).'".format(
-            len=len(site["cassette"]),
-            chr=site["chr_id"],
-            locus=(site["chr_delete_span"].a, site["chr_delete_span"].b),
-            dir=site["direction"],
+            len=len(site.integrative_dna),
+            chr=site.chr.id,
+            locus=(site.chr_excision_region_span.a, site.chr_excision_region_span.b),
+            dir=site.direction,
         )
         return result

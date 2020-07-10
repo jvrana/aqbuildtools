@@ -113,7 +113,11 @@ def generate_example_config():
     }
 
 
+from aqbt.aquarium.genome_builder import aq_to_gff
+
+
 class AquariumBuildTools:
+
     def __init__(self, config: Dict[str, Dict[str, str]]):
         self.sessions = config_to_sessions(config)
 

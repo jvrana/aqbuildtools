@@ -140,6 +140,8 @@ def parse_composite_parts(values):
         with LocationContext(*p[0][0].rc()):
             parsed_json_arr.append(values_to_json(p, 0, True))
 
+    # TODO: Validate the data here. Check for incorrect keys under each heading
+
     def _make_part_list(parsed_json):
         with LocationContext(*parsed_json['Name:'][0][0].rc()):
             names = transpose(parsed_json['Name:'])
@@ -166,11 +168,11 @@ def parse_composite_parts(values):
     return part_list
 
 
-values = to_cell_values(data['values'])
-parse_composite_parts(values);
-
-part_json = pd.DataFrame(extract_basic_parts(values)[2:],
-                         columns=extract_basic_parts(values)[1]).T.to_dict()
-part_json
-
-# validate
+# values = to_cell_values(data['values'])
+# parse_composite_parts(values);
+#
+# part_json = pd.DataFrame(extract_basic_parts(values)[2:],
+#                          columns=extract_basic_parts(values)[1]).T.to_dict()
+# part_json
+#
+# # validate

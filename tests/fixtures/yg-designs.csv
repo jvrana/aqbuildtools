@@ -1,0 +1,538 @@
+Collection Name:,Four inducible Plant Transcription Factors,,Blue = Do not change; Green = free text,,
+Institution to Build:,BioFab,,,,
+Date Created:,6/25/2020,,,,
+Date Last Updated:,,,,,
+Authors:,Rob Moseley,,,,
+Date Accepted:,,,,,
+Person Accepting:,,,,,
+SynBioHub Collection:,,,,,
+,,,,,
+Design Description,,,,,
+"This collection contains various parts for constructing circuits composed of 4 plant transcription factors that are inducible with either doxycycline or beta-estradiol. Parts for modifying promoter strength are included. One fluorescent protein is avaiable, GFP. There are two sequence versions for the operators for each plant TF: 1)  sequences containing binding site sequences taken from the literature (lit based) and 2) sequences containing consensus binding site sequences taken from FootprintDB (footprintdb based).",,,,,
+,,,,,
+Basic DNA Parts,,,,,
+Part Name,Role,Description (Optional),Source (Optional),length (bp),Sequence
+pTDH3,Promoter,"Strong promoter, YTK library",BioFab,680,cagttcgagtttatcattatcaatactgccatttcaaagaatacgtaaataattaatagtagtgattttcctaactttatttagtcaaaaaattagccttttaattctgctgtaacccgtacatgcccaaaatagggggcgggttacacagaatatataacatcgtaggtgtctgggtgaacagtttattcctggcatccactaaatataatggagcccgctttttaagctggcatccagaaaaaaaaagaatcccagcaccaaaatattgttttcttcaccaaccatcagttcataggtccattctcttagcgcaactacagagaacaggggcacaaacaggcaaaaaacgggcacaacctcaatggagtgatgcaacctgcctggagtaaatgatgacacaaggcaattgacccacgcatgtatctatctcattttcttacaccttctattaccttctgctctctctgatttggaaaaagctgaaaaaaaaggttgaaaccagttccctgaaattattcccctacttgactaataagtatataaagacggtaggtattgattgtaattctgtaaatctatttcttaaacttcttaaattctacttttatagttagtcttttttttagttttaaaacaccaagaacttagtttcgaataaacacacataaacaaacaaa
+pRPL18B,Promoter,"Medium promoter, YTK library",BioFab,700,aagaggatgtccaatattttttttaaggaataaggatacttcaagactagattcccccctgcattcccatcagaaccgtaaaccttggcgctttccttgggaagtattcaagaagtgccttgtccggtttctgtggctcacaaaccagcgcgcccgatatggctttcttttcacttatgaatgtaccagtacgggacaattagaacgctcctgtaacaatctctttgcaaatgtggggttacattctaaccatgtcacactgctgacgaaattcaaagtaaaaaaaaatgggaccacgtcttgagaacgatagattttctttattttacattgaacagtcgttgtctcagcgcgctttatgttttcattcatacttcatattataaaataacaaaagaagaatttcatattcacgcccaagaaatcaggctgctttccaaatgcaattgacacttcattagccatcacacaaaactctttcttgctggagcttcttttaaaaaagacctcagtacaccaaacacgttacccgacctcgttattttacgacaactatgataaaattctgaagaaaaaataaaaaaattttcatacttcttgcttttatttaaaccattgaatgatttcttttgaacaaaactacctgtttcaccaaaggaaatagaaagaaaaaatcaattagaagaaaacaaaaaacaaa
+pREV1,Promoter,"Weak promoter, YTK library",BioFab,700,gtgttgttatccgatacaaccggatatttttcttttaatgagtctaaaccgtgatagcttcaggttaatacaatcaaaaaaagctcaaatattcttttaatgccgcgttcacagattccaattgaatacaactaggtagttcattatatgaagcctttgctactatttttcactatagtctgccttcaccttaatgcagacatccacatattttaatcactttaaaataaaaaggaagatatattagaagctatgatccaatctgtaagccagattaaaattcacgaactcttctttcatttgaattgaatgctttgagttggggtagattatcgcaaattactcatcacatttattgactacgaacttgctgatgtcctttttttatttatatttttcttcagtgaagcgattttttttttacacagaccaagacggaaaaaagtagctaaggaagaaaacaaaatcatgaaaaaaatgtgaagtgatcatgcacatcgcatcaacttaaacattggcttagagatatatagagttagagtttacggcaacctttaagcaccaataccttttggcatagtctaaagacctggttcttaattttaaacaaatttaactaaagatttccctatcaaagaagtaacgagttgacagattttctcaaaataaatcgatactgcatttctaggcatatccagcg
+VPR,Engineered Region,Very strong activating transcription factor,BioFab,1692,AGCAGGGCTGACCCCAAGAAGAAGAGGAAGGTGTCGCCAGGGATCCGTCGACTTGACGCGTTaATATCAACAAGTTTGTACAAAAAAGCAGGCTACAAAGAGGCCAGCGGTTCCGGACGGGCTGACGCATTGGACGATTTTGATCTGGATATGCTGGGAAGTGACGCCCTCGATGATTTTGACCTTGACATGCTTGGTTCGGATGCCCTTGATGACTTTGACCTCGACATGCTCGGCAGTGACGCCCTTGATGATTTCGACCTGGACATGCTGATTAACTCTAGAAGTTCCGGATCTCCGAAAAAGAAACGCAAAGTTGGTAGCCAGTACCTGCCCGACACCGACGACCGGCACCGGATCGAGGAAAAGCGGAAGCGGACCTACGAGACATTCAAGAGCATCATGAAGAAGTCCCCCTTCAGCGGCCCCACCGACCCTAGACCTCCACCTAGAAGAATCGCCGTGCCCAGCAGATCCAGCGCCAGCGTGCCAAAACCTGCCCCCCAGCCTTACCCCTTCACCAGCAGCCTGAGCACCATCAACTACGACGAGTTCCCTACCATGGTGTTCCCCAGCGGCCAGATCTCTCAGGCCTCTGCTCTGGCTCCAGCCCCTCCTCAGGTGCTGCCTCAGGCTCCTGCTCCTGCACCAGCTCCAGCCATGGTGTCTGCACTGGCTCAGGCACCAGCACCCGTGCCTGTGCTGGCTCCTGGACCTCCACAGGCTGTGGCTCCACCAGCCCCTAAACCTACACAGGCCGGCGAGGGCACACTGTCTGAAGCTCTGCTGCAGCTGCAGTTCGACGACGAGGATCTGGGAGCCCTGCTGGGAAACAGCACCGATCCTGCCGTGTTCACCGACCTGGCCAGCGTGGACAACAGCGAGTTCCAGCAGCTGCTGAACCAGGGCATCCCTGTGGCCCCTCACACCACCGAGCCCATGCTGATGGAATACCCCGAGGCCATCACCCGGCTCGTGACAGGCGCTCAGAGGCCTCCTGATCCAGCTCCTGCCCCTCTGGGAGCACCAGGCCTGCCTAATGGACTGCTGTCTGGCGACGAGGACTTCAGCTCTATCGCCGATATGGATTTCTCAGCCTTGCTGGGCTCTGGCAGCGGCAGCCGGGATTCCAGGGAAGGGATGTTTTTGCCGAAGCCTGAGGCCGGCTCCGCTATTAGTGACGTGTTTGAGGGCCGCGAGGTGTGCCAGCCAAAACGAATCCGGCCATTTCATCCTCCAGGAAGTCCATGGGCCAACCGCCCACTCCCCGCCAGCCTCGCACCAACACCAACCGGTCCAGTACATGAGCCAGTCGGGTCACTGACCCCGGCACCAGTCCCTCAGCCACTGGATCCAGCGCCCGCAGTGACTCCCGAGGCCAGTCACCTGTTGGAGGATCCCGATGAAGAGACGAGCCAGGCTGTCAAAGCCCTTCGGGAGATGGCCGATACTGTGATTCCCCAGAAGGAAGAGGCTGCAATCTGTGGCCAAATGGACCTTTCCCATCCGCCCCCAAGGGGCCATCTGGATGAGCTGACAACCACACTTGAGTCCATGACCGAGGATCTGAACCTGGACTCACCCCTGACCCCGGAATTGAACGAGATTCTGGATACCTTCCTGAACGACGAGTGCCTCTTGCATGCCATGCATATCAGCACAGGACTGTCCATCTTCGACACATCTCTGTTT
+VP64,Engineered Region,Strong activating transcription factor,BioFab,117,GACGCCCTTGACGATTTTGACTTAGACATGCTCCCAGCCGATGCCCTTGACGACTTTGACCTTGATATGCTGCCTGCTGACGCTCTTGACGATTTTGACCTTGACATGCTCCCCGGG
+tADH1,Terminator,Terminator,BioFab,225,gcgaatttcttatgatttatgatttttattattaaataagttataaaaaaaataagtgtatacaaattttaaagtgactcttaggttttaaaacgaaaattcttattcttgagtaactctttcctgtaggtcaggttgctttctcaggtatagcatgaggtcgctcttattgaccacacctctaccggcatgccgagcaaatgcctgcaaatcgctccccatttc
+tTA,Engineered Region,Doxycycline responsive DNA binding element (Tet-OFF),BioFab,,
+rtTA,Engineered Gene,Doxycycline responsive DNA binding element (Tet-ON),BioFab,624,TCTAGACTGGACAAGAGCAAAGTCATAAACGGAGCTCTGGAATTACTCAATGGTGTCGGTATCGAAGGCCTGACGACAAGGAAACTCGCTCAAAAGCTGGGAGTTGAGCAGCCTACCCTGTACTGGCACGTGAAGAACAAGCGGGCCCTGCTCGATGCCCTGCCAATCGAGATGCTGGACAGGCATCATACCCACTTCTGCCCCCTGGAAGGCGAGTCATGGCAAGACTTTCTGCGGAACAACGCCAAGTCATACCGCTGTGCTCTCCTCTCACATCGCGACGGGGCTAAAGTGCATCTCGGCACCCGCCCAACAGAGAAACAGTACGAAACCCTGGAAAATCAGCTCGCGTTCCTGTGTCAGCAAGGCTTCTCCCTGGAGAACGCACTGTACGCTCTGTCCGCCGTGGGCCACTTTACACTGGGCTGCGTATTGGAGGAACAGGAGCATCAAGTAGCAAAAGAGGAAAGAGAGACACCTACCACCGATTCTATGCCCCCACTTCTGAGACAAGCAATTGAGCTGTTCGACCGGCAGGGAGCCGAACCTGCCTTCCTTTTCGGCCTGGAACTAATCATATGTGGCCTGGAGAAACAGCTAAAGTGCGAAAGCGGCGGGCCGACC
+TetO binding site 7x,Binding Site,Seven binding sites for doxycycline sensing TF,https://www.ncbi.nlm.nih.gov/pubmed/?term=19655272,252,TCCCTATCAGTGATAGAGAACGTATGTCGAGTTTACTCCCTATCAGTGATAGAGAACGTATGTCGAGTTTACTCCCTATCAGTGATAGAGAACGTATGTCGAGTTTACTCCCTATCAGTGATAGAGAACGTATGTCGAGTTTACTCCCTATCAGTGATAGAGAACGTATGTCGAGTTTACTCCCTATCAGTGATAGAGAACGTATGTCGAGTTTACTCCCTATCAGTGATAGAGAACGTATGTCGAGTTTAC
+ZEV4 binding site 6x,Binding Site,Six inding sites for beta-estradiol sensing TF,BioFab pMOD8-pGALZ4-eYFP (sample id: 14311),91,GCGGCCGCGGCGGAGGAGTGCGGCGGAGGAGGAGCGGCGGAGGAGTGCGGCGGAGGAGGAGCGGCGGAGGAGTGCGGCGGAGGAGTCTAGA
+Zev4,Engineered Region,"beta-estradiol responsive DNA binding element (Z4 array with Estrogen receptor)
+",BioFab pMODKan_HO_pACT1_Zev4 (sample id: 1096),351,ATGGGTACCCGCCCATATGCTTGCCCTGTCGAGTCCTGCGATCGCCGCTTTTCTCGCCACGCCAATCTTACCCGCCATATCCGCATCCATACCGGTCAGAAGCCCTTCCAGTGTCGAATCTGCATGCGTAACTTCAGTCGTAATGCGAACCTTGTGCGCCACATCCGCACCCACACAGGATCCCAAAAGCCGTTCCAATGTCGGATCTGTATGCGGAACTTTAGTCGAAAGGCCGACCTGAGGCGTCACATTCGCACGCACACCGGCGAGAAGCCTTTTGCCTGTGACATTTGTGGGAGGAAGTTTGCCAGGAAGGGCGACCTCAAGAGGCATACCAAAATCCATACAGGT
+EDLL AD,Engineered Region,AD,https://www.ncbi.nlm.nih.gov/pubmed/28531348,154,AACCGGTGAAGTTTTCGAGTTTGAGTATTTGGACGATAAGGTTCTTGAAGAACTTCTTGATTCAGAAGAAAGGAAGAGAGAAGTTTTCGAGTTTGAGTATTTGGACGATAAGGTTCTTGAAGAACTTCTTGATTCAGAAGAAAGGAAGAGA
+SV40 NLS,Engineered Region,NLS,https://www.ncbi.nlm.nih.gov/pubmed/28531348,60,GCGGAATTAATTCCCGAGCCTCCAAAAAAGAAGAGAAAGGTCGAATTGGGTACCGCC
+ATAF1 TF without start and stop codon,CDS,plant TF CDS w/o start/stop codon,https://www.ncbi.nlm.nih.gov/pubmed/28531348,864,TCAGAATTATTACAGTTGCCTCCAGGTTTCCGATTTCACCCTACCGATGAAGAGCTTGTCATGCACTATCTCTGCCGCAAATGTGCCTCTCAGTCCATCGCCGTTCCGATCATCGCTGAGATCGATCTCTACAAATACGATCCATGGGAGCTTCCTGGTTTAGCCTTGTATGGTGAGAAGGAATGGTACTTCTTCTCTCCCAGGGACAGAAAATATCCCAACGGTTCGCGTCCTAACCGGTCCGCTGGTTCTGGTTACTGGAAAGCTACCGGAGCTGATAAACCGATCGGACTACCTAAACCGGTCGGAATTAAGAAAGCTCTTGTTTTCTACGCCGGCAAAGCTCCAAAGGGAGAGAAAACCAATTGGATCATGCACGAGTACCGTCTCGCCGACGTTGACCGGTCCGTTCGCAAGAAGAAGAATAGTCTCAGGCTGGATGATTGGGTTCTCTGCCGGATTTACAACAAAAAAGGAGCTACCGAGAGGCGGGGACCACCGCCTCCGGTTGTTTACGGCGACGAAATCATGGAGGAGAAGCCGAAGGTGACGGAGATGGTTATGCCTCCGCCGCCGCAACAGACAAGTGAGTTCGCGTATTTCGACACGTCGGATTCGGTGCCGAAGCTGCATACTACGGATTCGAGTTGCTCGGAGCAGGTGGTGTCGCCGGAGTTCACGAGCGAGGTTCAGAGCGAGCCCAAGTGGAAAGATTGGTCGGCCGTAAGTAATGACAATAACAATACCCTTGATTTTGGGTTTAATTACATTGATGCCACCGTGGATAACGCGTTTGGAGGAGGAGGGAGTAGTAATCAGATGTTTCCGCTACAGGATATGTTCATGTACATGCAGAAGCCTTAC
+ATAF1 footprintdb based operator 1x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. Two consensus binding motifs were used,  [raAGAGmCGTAt, rAGAGaCGTGyk], taken from FootprintDB ( http://floresta.eead.csic.es/footprintdb/index.php?tf=0ae612c8e4b39e439acf0728d1f6f86f). Sequence design is [[motif-1 30*N][motif-2 30*N]] * 1. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,84,AAAGAGACGTATGCTTGGTATACCCCAACGGGGGCCATATAAGAGAGACGTGTGCTTGTTTGGTCGGGTATCCACCCCATGAAG
+ATAF1 footprintdb based operator 2x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. Two consensus binding motifs were used,  [raAGAGmCGTAt, rAGAGaCGTGyk], taken from FootprintDB ( http://floresta.eead.csic.es/footprintdb/index.php?tf=0ae612c8e4b39e439acf0728d1f6f86f). Sequence design is [[motif-1 30*N][motif-2 30*N]] * 2. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,168,AAAGAGACGTATGCTTGGTATACCCCAACGGGGGCCATATAAGAGAGACGTGTGCTTGTTTGGTCGGGTATCCACCCCATGAAGAAAGAGACGTATAGCAAAACCTAAATTAGAATCAAAAGGGGTAAGAGACGTGCTAGCCGGTTGCCGTAGGCGAGGTTTCTGCGA
+ATAF1 footprintdb based operator 3x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. Two consensus binding motifs were used,  [raAGAGmCGTAt, rAGAGaCGTGyk], taken from FootprintDB ( http://floresta.eead.csic.es/footprintdb/index.php?tf=0ae612c8e4b39e439acf0728d1f6f86f). Sequence design is [[motif-1 30*N][motif-2 30*N]] * 3. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,252,AAAGAGACGTATGCTTGGTATACCCCAACGGGGGCCATATAAGAGAGACGTGTGCTTGTTTGGTCGGGTATCCACCCCATGAAGAAAGAGACGTATAGCAAAACCTAAATTAGAATCAAAAGGGGTAAGAGACGTGCTAGCCGGTTGCCGTAGGCGAGGTTTCTGCGAAAAGAGACGTATTAGCGCTTGGCGTTCGGTCCCTCATAGCGAGAGAGACGTGTTTTGGCGTGAACAGGTCCGTAATAGCATTAG
+ANAC102 TF without start and stop codon,CDS,plant TF CDS w/o start/stop codon,https://www.ncbi.nlm.nih.gov/pubmed/28531348,1311,GACTTTGCTCTCTTCTCCTCGATTTCAATCTTTGAGATAAACCACAAAGATCCTCCGATTCGAAGGTTTATAAAAACTCAAAATCGAATCTTATCCACAAGAAAACAACAAGGTACTTTTCCAAAAATGAAGGCGGAGTTGAATTTGCCGGCGGGATTCCGATTTCATCCGACGGACGAAGAGCTTGTCAAGTTCTATCTTTGCCGGAGATGTGCGTCAGAACCGATTAACGTTCCGGTTATCGCAGAGATTGACTTGTACAAATTCAATCCATGGGAGCTTCCAGAAATGGCGTTGTACGGTGAGAAAGAATGGTACTTCTTCTCGCATAGAGACCGGAAATACCCAAACGGGTCGAGACCAAACCGGGCAGCTGGAACCGGTTATTGGAAAGCGACTGGAGCTGATAAACCGATCGGAAAACCGAAGACGTTAGGGATTAAGAAAGCACTCGTCTTCTACGCAGGAAAAGCTCCGAAAGGGATTAAAACGAATTGGATTATGCACGAGTATCGTCTCGCTAATGTCGATCGATCTGCTTCTACCAACAAGAAGAACAACTTAAGACTTGATGATTGGGTTTTGTGTCGGATATACAATAAGAAAGGAACAATGGAGAAGTATTTACCGGCGGCGGCTGAGAAACCGACGGAAAAGATGAGTACGTCGGACTCAAGATGCTCAAGTCACGTGATTTCACCGGACGTCACGTGTTCTGATAACTGGGAGGTTGAGAGTGAGCCCAAATGGATTAATCTGGAAGACGCGTTAGAGGCATTTAATGATGACACGTCCATGTTTAGTTCCATTGGTTTGTTGCAAAATGACGCCTTTGTTCCTCAGTTTCAGTACCAGTCCTCCGATTTCGTCGATTCGTTTCAGGACCCGTTCGAGCAGAAACCGTTCTTGAATTGGAATTTTGCTCCTCAAGGGTAAAAATAATCGGCAAAAAGTTGAAGCTTTTCAGAGTCTTCGATCACCGGCATTGTGTCGGATCCTGACCCGGAGACCAAGTCGGGTCATACGATTACATAATCGGGTTATTGAGATTTCCACATTTGGATTTCCGAGACTAACCAACTTAACGGATTCTGGGGTAATTGGGGGGTTTTGCACAGGTGAATCACACTGAGTCAGCAAGTTTCGATTTTTTGGTTTTGTTTTGTAATGATTGATTAAATGTCTAAAGATATCACGAAGTAGATACAGAAGAACTGTAAAAGCAATTGTGACCAACCATTATGAATCATATATATATTCAATGAAGCATGAGCTTATTTCTTCTTTAATGAAGCAATGTACATTTTTCTC
+ANAC102 lit based with linker operator 1x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. One binding motif-was used,  [AGTAATCNNNNNNNNTACGCAACT], taken from article cited in Source. Sequence design is [[motif-1 30*N][motif-1 30*N]] * 1. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",https://www.ncbi.nlm.nih.gov/pubmed/28531348,108,AGTAATCTTTCGGTCTACGCAACTGACTAGCTAACTATCGTTTCGACTGGGCCAAGTAATCGGCCGACTTACGCAACTAGGTGTCAGTCTATGACACCGTTGTACTGG
+ANAC102 lit based with linker operator 2x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. One binding motif-was used,  [AGTAATCNNNNNNNNTACGCAACT], taken from article cited in Source. Sequence design is [[motif-1 30*N][motif-1 30*N]] * 2. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",https://www.ncbi.nlm.nih.gov/pubmed/28531349,216,AGTAATCTTTCGGTCTACGCAACTGACTAGCTAACTATCGTTTCGACTGGGCCAAGTAATCGGCCGACTTACGCAACTAGGTGTCAGTCTATGACACCGTTGTACTGGAGTAATCTATGCAGTTACGCAACTAAGATATAAGGCGCCTTTCCTGCCTCGCAAAGTAATCACGGTAGTTACGCAACTTGGTGAGATGGAAGGCCATCACCGGACGAG
+ANAC102 lit based with linker operator 3x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. One binding motif-was used,  [AGTAATCNNNNNNNNTACGCAACT], taken from article cited in Source. Sequence design is [[motif-1 30*N][motif-1 30*N]] * 3. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",https://www.ncbi.nlm.nih.gov/pubmed/28531350,324,AGTAATCTTTCGGTCTACGCAACTGACTAGCTAACTATCGTTTCGACTGGGCCAAGTAATCGGCCGACTTACGCAACTAGGTGTCAGTCTATGACACCGTTGTACTGGAGTAATCTATGCAGTTACGCAACTAAGATATAAGGCGCCTTTCCTGCCTCGCAAAGTAATCACGGTAGTTACGCAACTTGGTGAGATGGAAGGCCATCACCGGACGAGAGTAATCGCATCCTCTACGCAACTCTACCCGTACTGCTCCCTTGAGATAGCAAAAGTAATCAATACGCCTACGCAACTTGCCGTGTGCTGTGTTCAACACGATCGTCT
+JUB1 TF without start and stop codon,CDS,plant TF CDS w/o start/stop codon,https://www.ncbi.nlm.nih.gov/pubmed/28531348,822,AGTGGCGAAGGTAACTTAGGTAAGGATCATGAAGAAGAAAACGAAGCACCACTTCCTGGGTTCAGGTTTCATCCGACGGATGAAGAGCTTTTAGGATACTATCTTCGAAGAAAAGTAGAGAACAAAACCATCAAACTCGAACTTATCAAACAGATCGATATCTATAAGTACGATCCTTGGGATCTTCCAAGAGTGAGCAGCGTCGGAGAAAAGGAGTGGTACTTCTTCTGCATGAGAGGTAGGAAATACAGGAATAGCGTTCGACCAAACCGAGTGACCGGTTCAGGTTTCTGGAAAGCCACTGGTATTGATAAACCGGTTTACTCCAATCTTGACTGTGTTGGTCTCAAGAAATCTCTGGTTTACTATCTTGGTTCAGCCGGTAAAGGCACCAAAACCGATTGGATGATGCATGAATTCCGCCTCCCCTCCACCACGAAAACCGACTCTCCAGCTCAACAAGCAGAGGTATGGACACTTTGCAGAATCTTCAAACGAGTCACATCTCAAAGAAACCCAACCATCTTACCACCAAACCGAAAACCGGTTATCACTTTAACCGACACTTGTTCTAAGACCAGCAGCTTAGATTCCGACCACACGAGCCACCGTACAGTAGATTCCATGTCCCACGAGCCGCCGCTTCCACAGCCACAGAATCCTTATTGGAACCAACATATAGTTGGTTTTAATCAACCGACATATACTGGTAATGATAATAACCTCCTGATGAGTTTCTGGAACGGCAACGGTGGAGATTTCATAGGAGACTCAGCAAGTTGGGATGAACTTAGATCTGTTATAGATGGCAACACTAAACCC
+JUB1 footprintdb based operator 1x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. One consensus binding motif-was used,  [ygCCGTrwhhtyymCGyyry], taken from FootprintDB (link not provided, keyword search db with 'AT2G43000'). Sequence design is [[motif-1 30*N][motif-1 30*N]] * 1. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,100,TGCCGTGTCCTTCCCGCTGCCATTCTTCCAGACGGGGCTTCGGTCAGGTGCGCCGTGACTTCCCCGTCGCGGTCTATGAGCCTCGGGTTGGTAAAAACTT
+JUB1 footprintdb based operator 2x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. One consensus binding motif-was used,  [ygCCGTrwhhtyymCGyyry], taken from FootprintDB (link not provided, keyword search db with 'AT2G43000'). Sequence design is [[motif-1 30*N][motif-1 30*N]] * 2. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,200,TGCCGTGTCCTTCCCGCTGCCATTCTTCCAGACGGGGCTTCGGTCAGGTGCGCCGTGACTTCCCCGTCGCGGTCTATGAGCCTCGGGTTGGTAAAAACTTTGCCGTGATCTTCCCGTCATTGTCGAGGTTAACCTGCAATGTCTATGCACTGCCGTATTCTCTCCGCCGCGGTTTTCATGTACTAGGACGCACCTCTGCA
+JUB1 footprintdb based operator 3x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. One consensus binding motif-was used,  [ygCCGTrwhhtyymCGyyry], taken from FootprintDB (link not provided, keyword search db with 'AT2G43000'). Sequence design is [[motif-1 30*N][motif-1 30*N]] * 3. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,300,TGCCGTGTCCTTCCCGCTGCCATTCTTCCAGACGGGGCTTCGGTCAGGTGCGCCGTGACTTCCCCGTCGCGGTCTATGAGCCTCGGGTTGGTAAAAACTTTGCCGTGATCTTCCCGTCATTGTCGAGGTTAACCTGCAATGTCTATGCACTGCCGTATTCTCTCCGCCGCGGTTTTCATGTACTAGGACGCACCTCTGCACGCCGTATCATTCCCGTTATTCATCAATCCGACCCAAATCAGATTCTCCCTGCCGTAAACTCTACGCTATGCAGTACAAGTCTGTGTGGCTTTGGTTAGG
+ANT TF without start and stop codon,CDS,plant TF CDS w/o start/stop codon,https://www.ncbi.nlm.nih.gov/pubmed/28531348,1662,AAGTCTTTTTGTGATAATGATGATAATAATCATAGCAACACGACTAATTTGTTAGGGTTCTCATTGTCTTCAAATATGATGAAAATGGGAGGTAGAGGAGGTAGAGAAGCTATTTACTCATCTTCAACTTCTTCAGCTGCAACTTCTTCTTCTTCTGTTCCACCTCAACTTGTTGTTGGTGACAACACTAGCAACTTTGGTGTTTGCTATGGATCTAACCCAAATGGAGGAATCTATTCTCACATGTCTGTGATGCCACTCAGATCTGATGGTTCTCTTTGCTTAATGGAAGCTCTCAACAGATCTTCTCACTCGAATCACCATCAAGATTCATCTCCAAAGGTGGAGGATTTCTTTGGGACCCATCACAACAACACAAGTCACAAAGAAGCCATGGATCTTAGCTTAGATAGTTTATTCTACAACACCACTCATGAGCCCAACACGACTACAAACTTTCAAGAGTTCTTTAGCTTCCCTCAAACCAGAAACCATGAGGAAGAAACTAGAAATTACGGGAATGACCCTAGTTTGACACATGGAGGGTCTTTTAATGTAGGGGTATATGGGGAATTTCAACAGTCACTGAGCTTATCCATGAGCCCTGGGTCACAATCTAGCTGCATCACTGGCTCTCACCACCACCAACAAAACCAAAACCAAAACCACCAAAGCCAAAACCACCAGCAGATCTCTGAAGCTCTTGTGGAGACAAGCGTTGGGTTTGAGACGACGACAATGGCGGCTGCGAAGAAGAAGAGGGGACAAGAGGATGTTGTAGTTGTTGGTCAGAAACAGATTGTTCATAGAAAATCTATCGATACTTTTGGACAACGAACTTCTCAATACCGAGGCGTTACAAGACATAGATGGACTGGTAGATATGAAGCTCATCTATGGGACAATAGTTTCAAGAAGGAAGGTCACAGTAGAAAAGGAAGACAAGTTTATCTGGGAGGTTATGATATGGAGGAGAAAGCTGCTCGAGCATATGATCTTGCTGCACTCAAGTACTGGGGTCCCTCTACTCACACCAATTTCTCTGCGGAGAATTATCAGAAAGAGATTGAAGACATGAAGAACATGACTAGACAAGAATATGTTGCACATTTGAGAAGGAAGAGCAGTGGTTTCTCTAGGGGTGCTTCCATCTATAGAGGAGTCACAAGACATCACCAGCATGGAAGGTGGCAAGCACGGATTGGTAGAGTCGCTGGAAACAAAGATCTCTACCTTGGAACTTTTGGAACCCAAGAAGAAGCTGCAGAAGCTTACGATGTAGCAGCAATTAAGTTCCGTGGCACAAATGCTGTGACTAACTTTGATATCACGAGGTACGATGTTGATCGTATCATGTCTAGTAACACACTCTTGTCTGGAGAGTTAGCGCGAAGGAACAACAACAGCATTGTCGTCAGGAATACTGAAGACCAAACCGCTCTAAATGCTGTTGTGGAAGGTGGTTCCAACAAAGAAGTCAGTACTCCCGAGAGACTCTTGAGTTTTCCGGCGATTTTCGCGTTGCCTCAAGTTAATCAAAAGATGTTCGGATCAAATATGGGCGGAAATATGAGTCCTTGGACATCAAACCCTAATGCTGAGCTTAAGACCGTCGCTCTTACTTTGCCTCAGATGCCGGTTTTCGCTGCTTGGGCTGATTCT
+ANT footprintdb based operator 1x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. Two consensus binding motifs were used,  [GCACrgwTCCCvAkGy, kkGCACrgwTCCCvAkGygma], taken from FootprintDB (http://floresta.eead.csic.es/footprintdb/index.php?tf=75e348eecb552fdc48780352e4104b0b). Sequence design is [[motif-1 30*N][motif-2 30*N]] * 1. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,97,GCACGGTTCCCAATGTATAATGGCGCCAAGGCGCCGTTGAAGGACAGTGCACGGATCCCAAGGTGCACGGGCATGGGCCTTACTAGGCGTCAACATC
+ANT footprintdb based operator 2x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. Two consensus binding motifs were used,  [GCACrgwTCCCvAkGy, kkGCACrgwTCCCvAkGygma], taken from FootprintDB (http://floresta.eead.csic.es/footprintdb/index.php?tf=75e348eecb552fdc48780352e4104b0b). Sequence design is [[motif-1 30*N][motif-2 30*N]] * 2. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,194,GCACGGTTCCCAATGTATAATGGCGCCAAGGCGCCGTTGAAGGACAGTGCACGGATCCCAAGGTGCACGGGCATGGGCCTTACTAGGCGTCAACATCGCACAGATCCCGAGGCTTCGAATCAATCTGTCAGGTTCATCGGAGGGTGCACAGATCCCCAGGTGAATTTTGGTAAGTTACAACGGTTGATGTGAGA
+ANT footprintdb based operator 3x,Operator,"Operator sequence created using Salis Lab non-repetitive parts calculator. Two consensus binding motifs were used,  [GCACrgwTCCCvAkGy, kkGCACrgwTCCCvAkGygma], taken from FootprintDB (http://floresta.eead.csic.es/footprintdb/index.php?tf=75e348eecb552fdc48780352e4104b0b). Sequence design is [[motif-1 30*N][motif-2 30*N]] * 3. Additional calculator settings: 40-60% GC content, reduce synthesis complexity, max. repeat size of 12.",,291,GCACGGTTCCCAATGTATAATGGCGCCAAGGCGCCGTTGAAGGACAGTGCACGGATCCCAAGGTGCACGGGCATGGGCCTTACTAGGCGTCAACATCGCACAGATCCCGAGGCTTCGAATCAATCTGTCAGGTTCATCGGAGGGTGCACAGATCCCCAGGTGAATTTTGGTAAGTTACAACGGTTGATGTGAGAGCACAGTTCCCAATGCATAGTGGTGTGTGGCAATACCCGTGGTCTCGGGCACGGATCCCCATGCGAATAGGGATAATTTTGAGAGGGGTGAGATGGA
+yeGFP,CDS,Fluorescent protein,,720,ATGGTCTCTAAGGGTGAAGAATTGTTCACCGGTGTCGTCCCAATCTTGGTCGAATTGGACGGGGACGTCAACGGTCACAAGTTCTCTGTCTCTGGTGAAGGTGAAGGTGACGCTACCTACGGTAAGTTGACCTTGAAGTTCATCTGTACCACCGGTAAGTTGCCAGTCCCATGGCCAACCTTGGTCACCACCTTCGGTTACGGTGTCCAATGTTTCGCTAGATACCCAGACCACATGAAGCAACACGACTTCTTCAAGTCTGCTATGCCAGAAGGTTACGTCCAAGAAAGAACCATCTTCTTCAAGGACGACGGTAACTACAAGACCAGAGCTGAAGTCAAGTTCGAAGGTGACACCTTGGTCAACAGAATCGAATTGAAGGGTATCGACTTCAAGGAAGACGGTAACATCTTGGGTCACAAGTTGGAATACAACTACAACTCTCACAACGTCTACATCATGGCTGACAAGCAAAAGAACGGTATCAAGGTCAACTTCAAGATCAGACACAACATCGAAGACGGTTCTGTCCAATTGGCTGACCACTACCAACAAAACACCCCAATCGGTGACGGTCCAGTCTTGTTGCCAGACAACCACTACTTGTCTACCCAATCTGCTTTGTCTAAGGACCCAAACGAAAAGAGAGACCACATGGTCTTGTTGGAATTCGTCACCGCTGCTGGTATCACCCACGGTATGGACGAATTGTACAAGTAA
+CYC1 terminator,Terminator,terminator,,248,TCATGTAATTAGTTATGTCACGCTTACATTCACGCCCTCCCCCCACATCCGCTCTAACCGAAAAGGAAGGAGTTAGACAACCTGAAGTCTAGGTCCCTATTTATTTTTTTATAGTTATGTTAGTATTAAGAACGTTATTTATATTTCAAATTTTTCTTTTTTTTCTGTACAGACGCGTGTACGCATGTAACATTATACTGAAAACCTTGCTTGAGAAGGTTTTGGGACGCTCGAAGGCTTTAATTTGC
+CYC1 minimal promoter,Promoter,promoter,https://www.ncbi.nlm.nih.gov/pubmed/?term=23977949,225,AAGCTTGATATCGAATTCCTGCAGCCCGGGTACTGTATGTACATACAGTAGGATCCTATGGCATGCATGTGCTCTGTATGTATATAAAACTCTTGTTTTCTTCTTTTCTCTAAATATTCTTTCCTTATACATTAGGACCTTTGCAGCATAAATTACTATACTTCTATAGACACACAAACACAAATACACACACTAATCTAGATATTAAAATGTCTAAAGGTGAAG
+Start codon,Engineered Region,start codon,,3,ATG
+Stop codon,Engineered Region,stop codon,,3,TAG
+,,,,,
+,,,,,
+Composite DNA Parts,,,,,
+Collection Name:,Inducer_receptors,,,,
+Name:,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet
+Description:,Tet protein is driven by a strong promoter and has a medium strength activation domain,Tet protein is driven by a medium promoter and has a medium strength activation domain,Tet protein is driven by a weak promoter and has a medium strength activation domain,Tet protein is driven by a strong promoter and has a strong activation domain,Tet protein is driven by a medium promoter and has a strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,pTDH3,pRPL18B,pREV1,pTDH3,pRPL18B
+"Add parts for each composite in a vertical list, from 5' top to 3' bottom; you can add more rows and more collections if you need",VP64,VP64,VP64,VPR,VPR
+,rtTA,rtTA,rtTA,rtTA,rtTA
+,tADH1,tADH1,tADH1,tADH1,tADH1
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,Inducer_receptors,,,,
+Name:,weak_exp_strong_ad_tet,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev
+Description:,Tet protein is driven by a weak promoter and has a strong activation domain,Zev protein is driven by a strong promoter and has a medium strength activation domain,Zev protein is driven by a medium promoter and has a medium strength activation domain,Zev protein is driven by a weak promoter and has a medium strength activation domain,Zev protein is driven by a strong promoter and has a strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,pREV1,pTDH3,pRPL18B,pREV1,pTDH3
+,VPR,VP64,VP64,VP64,VPR
+,rtTA,Zev4,Zev4,Zev4,Zev4
+,tADH1,tADH1,tADH1,tADH1,tADH1
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,Inducer_receptors,,,,
+Name:,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,,,
+Description:,Zev protein is driven by a medium promoter and has a strong activation domain,Zev protein is driven by a weak promoter and has a strong activation domain,,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,pRPL18B,pREV1,,,
+,VPR,VPR,,,
+,Zev4,Zev4,,,
+,tADH1,tADH1,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,Input_nodes,,,,
+Name:,Input_node_doxy_ataf1,Input_node_be_ataf1,Input_node_doxy_anac102,Input_node_be_anac102,
+Description:,Input node for Doxy activation expression of ATAF1 TF,Input node for BE activation expression of ATAF1 TF,Input node for Doxy activation expression of ANAC102 TF,Input node for BE activation expression of ANAC102 TF,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,TetO binding site 7x,ZEV4 binding site 6x,TetO binding site 7x,ZEV4 binding site 6x,
+,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,
+,Start Codon,Start Codon,Start Codon,Start Codon,
+,SV40 NLS,SV40 NLS,SV40 NLS,SV40 NLS,
+,EDLL AD,EDLL AD,EDLL AD,EDLL AD,
+,ATAF1 TF without start and stop codon,ATAF1 TF without start and stop codon,ANAC102 TF without start and stop codon,ANAC102 TF without start and stop codon,
+,Stop Codon,Stop Codon,Stop Codon,Stop Codon,
+,CYC1 terminator,CYC1 terminator,CYC1 terminator,CYC1 terminator,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,Input_nodes,,,,
+Name:,Input_node_doxy_jub1,Input_node_be_jub1,Input_node_doxy_ant,Input_node_be_ant,
+Description:,Input node for Doxy activation expression of JUB1 TF,Input node for BE activation expression of JUB1 TF,Input node for Doxy activation expression of ANT TF,Input node for BE activation expression of ANT TF,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,TetO binding site 7x,ZEV4 binding site 6x,TetO binding site 7x,ZEV4 binding site 6x,
+,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,
+,Start Codon,Start Codon,Start Codon,Start Codon,
+,SV40 NLS,SV40 NLS,SV40 NLS,SV40 NLS,
+,EDLL AD,EDLL AD,EDLL AD,EDLL AD,
+,JUB1 TF without start and stop codon,JUB1 TF without start and stop codon,ANT TF without start and stop codon,ANT TF without start and stop codon,
+,Stop Codon,Stop Codon,Stop Codon,Stop Codon,
+,CYC1 terminator,CYC1 terminator,CYC1 terminator,CYC1 terminator,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,ATAF1_output_nodes,,,,
+Name:,output_node_2b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,,
+Description:,Output node for activating GFP by ATAF1 TF. GFP has native protein stability and has 2 ATAF1 binding sites,Output node for activating GFP by ATAF1 TF. GFP has native protein stability and has 4 ATAF1 binding sites,Output node for activating GFP by ATAF1 TF. GFP has native protein stability and has 6 ATAF1 binding sites,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,ATAF1 footprintdb based operator 1x,ATAF1 footprintdb based operator 2x,ATAF1 footprintdb based operator 3x,,
+,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,,
+,yeGFP,yeGFP,yeGFP,,
+,CYC1 terminator,CYC1 terminator,CYC1 terminator,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,ANAC102_output_nodes,,,,
+Name:,output_node_2b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,,
+Description:,Output node for activating GFP by ANAC102 TF. GFP has native protein stability and has 2 ANAC102 binding sites,Output node for activating GFP by ANAC102 TF. GFP has native protein stability and has 4 ANAC102 binding sites,Output node for activating GFP by ANAC102 TF. GFP has native protein stability and has 6 ANAC102 binding sites,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,ANAC102 lit based with linker operator 1x,ANAC102 lit based with linker operator 2x,ANAC102 lit based with linker operator 3x,,
+,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,,
+,yeGFP,yeGFP,yeGFP,,
+,CYC1 terminator,CYC1 terminator,CYC1 terminator,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,JUB1_output_nodes,,,,
+Name:,output_node_2b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,,
+Description:,Output node for activating GFP by JUB1 TF. GFP has native protein stability and has 2 JUB1 binding sites,Output node for activating GFP by JUB1 TF. GFP has native protein stability and has 4 JUB1 binding sites,Output node for activating GFP by JUB1 TF. GFP has native protein stability and has 6 JUB1 binding sites,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,JUB1 footprintdb based operator 1x,JUB1 footprintdb based operator 2x,JUB1 footprintdb based operator 3x,,
+,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,,
+,yeGFP,yeGFP,yeGFP,,
+,CYC1 terminator,CYC1 terminator,CYC1 terminator,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,ANT_output_nodes,,,,
+Name:,output_node_2b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,,
+Description:,Output node for activating GFP by ANT TF. GFP has native protein stability and has 2 ANT binding sites,Output node for activating GFP by ANT TF. GFP has native protein stability and has 4 ANT binding sites,Output node for activating GFP by ANT TF. GFP has native protein stability and has 6 ANT binding sites,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,ANT footprintdb based operator 1x,ANT footprintdb based operator 2x,ANT footprintdb based operator 3x,,
+,CYC1 minimal promoter,CYC1 minimal promoter,CYC1 minimal promoter,,
+,yeGFP,yeGFP,yeGFP,,
+,CYC1 terminator,CYC1 terminator,CYC1 terminator,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ataf1_strains,,,,
+Name:,SM_doxy_ataf1_2bs_stable_gfp_strain,MM_doxy_ataf1_2bs_stable_gfp_strain,WM_doxy_ataf1_2bs_stable_gfp_strain,SS_doxy_ataf1_2bs_stable_gfp_strain,MS_doxy_ataf1_2bs_stable_gfp_strain
+Description:,Doxy-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet
+,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1
+,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ataf1_strains,,,,
+Name:,WS_doxy_ataf1_2bs_stable_gfp_strain,SM_doxy_ataf1_4bs_stable_gfp_strain,MM_doxy_ataf1_4bs_stable_gfp_strain,WM_doxy_ataf1_4bs_stable_gfp_strain,SS_doxy_ataf1_4bs_stable_gfp_strain
+Description:,Doxy-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet
+,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1
+,output_node_2b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ataf1_strains,,,,
+Name:,MS_doxy_ataf1_4bs_stable_gfp_strain,WS_doxy_ataf1_4bs_stable_gfp_strain,SM_doxy_ataf1_6bs_stable_gfp_strain,MM_doxy_ataf1_6bs_stable_gfp_strain,WM_doxy_ataf1_6bs_stable_gfp_strain
+Description:,Doxy-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet
+,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1
+,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ataf1_strains,,,,
+Name:,SS_doxy_ataf1_6bs_stable_gfp_strain,MS_doxy_ataf1_6bs_stable_gfp_strain,WS_doxy_ataf1_6bs_stable_gfp_strain,,
+Description:,Doxy-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,,
+,Input_node_doxy_ataf1,Input_node_doxy_ataf1,Input_node_doxy_ataf1,,
+,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ataf1_strains,,,,
+Name:,SM_be_ataf1_2bs_stable_gfp_strain,MM_be_ataf1_2bs_stable_gfp_strain,WM_be_ataf1_2bs_stable_gfp_strain,SS_be_ataf1_2bs_stable_gfp_strain,MS_be_ataf1_2bs_stable_gfp_strain
+Description:,BE-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev
+,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1
+,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp,output_node_2b2_ataf1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ataf1_strains,,,,
+Name:,WS_be_ataf1_2bs_stable_gfp_strain,SM_be_ataf1_4bs_stable_gfp_strain,MM_be_ataf1_4bs_stable_gfp_strain,WM_be_ataf1_4bs_stable_gfp_strain,SS_be_ataf1_4bs_stable_gfp_strain
+Description:,BE-inducible ATAF1 TF that activates GFP expression. 2 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev
+,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1
+,output_node_2b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ataf1_strains,,,,
+Name:,MS_be_ataf1_4bs_stable_gfp_strain,WS_be_ataf1_4bs_stable_gfp_strain,SM_be_ataf1_6bs_stable_gfp_strain,MM_be_ataf1_6bs_stable_gfp_strain,WM_be_ataf1_6bs_stable_gfp_strain
+Description:,BE-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible ATAF1 TF that activates GFP expression. 4 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev
+,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1
+,output_node_4b2_ataf1_stable_gfp,output_node_4b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ataf1_strains,,,,
+Name:,SS_be_ataf1_6bs_stable_gfp_strain,MS_be_ataf1_6bs_stable_gfp_strain,WS_be_ataf1_6bs_stable_gfp_strain,,
+Description:,BE-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible ATAF1 TF that activates GFP expression. 6 ATAF1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,,
+,Input_node_be_ataf1,Input_node_be_ataf1,Input_node_be_ataf1,,
+,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,output_node_6b2_ataf1_stable_gfp,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_anac102_strains,,,,
+Name:,SM_doxy_anac102_2bs_stable_gfp_strain,MM_doxy_anac102_2bs_stable_gfp_strain,WM_doxy_anac102_2bs_stable_gfp_strain,SS_doxy_anac102_2bs_stable_gfp_strain,MS_doxy_anac102_2bs_stable_gfp_strain
+Description:,Doxy-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet
+,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102
+,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_anac102_strains,,,,
+Name:,WS_doxy_anac102_2bs_stable_gfp_strain,SM_doxy_anac102_4bs_stable_gfp_strain,MM_doxy_anac102_4bs_stable_gfp_strain,WM_doxy_anac102_4bs_stable_gfp_strain,SS_doxy_anac102_4bs_stable_gfp_strain
+Description:,Doxy-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet
+,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102
+,output_node_2b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_anac102_strains,,,,
+Name:,MS_doxy_anac102_4bs_stable_gfp_strain,WS_doxy_anac102_4bs_stable_gfp_strain,SM_doxy_anac102_6bs_stable_gfp_strain,MM_doxy_anac102_6bs_stable_gfp_strain,WM_doxy_anac102_6bs_stable_gfp_strain
+Description:,Doxy-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet
+,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102
+,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_anac102_strains,,,,
+Name:,SS_doxy_anac102_6bs_stable_gfp_strain,MS_doxy_anac102_6bs_stable_gfp_strain,WS_doxy_anac102_6bs_stable_gfp_strain,,
+Description:,Doxy-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,,
+,Input_node_doxy_anac102,Input_node_doxy_anac102,Input_node_doxy_anac102,,
+,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_anac102_strains,,,,
+Name:,SM_be_anac102_2bs_stable_gfp_strain,MM_be_anac102_2bs_stable_gfp_strain,WM_be_anac102_2bs_stable_gfp_strain,SS_be_anac102_2bs_stable_gfp_strain,MS_be_anac102_2bs_stable_gfp_strain
+Description:,BE-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev
+,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102
+,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp,output_node_2b2_anac102_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_anac102_strains,,,,
+Name:,WS_be_anac102_2bs_stable_gfp_strain,SM_be_anac102_4bs_stable_gfp_strain,MM_be_anac102_4bs_stable_gfp_strain,WM_be_anac102_4bs_stable_gfp_strain,SS_be_anac102_4bs_stable_gfp_strain
+Description:,BE-inducible ANAC102 TF that activates GFP expression. 2 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev
+,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102
+,output_node_2b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_anac102_strains,,,,
+Name:,MS_be_anac102_4bs_stable_gfp_strain,WS_be_anac102_4bs_stable_gfp_strain,SM_be_anac102_6bs_stable_gfp_strain,MM_be_anac102_6bs_stable_gfp_strain,WM_be_anac102_6bs_stable_gfp_strain
+Description:,BE-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible ANAC102 TF that activates GFP expression. 4 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev
+,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102
+,output_node_4b2_anac102_stable_gfp,output_node_4b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_anac102_strains,,,,
+Name:,SS_be_anac102_6bs_stable_gfp_strain,MS_be_anac102_6bs_stable_gfp_strain,WS_be_anac102_6bs_stable_gfp_strain,,
+Description:,BE-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible ANAC102 TF that activates GFP expression. 6 ANAC102 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,,
+,Input_node_be_anac102,Input_node_be_anac102,Input_node_be_anac102,,
+,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,output_node_6b2_anac102_stable_gfp,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_jub1_strains,,,,
+Name:,SM_doxy_jub1_2bs_stable_gfp_strain,MM_doxy_jub1_2bs_stable_gfp_strain,WM_doxy_jub1_2bs_stable_gfp_strain,SS_doxy_jub1_2bs_stable_gfp_strain,MS_doxy_jub1_2bs_stable_gfp_strain
+Description:,Doxy-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet
+,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1
+,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_jub1_strains,,,,
+Name:,WS_doxy_jub1_2bs_stable_gfp_strain,SM_doxy_jub1_4bs_stable_gfp_strain,MM_doxy_jub1_4bs_stable_gfp_strain,WM_doxy_jub1_4bs_stable_gfp_strain,SS_doxy_jub1_4bs_stable_gfp_strain
+Description:,Doxy-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet
+,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1
+,output_node_2b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_jub1_strains,,,,
+Name:,MS_doxy_jub1_4bs_stable_gfp_strain,WS_doxy_jub1_4bs_stable_gfp_strain,SM_doxy_jub1_6bs_stable_gfp_strain,MM_doxy_jub1_6bs_stable_gfp_strain,WM_doxy_jub1_6bs_stable_gfp_strain
+Description:,Doxy-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet
+,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1
+,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_jub1_strains,,,,
+Name:,SS_doxy_jub1_6bs_stable_gfp_strain,MS_doxy_jub1_6bs_stable_gfp_strain,WS_doxy_jub1_6bs_stable_gfp_strain,,
+Description:,Doxy-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,,
+,Input_node_doxy_jub1,Input_node_doxy_jub1,Input_node_doxy_jub1,,
+,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_jub1_strains,,,,
+Name:,SM_be_jub1_2bs_stable_gfp_strain,MM_be_jub1_2bs_stable_gfp_strain,WM_be_jub1_2bs_stable_gfp_strain,SS_be_jub1_2bs_stable_gfp_strain,MS_be_jub1_2bs_stable_gfp_strain
+Description:,BE-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev
+,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1
+,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp,output_node_2b2_jub1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_jub1_strains,,,,
+Name:,WS_be_jub1_2bs_stable_gfp_strain,SM_be_jub1_4bs_stable_gfp_strain,MM_be_jub1_4bs_stable_gfp_strain,WM_be_jub1_4bs_stable_gfp_strain,SS_be_jub1_4bs_stable_gfp_strain
+Description:,BE-inducible JUB1 TF that activates GFP expression. 2 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev
+,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1
+,output_node_2b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_jub1_strains,,,,
+Name:,MS_be_jub1_4bs_stable_gfp_strain,WS_be_jub1_4bs_stable_gfp_strain,SM_be_jub1_6bs_stable_gfp_strain,MM_be_jub1_6bs_stable_gfp_strain,WM_be_jub1_6bs_stable_gfp_strain
+Description:,BE-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible JUB1 TF that activates GFP expression. 4 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev
+,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1
+,output_node_4b2_jub1_stable_gfp,output_node_4b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_jub1_strains,,,,
+Name:,SS_be_jub1_6bs_stable_gfp_strain,MS_be_jub1_6bs_stable_gfp_strain,WS_be_jub1_6bs_stable_gfp_strain,,
+Description:,BE-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible JUB1 TF that activates GFP expression. 6 JUB1 binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,,
+,Input_node_be_jub1,Input_node_be_jub1,Input_node_be_jub1,,
+,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,output_node_6b2_jub1_stable_gfp,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ant_strains,,,,
+Name:,SM_doxy_ant_2bs_stable_gfp_strain,MM_doxy_ant_2bs_stable_gfp_strain,WM_doxy_ant_2bs_stable_gfp_strain,SS_doxy_ant_2bs_stable_gfp_strain,MS_doxy_ant_2bs_stable_gfp_strain
+Description:,Doxy-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet
+,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant
+,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ant_strains,,,,
+Name:,WS_doxy_ant_2bs_stable_gfp_strain,SM_doxy_ant_4bs_stable_gfp_strain,MM_doxy_ant_4bs_stable_gfp_strain,WM_doxy_ant_4bs_stable_gfp_strain,SS_doxy_ant_4bs_stable_gfp_strain
+Description:,Doxy-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp_strong_ad_tet
+,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant
+,output_node_2b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ant_strains,,,,
+Name:,MS_doxy_ant_4bs_stable_gfp_strain,WS_doxy_ant_4bs_stable_gfp_strain,SM_doxy_ant_6bs_stable_gfp_strain,MM_doxy_ant_6bs_stable_gfp_strain,WM_doxy_ant_6bs_stable_gfp_strain
+Description:,Doxy-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,Doxy-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with medium strength activation domain,Doxy-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet
+,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant
+,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,doxy_ant_strains,,,,
+Name:,SS_doxy_ant_6bs_stable_gfp_strain,MS_doxy_ant_6bs_stable_gfp_strain,WS_doxy_ant_6bs_stable_gfp_strain,,
+Description:,Doxy-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by strong promoter and tagged with strong activation domain,Doxy-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by medium strength promoter and tagged with strong activation domain,Doxy-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Tet protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_tet,medium_exp_strong_ad_tet,weak_exp_strong_ad_tet,,
+,Input_node_doxy_ant,Input_node_doxy_ant,Input_node_doxy_ant,,
+,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,,
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ant_strains,,,,
+Name:,SM_be_ant_2bs_stable_gfp_strain,MM_be_ant_2bs_stable_gfp_strain,WM_be_ant_2bs_stable_gfp_strain,SS_be_ant_2bs_stable_gfp_strain,MS_be_ant_2bs_stable_gfp_strain
+Description:,BE-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev
+,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant
+,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp,output_node_2b2_ant_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ant_strains,,,,
+Name:,WS_be_ant_2bs_stable_gfp_strain,SM_be_ant_4bs_stable_gfp_strain,MM_be_ant_4bs_stable_gfp_strain,WM_be_ant_4bs_stable_gfp_strain,SS_be_ant_4bs_stable_gfp_strain
+Description:,BE-inducible ANT TF that activates GFP expression. 2 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev,strong_exp_strong_ad_zev
+,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant
+,output_node_2b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ant_strains,,,,
+Name:,MS_be_ant_4bs_stable_gfp_strain,WS_be_ant_4bs_stable_gfp_strain,SM_be_ant_6bs_stable_gfp_strain,MM_be_ant_6bs_stable_gfp_strain,WM_be_ant_6bs_stable_gfp_strain
+Description:,BE-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible ANT TF that activates GFP expression. 4 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,BE-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with medium strength activation domain,BE-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with medium strength activation domain
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_exp_med_ad_zev
+,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant
+,output_node_4b2_ant_stable_gfp,output_node_4b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp
+,,,,,
+,,,,,
+,,,,,
+Collection Name:,be_ant_strains,,,,
+Name:,SS_be_ant_6bs_stable_gfp_strain,MS_be_ant_6bs_stable_gfp_strain,WS_be_ant_6bs_stable_gfp_strain,,
+Description:,BE-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by strong promoter and tagged with strong activation domain,BE-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by medium strength promoter and tagged with strong activation domain,BE-inducible ANT TF that activates GFP expression. 6 ANT binding sites infront of promoter that drives expression of stable GFP. Zev protein driven by weak promoter and tagged with strong activation domain,,
+Strain (optional),,,,,
+Integration Locus (optional),,,,,
+Parts:,strong_exp_strong_ad_zev,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,,
+,Input_node_be_ant,Input_node_be_ant,Input_node_be_ant,,
+,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,output_node_6b2_ant_stable_gfp,,
