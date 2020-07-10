@@ -15,6 +15,14 @@ from .exceptions import LocationContext, BuildRequestParsingException
 
 T = TypeVar('T')
 
+# TODO: parse these keys
+class Keys:
+
+    Basic_DNA_Parts = "Basic DNA Parts"
+    Composite_DNA_Parts = "Composite DNA Parts"
+    Collection_Name = "Collection Name"
+    Part_Name = "Part Name"
+
 ##########################
 # Utilities
 ##########################
@@ -126,6 +134,7 @@ def values_to_json(values, key_column: int, fill_empty_key_from_above: bool = Fa
         prev_key = key
     return data
 
+
 def parse_composite_parts(values):
     composite = extract_composite_parts(values)
 
@@ -156,7 +165,7 @@ def parse_composite_parts(values):
             part_list.append({
                 'name': _name[0],
                 'collection': collection_name,
-                'type': 'composite part',
+                'partType': 'composite part',
                 'description': _description[0],
                 'parts': _parts
             })
@@ -168,11 +177,45 @@ def parse_composite_parts(values):
     return part_list
 
 
-# values = to_cell_values(data['values'])
-# parse_composite_parts(values);
-#
-# part_json = pd.DataFrame(extract_basic_parts(values)[2:],
-#                          columns=extract_basic_parts(values)[1]).T.to_dict()
-# part_json
-#
-# # validate
+def parse_basic_parts(values):
+    basic = extract_basic_parts(values)
+
+    # remove empty rows
+    basic = [b for b in basic if b[0] != 'nan']
+
+    part_json = pd.DataFrame(basic[2:], columns=basic[1]).T.to_dict()
+
+    part_json_list = []
+    for data in part_json.values():
+        new_data = {
+            'name': data['Part Name'].strip(),
+            "collection": "basic DNA parts",
+            "partType": "basic part",
+            'description': data['Description (Optional)'].strip(),
+            'sequence': data['Sequence'].strip()
+        }
+
+
+        length = data['length (bp)']
+        if length and not length == 'nan':
+            try:
+                new_data['length'] = int(length)
+            except ValueError:
+                pass
+
+        source = data['Source (Optional)']
+        if source and not source == 'nan':
+            new_data['source'] = source.strip()
+
+        role = data['Role']
+        if role and not role == 'nan':
+            new_data['roles'] = [role.strip()]
+
+        part_json_list.append(new_data)
+    return part_json_list
+
+
+def parse_parts(values):
+    basic_parts = parse_basic_parts(values)
+    composite_parts = parse_composite_parts(values)
+    return basic_parts + composite_parts

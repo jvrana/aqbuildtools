@@ -30,7 +30,7 @@
     "basic_part": {
       "description": "A basic DNA part with a sequence, source, and role",
       "properties": {
-            "part_type": {
+            "partType": {
               "type": "string",
               "enum": [
                 "basic part"
@@ -60,7 +60,7 @@
     "composite_part": {
       "description": "A composite DNA part composed of many basic_parts or composite_parts",
       "properties": {
-            "part_type": {
+            "partType": {
               "type": "string",
               "enum": [
                 "composite part"
@@ -93,7 +93,7 @@
             "description": {
               "type": "string"
             },
-            "part_type": {
+            "partType": {
               "type": "string",
               "enum": [
                 "composite part",
@@ -105,13 +105,13 @@
             "name",
             "collection",
             "description",
-            "part_type"
+            "partType"
           ]
         },
         {
           "if": {
             "properties": {
-              "part_type": {
+              "partType": {
                 "const": "composite part"
               }
             }
@@ -123,7 +123,7 @@
         {
           "if": {
             "properties": {
-              "part_type": {
+              "partType": {
                 "const": "basic part"
               }
             }
