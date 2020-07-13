@@ -11,7 +11,7 @@ from typing import TypeVar, Union, Callable, List, Iterable, Tuple, Optional
 from itertools import tee
 import re
 from .cell_value import CellValue
-from .exceptions import LocationContext, BuildRequestParsingException
+from .exceptions import parsing_location, BuildRequestParsingException
 
 T = TypeVar('T')
 
@@ -74,9 +74,13 @@ def _partition(x: List, indices: Union[None, int]) -> List:
         yield x[a:b]
 
 
+def _cell_is_empty(cell: str):
+    return cell.strip() == '' or cell.strip() == 'nan'
+
+
 def _is_empty(row: List[str]) -> bool:
     """check that a row of string values is empty"""
-    return sum([len(str(r).strip()) for r in row]) == 0
+    return all(_cell_is_empty(c) for c in row)
 
 
 def remove_empty(values: List[List[str]]) -> List[List[str]]:
@@ -146,17 +150,17 @@ def parse_composite_parts(values):
     partitioned = list((_partition(composite, rows)))[1:]
     parsed_json_arr = []
     for p in partitioned:
-        with LocationContext(*p[0][0].rc()):
+        with parsing_location(p[0][0]):
             parsed_json_arr.append(values_to_json(p, 0, True))
 
     # TODO: Validate the data here. Check for incorrect keys under each heading
 
     def _make_part_list(parsed_json):
-        with LocationContext(*parsed_json['Name:'][0][0].rc()):
+        with parsing_location(parsed_json['Name:'][0][0]):
             names = transpose(parsed_json['Name:'])
-        with LocationContext(*parsed_json['Parts:'][0][0].rc()):
+        with parsing_location(parsed_json['Parts:'][0][0]):
             parts = transpose(parsed_json['Parts:'])
-        with LocationContext(*parsed_json['Description:'][0][0].rc()):
+        with parsing_location(parsed_json['Description:'][0][0]):
             descriptions = transpose(parsed_json['Description:'])
         collection_name = parsed_json['Collection Name:'][0][0]
 
@@ -174,6 +178,16 @@ def parse_composite_parts(values):
     part_list = []
     for p in parsed_json_arr:
         part_list += _make_part_list(p)
+
+    # remove empty parts (again)
+    part_list_old = part_list[:]
+    part_list = []
+    for part in part_list_old:
+        if part['name'] == 'nan' and part['description'] == 'nan' and part['parts'] in [[], ['nan']]:
+            continue
+        else:
+            part_list.append(part)
+
     return part_list
 
 
