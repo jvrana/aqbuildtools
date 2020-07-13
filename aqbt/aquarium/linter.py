@@ -240,6 +240,7 @@ class Linter:
         errors = [e for e in self.errors if e.err_type == LintError.ERROR]
         warnings = list(set(warnings))
         errors = list(set(errors))
+
         for e in errors:
             print(e)
         for w in warnings:

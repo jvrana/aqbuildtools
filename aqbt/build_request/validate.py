@@ -32,7 +32,7 @@ def validate_part(part: Part):
             ))
 
 
-def validate_part_list(parts: List[Part]):
+def validate_part_list(parts: List[Part], fast_fail: bool = True):
     for part in parts:
         validate_part(part)
 
@@ -45,6 +45,8 @@ def validate_part_list(parts: List[Part]):
     for part in basic_parts + composite_parts:
         if part['name'] in part_dict:
             raise BuildRequestParsingError("Part name conflict for {}".format(part['name']))
+        else:
+            part_dict[part['name']] = part
 
     # check for references
     for composite_part in composite_parts:
