@@ -31,6 +31,13 @@ def validate_part(part: Part):
                 part['name'], part['length'], len(part['sequence'])
             ))
 
+    if part['name'] == 'nan':
+            raise BuildRequestParsingError('"nan" is an invalid part name for a basic part')
+    if part['partType'] == 'composite part':
+        for _part in part['parts']:
+            if _part == 'nan':
+                raise BuildRequestParsingError('"nan" is an invalid part name for a sub part')
+
 
 def validate_part_list(parts: List[Part], fast_fail: bool = True):
     for part in parts:
