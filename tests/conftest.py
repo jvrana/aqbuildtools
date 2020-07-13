@@ -16,9 +16,9 @@ def config_path():
     return join(here, "secrets", "test_config.toml")
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def config(config_path):
-    with open(config_path, 'r') as f:
+    with open(config_path, "r") as f:
         return parse_config(toml.load(f))
 
 

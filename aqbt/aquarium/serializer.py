@@ -31,9 +31,9 @@ def model_serializer(
 ) -> DataType:
     if model is None:
         return None
-    return model.dump(only=only, include=include,
-                           include_model_type=True,
-                           include_uri=True)
+    return model.dump(
+        only=only, include=include, include_model_type=True, include_uri=True
+    )
 
 
 def field_value_serializer(fv: FieldValue) -> DataType:

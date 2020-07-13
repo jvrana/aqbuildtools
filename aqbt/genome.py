@@ -308,21 +308,21 @@ def parse_result_to_span(data, inclusive=True, input_index=1, output_index=None)
 
 
 class IntegrationSite(object):
-
-    def __init__(self,
-                 chr: SeqRecord,
-                 integrative_dna: SeqRecord,
-                 direction: int,
-                 chr_five_prime_flanking_region_span: Span,
-                 chr_three_prime_flanking_region_span: Span,
-                 chr_excision_region_span: Span,
-                 chr_five_prime_homology_arm_span: Span,
-                 chr_three_prime_homology_arm_span: Span,
-                 chr_integration_cassette_span: Span,
-                 insert_five_prime_homology_arm_span: Span,
-                 insert_three_prime_homology_arm_span: Span,
-                 insert_integration_cassette_span: Span,
-        ):
+    def __init__(
+        self,
+        chr: SeqRecord,
+        integrative_dna: SeqRecord,
+        direction: int,
+        chr_five_prime_flanking_region_span: Span,
+        chr_three_prime_flanking_region_span: Span,
+        chr_excision_region_span: Span,
+        chr_five_prime_homology_arm_span: Span,
+        chr_three_prime_homology_arm_span: Span,
+        chr_integration_cassette_span: Span,
+        insert_five_prime_homology_arm_span: Span,
+        insert_three_prime_homology_arm_span: Span,
+        insert_integration_cassette_span: Span,
+    ):
         self.chr = chr
         self.integrative_dna = integrative_dna
         self.direction = direction
@@ -589,10 +589,14 @@ class GenomeIntegrator:
                                 chr_excision_region_span=gap_span,
                                 chr_five_prime_homology_arm_span=left_hom_span,
                                 chr_three_prime_homology_arm_span=right_hom_span,
-                                chr_integration_cassette_span=left.subject.new(left_flank_span.b, right_flank_span.a),
+                                chr_integration_cassette_span=left.subject.new(
+                                    left_flank_span.b, right_flank_span.a
+                                ),
                                 insert_five_prime_homology_arm_span=left.query,
                                 insert_three_prime_homology_arm_span=right.query,
-                                insert_integration_cassette_span=left.query.new(left.query.b, right.query.a)
+                                insert_integration_cassette_span=left.query.new(
+                                    left.query.b, right.query.a
+                                ),
                             )
                         )
                         # integration_sites.append(
@@ -658,7 +662,6 @@ class GenomeIntegrator:
 
     def integrate(
         self, chromosomes: List[SeqRecord], integrants: List[SeqRecord],
-
     ) -> List[Dict[str, Any]]:
         """From a list of chromosomes and list of integrants, generate a new
         engineered genome.
@@ -689,7 +692,9 @@ class GenomeIntegrator:
                 left_flank = site.chr_five_prime_flanking_region_span.get_slice(chr)
                 left_hom = site.insert_five_prime_homology_arm_span.get_slice(cassette)
                 insert = site.insert_integration_cassette_span.get_slice(cassette)
-                right_hom = site.insert_three_prime_homology_arm_span.get_slice(cassette)
+                right_hom = site.insert_three_prime_homology_arm_span.get_slice(
+                    cassette
+                )
                 right_flank = site.chr_three_prime_flanking_region_span.get_slice(chr)
 
                 new_chr = left_flank + left_hom + insert + right_hom + right_flank

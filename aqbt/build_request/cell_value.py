@@ -1,7 +1,7 @@
-
 class CellValue(str):
     """String class that maintains 2-dimensional index. Primarily used for
     relaying parsing errors."""
+
     def add_rc(self, r, c):
         self.row = r
         self.col = c

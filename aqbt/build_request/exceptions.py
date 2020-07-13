@@ -18,14 +18,15 @@ class LocationContext(object):
 
     def __exit__(self, exc_type, exc_value, traceback):
         if exc_value:
-            exception = BuildRequestParsingException( "{} near ({}, {}).\n{}".format(exc_type, self.row, self.col, exc_value))
+            exception = BuildRequestParsingException(
+                "{} near ({}, {}).\n{}".format(exc_type, self.row, self.col, exc_value)
+            )
             exception.row = self.row
             exception.col = self.col
             raise exception
 
 
 class EmptyContext(object):
-
     def __enter__(self):
         pass
 

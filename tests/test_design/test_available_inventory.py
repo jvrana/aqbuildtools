@@ -1,23 +1,26 @@
-from aqbt.design.components.aq_to_dna_inventory_json import available_sample_json_from_aquarium_session, dna_json_from_benchling_connector, sample_ids_from_dna_json
+from aqbt.design.components.aq_to_dna_inventory_json import (
+    available_sample_json_from_aquarium_session,
+    dna_json_from_benchling_connector,
+    sample_ids_from_dna_json,
+)
 from aqbt.design.components.aq_to_dna_inventory_json import generate_inventory_json
 import pytest
 import json
 from aqbt.bioadapter.conversion import json_to_seqrecord
 
 
-@pytest.mark.parametrize('x', [
-    (['Fragment'], ['Fragment Stock']),
-    (['Plasmid'], ['Plasmid Glycerol Stock'])
-])
+@pytest.mark.parametrize(
+    "x", [(["Fragment"], ["Fragment Stock"]), (["Plasmid"], ["Plasmid Glycerol Stock"])]
+)
 def test_available_inventory(aquarium, x):
 
     samples = available_sample_json_from_aquarium_session(
         aquarium, x[0], x[1], sample_limit=100, item_limit=100, page_size=1000
     )
     for s in samples:
-        assert 'available_items' in s
-        assert isinstance(s['available_items'], list)
-        assert len(s['available_items']) > 0
+        assert "available_items" in s
+        assert isinstance(s["available_items"], list)
+        assert len(s["available_items"]) > 0
 
 
 def test_get_all_registered(registry):
@@ -49,16 +52,21 @@ def test_registered_aq_inventory(registry):
 def test_available_inventory(registry, aquarium):
     connector = registry.connector
 
-    result = generate_inventory_json(connector, aquarium,{
-        'Fragment': {
-            'object_types': ['Fragment Stock'],
-            'topology': 'linear',
+    result = generate_inventory_json(
+        connector,
+        aquarium,
+        {
+            "Fragment": {"object_types": ["Fragment Stock"], "topology": "linear",},
+            "Plasmid": {
+                "object_types": ["Plasmid Glycerol Stock"],
+                "topology": "circular",
+            },
         },
-        'Plasmid': {
-            'object_types': ['Plasmid Glycerol Stock'],
-            'topology': 'circular'
-        }
-    }, sample_limit=-1, item_limit=-1, page_size=1000, dna_limit=100)
+        sample_limit=-1,
+        item_limit=-1,
+        page_size=1000,
+        dna_limit=100,
+    )
     assert result
     print(json.dumps(result, indent=2))
 
@@ -66,19 +74,31 @@ def test_available_inventory(registry, aquarium):
 def test_inventory_to_seq_records(registry, aquarium):
     connector = registry.connector
 
-    result = generate_inventory_json(connector, aquarium,{
-        'Fragment': {
-            'object_types': ['Fragment Stock'],
-            'topology': 'linear',
+    result = generate_inventory_json(
+        connector,
+        aquarium,
+        {
+            "Fragment": {"object_types": ["Fragment Stock"], "topology": "linear",},
+            "Plasmid": {
+                "object_types": ["Plasmid Glycerol Stock"],
+                "topology": "circular",
+            },
         },
-        'Plasmid': {
-            'object_types': ['Plasmid Glycerol Stock'],
-            'topology': 'circular'
-        }
-    }, sample_limit=-1, item_limit=-1, page_size=1000,
-                            dna_limit=100)
+        sample_limit=-1,
+        item_limit=-1,
+        page_size=1000,
+        dna_limit=100,
+    )
 
-    cyclic_records = [json_to_seqrecord(entry['sequence'][0]) for entry in result if entry['sequence'][0]['isCircular']]
-    linear_records = [json_to_seqrecord(entry['sequence'][0]) for entry in result if entry['sequence'][0]['isCircular']]
+    cyclic_records = [
+        json_to_seqrecord(entry["sequence"][0])
+        for entry in result
+        if entry["sequence"][0]["isCircular"]
+    ]
+    linear_records = [
+        json_to_seqrecord(entry["sequence"][0])
+        for entry in result
+        if entry["sequence"][0]["isCircular"]
+    ]
     assert cyclic_records
     assert linear_records

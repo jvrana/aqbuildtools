@@ -32,7 +32,6 @@ class LabRegistryException(Exception):
 
 
 class RegistryConnectorABC(ABC):
-
     @abstractmethod
     def expected_return_type(self) -> Type:
         pass
@@ -63,8 +62,12 @@ class RegistryConnectorABC(ABC):
 class FakeRegistryConnector(RegistryConnectorABC):
     """Generate a faked DNA registry."""
 
-    def __init__(self, seq_size_range: Tuple[int, int], feature_length_range: Tuple[int, int],
-                 name: str = 'FakeRegistry'):
+    def __init__(
+        self,
+        seq_size_range: Tuple[int, int],
+        feature_length_range: Tuple[int, int],
+        name: str = "FakeRegistry",
+    ):
         """
         Constructor for a connector to a faked DNA registry.
 
@@ -84,7 +87,7 @@ class FakeRegistryConnector(RegistryConnectorABC):
         self.feature_length_range = feature_length_range
         self.cache = {}
         self._last_id = 0
-        self.name = 'FakeRegistry'
+        self.name = "FakeRegistry"
 
     @property
     def expected_return_type(self):
@@ -109,22 +112,25 @@ class FakeRegistryConnector(RegistryConnectorABC):
             return self._random_seq()
         return seq
 
-    def find_by_url(self, url: str, always_return: bool = False) -> Union[None, DNASequence]:
-        url_to_seq = {seq['url'] for seq in self.cache.values()}
+    def find_by_url(
+        self, url: str, always_return: bool = False
+    ) -> Union[None, DNASequence]:
+        url_to_seq = {seq["url"] for seq in self.cache.values()}
         seq = url_to_seq.get(url, None)
         if always_return and seq is None:
             return self._random_seq()
 
     def _random_seq(self):
         length = random.randint(self.seq_size_range[0], self.seq_size_range[1])
-        seq = biopython.random_record(length, 'AGCT', cyclic=[True, False][random.randint(0, 1)])
-        biopython.randomly_annotate(seq,
-                                    feature_length_range=self.feature_length_range)
+        seq = biopython.random_record(
+            length, "AGCT", cyclic=[True, False][random.randint(0, 1)]
+        )
+        biopython.randomly_annotate(seq, feature_length_range=self.feature_length_range)
         self._last_id += 1
         seq = seqrecord_to_json(seq)
-        seq['entityRegistryId'] = self.format_registry_id(self._last_id)
-        seq['url'] = 'www.fakeregistry.org/sequences/{}'.format(seq['entityRegistryId'])
-        self.cache[seq['entityRegistryId']] = seq
+        seq["entityRegistryId"] = self.format_registry_id(self._last_id)
+        seq["url"] = "www.fakeregistry.org/sequences/{}".format(seq["entityRegistryId"])
+        self.cache[seq["entityRegistryId"]] = seq
         return seq
 
     def all(self, limit: int):
@@ -135,7 +141,6 @@ class FakeRegistryConnector(RegistryConnectorABC):
 
 
 class BenchlingRegistryConnector(RegistryConnectorABC):
-
     def __init__(self, api, initials, schema, prefix, folder_id, registry_id):
         self.api = api
         self.organization_initials = initials
