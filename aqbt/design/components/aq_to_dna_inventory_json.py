@@ -37,14 +37,14 @@ def available_sample_json_from_aquarium_session(
         "__model__": "Sample",
         "__description__": "get samples",
         "__json__": True,
-        "query": {
-            "sample_type": {"query": {"name": sample_type_names}},
+        "__query__": {
+            "sample_type": {"__query__": {"name": sample_type_names}},
             "__options__": {"pageSize": page_size, "limit": sample_limit},
             "__return__": {"field_values": [], "sample_type": [],},
         },
     }
     if sample_ids:
-        sample_query["query"]["id"] = sample_ids
+        sample_query["__query__"]["id"] = sample_ids
 
     samples = session.query(sample_query)
 
@@ -53,8 +53,8 @@ def available_sample_json_from_aquarium_session(
             "__model__": "Item",
             "__description__": "get available fragment stocks",
             "__json__": True,
-            "query": {
-                "object_type": {"query": {"name": object_type_names}},
+            "__query__": {
+                "object_type": {"__query__": {"name": object_type_names}},
                 "location": {"__not__": "deleted"},
                 "sample_id": [entry["id"] for entry in samples],
                 "__options__": {"pageSize": page_size, "limit": item_limit},

@@ -287,10 +287,10 @@ CONFIG = {
     "primer_sample_type": "Primer",
     "fragment_sample_type": "Fragment",
     "plasmid_sample_type": "Plasmid",
-    "default_sequence_field_names": ["Sequence"],
-    "primer_sequence_field_names": ["Overhang Sequence", "Anneal Sequence"],
+    "default_sequence_field_names": ("Sequence",),
+    "primer_sequence_field_names": ("Overhang Sequence", "Anneal Sequence"),
     "fragment_template_field_name": "Template",
-    "fragment_primer_field_names": ["Forward Primer", "Reverse Primer"],
+    "fragment_primer_field_names": ("Forward Primer", "Reverse Primer"),
 }
 
 
@@ -402,7 +402,7 @@ class LabDNARegistry:
             try:
                 property = properties.get(key, None)
                 break
-            except Exception:
+            except Exception as e:
                 pass
         return property
 
@@ -417,7 +417,7 @@ class LabDNARegistry:
         :return: DNASequence or None
         """
         if keys is None:
-            keys = (CONFIG["default_sequence_field_names"],)
+            keys = CONFIG["default_sequence_field_names"]
         url = self._safe_get_sample_property(sample, keys)
         return self.connector.find_by_url(url)
 
@@ -567,10 +567,13 @@ class LabDNARegistry:
         # seq = self.connector.convert(seq, to=return_type)
         # return seq
 
-    def is_registered(self, sample) -> bool:
+    def is_registered(self, sample: Sample) -> bool:
+        """Check that an Aquarium sample has a registered DNA sequence."""
         return self.get_sequence(sample) is not None
 
     def fast_is_registered(self, sample: Sample) -> bool:
+        """Quickly check if an Aquarium sample has a registered DNA sequence
+        by checking the cached sequences."""
         if not self._using_cache:
             raise ValueError(
                 "`registry.use_cache` must be True to use '{}'."
