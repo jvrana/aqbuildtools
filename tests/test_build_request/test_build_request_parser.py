@@ -10,7 +10,7 @@ from aqbt.build_request.parser import (
 from aqbt.build_request.validate import validate_part, validate_part_list
 from aqbt.build_request.exceptions import LocationContext
 
-from aqbt.build_request.parser import _is_empty
+from aqbt.build_request.parser import row_is_empty
 
 
 @pytest.fixture()
@@ -23,13 +23,13 @@ def values(fixtures_path):
 
 class TestParseUtilities:
     def test_is_empty1(self):
-        assert _is_empty(["nan"] * 10)
+        assert row_is_empty(["nan"] * 10)
 
     def test_is_empty2(self):
-        assert _is_empty(["nan "] * 10 + [""] + [" "])
+        assert row_is_empty(["nan "] * 10 + [""] + [" "])
 
     def test_is_not_empty(self):
-        assert not _is_empty(["nan "] * 10 + [""] + [" "] + ["x"])
+        assert not row_is_empty(["nan "] * 10 + [""] + [" "] + ["x"])
 
 
 def test_parse_and_validate_composite_parts(values):
