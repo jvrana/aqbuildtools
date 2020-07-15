@@ -1,3 +1,4 @@
+
 arrow==0.14.7 \
     --hash=sha256:4bfacea734ead51495dc47df00421ecfd4ca1f2c0fbe58b9a26eaeddedc31caf \
     --hash=sha256:67f8be7c0cf420424bc62d8d7dc40b44e4bb2f7b515f9cc2954fb36e35797656
@@ -66,9 +67,9 @@ frozendict==1.2 \
 google-api-core==1.21.0 \
     --hash=sha256:fea9a434068406ddabe2704988d24d6c5bde3ecfc40823a34f43892d017b14f6 \
     --hash=sha256:7b65e8e5ee59bd7517eab2bf9b3008e7b50fd9fb591d4efd780ead6859cd904b
-google-api-python-client==1.9.3 \
-    --hash=sha256:220349ce189a85229fc46875d467101318495a4a735c0ff2f165b9bdbc7511a0 \
-    --hash=sha256:f8e73dd6433f8218922c952e09adc4fc0dbc360f9959cf427565a16e8d4c5d25
+google-api-python-client==1.10.0 \
+    --hash=sha256:fa24f07f6124ff2e91ee9b7550e240481bcb31b8f77a75e8d481be1c44a6ff07 \
+    --hash=sha256:51ac5158e5a011c2f5ff78c8a08dec6975efc74221a9714438a75ea26555e04a
 google-auth==1.19.0 \
     --hash=sha256:eefbb977d026d617e5d33b82b6c266d3be3bb7b44d370b692dded7319121f842 \
     --hash=sha256:b0e4ecc40ed18b8d12141df6af772efa4aba65e7eda470c258581443418ee753
