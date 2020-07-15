@@ -1,8 +1,5 @@
 import itertools
 from copy import deepcopy
-from os.path import abspath
-from os.path import dirname
-from os.path import join
 from typing import Any
 from typing import Callable
 from typing import Dict
@@ -14,12 +11,10 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from dasi.utils.region import Span
 from pyblast import BioBlast
-from pyblast.utils import make_linear
 from pydent import AqSession
 from pydent.models import Sample
 
 from aqbt import biopython
-from aqbt.bioadapter import convert
 from aqbt.logger import logger
 
 

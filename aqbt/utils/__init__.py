@@ -1,6 +1,6 @@
 """Utils.
 
-Utilities for lobio.
+Utility methods
 """
 import random
 from copy import deepcopy

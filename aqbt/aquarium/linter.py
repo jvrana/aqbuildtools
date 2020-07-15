@@ -35,193 +35,193 @@ class LintError:
             msg=self.msg,
         )
 
+# TODO: Linters should inherit LinterABC
+# from abc import ABC, abstractmethod
+# class LinterABC(ABC):
+#
+#     def __init__(self):
+#         self.errors = []
+#
+#     def warning(self, sample: Sample, msg: str):
+#         self.errors.append(LintError.warning(sample, msg))
+#
+#     def error(self, sample: Sample, msg: str):
+#         self.errors.append(LintError.error(sample, msg))
+#
+#     @staticmethod
+#     def _wrap_messages(msg_type: str, prefix: str, sample, msgs: List[str]):
+#         return [
+#             "{msg_type} {prefix}{sample}: {msg}".format(
+#                 msg_type=msg_type,
+#                 prefix=prefix,
+#                 sample="{}:{}".format(sample.id, sample.name[:20]),
+#                 msg=msg,
+#             )
+#             for msg in msgs
+#         ]
+#
+#     @abstractmethod
+#     def lint(self):
+#         pass
+#
+#     def report(self):
+#         warnings = [e for e in self.errors if e.err_type == LintError.WARNING]
+#         errors = [e for e in self.errors if e.err_type == LintError.ERROR]
+#         warnings = list(set(warnings))
+#         errors = list(set(errors))
+#
+#         for e in errors:
+#             print(e)
+#         for w in warnings:
+#             print(w)
 
-from abc import ABC, abstractmethod
-class LinterABC(ABC):
-
-    def __init__(self):
-        self.errors = []
-
-    def warning(self, sample: Sample, msg: str):
-        self.errors.append(LintError.warning(sample, msg))
-
-    def error(self, sample: Sample, msg: str):
-        self.errors.append(LintError.error(sample, msg))
-
-    @staticmethod
-    def _wrap_messages(msg_type: str, prefix: str, sample, msgs: List[str]):
-        return [
-            "{msg_type} {prefix}{sample}: {msg}".format(
-                msg_type=msg_type,
-                prefix=prefix,
-                sample="{}:{}".format(sample.id, sample.name[:20]),
-                msg=msg,
-            )
-            for msg in msgs
-        ]
-
-    @abstractmethod
-    def lint(self):
-        pass
-
-    def report(self):
-        warnings = [e for e in self.errors if e.err_type == LintError.WARNING]
-        errors = [e for e in self.errors if e.err_type == LintError.ERROR]
-        warnings = list(set(warnings))
-        errors = list(set(errors))
-
-        for e in errors:
-            print(e)
-        for w in warnings:
-            print(w)
-
-
-class FragmentLinter(object):
-
-    def __init__(self, fragment: Sample, registry):
-        super().__init__()
-        self.PRIMER_TM_FWD_REV_DIFF_THRESHOLD = 5
-        self.PRIMER_TA_TO_TM = 3
-        self.PRIMER_TA_DIFF_THRESHOLD = 3
-        self.LOW_TA_THRESHOLD = 50
-        self.LENGTH_DIFF_RATIO_THRESHOLD = 0.05
-
-        self.fragment = fragment
-        self.registry = registry
-        self.fwd = registry.get_primer_sequence(fragment.properties["Forward Primer"])
-        self.rev = registry.get_primer_sequence(fragment.properties["Reverse Primer"])
-        self.template = registry.get_sequence(fragment.properties["Template"])
-        self.reported_sequence = registry.get_sequence(fragment)
-
-        template_record = self.registry.connector.convert(self.template, to="SeqRecord")
-
-        self.products, self.fwd_matches, self.rev_matches = biopython.pcr_amplify(
-            (self.fwd, self.rev),
-            template_record,
-            cyclic=self.template.is_circular,
-            name=self.fragment.name,
-            return_matches=True,
-        )
-
-    def check(self):
-        self.check_reported_sequence_exists()
-        self.check_primers()
-        self.check_matches()
-        self.check_t_anneal()
-        self.check_products()
-        self.check_reported_sequence_match()
-        self.check_length()
-
-    def check_reported_sequence_exists(self):
-        if not self.reported_sequence:
-            self.warning(self.fragment, "There is no reported sequence")
-
-    def check_primers(self):
-        self.lint_primer(self.fragment.properties["Forward Primer"])
-        self.lint_primer(self.fragment.properties["Reverse Primer"])
-
-    def check_matches(self):
-        # CHECK 3: Verify forward primer match
-        if not self.fwd_matches:
-            self.error(
-                self.fragment,
-                "There are no forward matches with '{}' and '{}'".format(
-                    self.fragment.properties["Forward Primer"].name,
-                    self.fragment.properties["Reverse Primer"].name,
-                ),
-            )
-
-        # CHECK 4: Verify reverse primer match
-        if not self.rev_matches:
-            self.error(
-                self.fragment,
-                "There are no reverse anneal with '{}' and '{}'".format(
-                    self.fragment.properties["Forward Primer"].name,
-                    self.fragment.properties["Reverse Primer"].name,
-                ),
-            )
-
-    def check_t_anneal(self):
-        reported_fwd_ta = self.fragment.properties["Forward Primer"].properties["T Anneal"]
-        reported_rev_ta = self.fragment.properties["Reverse Primer"].properties["T Anneal"]
-
-        for f, r in itertools.product(self.fwd_matches, self.rev_matches):
-            fwd_anneal = f["anneal"]
-            rev_anneal = r["anneal"]
-            fwd_ta = primer3.calcTm(fwd_anneal[-60:]) - self.PRIMER_TA_TO_TM
-            rev_ta = primer3.calcTm(rev_anneal[-60:]) - self.PRIMER_TA_TO_TM
-            if abs(fwd_ta - rev_ta) > self.PRIMER_TM_FWD_REV_DIFF_THRESHOLD:
-                self.errors.append(
-                    LintError.warning(
-                        self.fragment,
-                        "Forward and reverse primer have different "
-                        "annealing temperatures: {} vs {}".format(fwd_ta, rev_ta),
-                    )
-                )
-            if abs(reported_fwd_ta - fwd_ta) > self.PRIMER_TA_DIFF_THRESHOLD:
-                self.errors.append(
-                    LintError.warning(
-                        self.fragment.properties["Forward Primer"],
-                        "Reported 'T Anneal' {} does not match calculated T Anneal {}"
-                        " for the specified template".format(reported_fwd_ta, fwd_ta),
-                    )
-                )
-            if abs(reported_rev_ta - rev_ta) > self.PRIMER_TA_DIFF_THRESHOLD:
-                self.errors.append(
-                    LintError.warning(
-                        self.fragment.properties["Reverse Primer"],
-                        "Reported 'T Anneal' {} does not match calculated T Anneal {}"
-                        " for the specified template".format(reported_rev_ta, rev_ta),
-                    )
-                )
-
-    def check_products(self):
-        # CHECK 7: Verify there are not more than 1 product
-        if len(self.products) > 1:
-            self.warning(
-                self.fragment,
-                "There is more than one product. Found {} products.".format(
-                    len(self.products)
-                ),
-            )
-
-        # CHECK 8: Verify that is at least 1 product
-        elif len(self.products) == 0:
-            self.error(self.fragment, "There are no products")
-            return
-
-    def check_reported_sequence_match(self):
-        intended_product = self.products[0][0]
-        if self.reported_sequence:
-            if (
-                    str(intended_product.seq).upper()
-                    != str(self.reported_sequence.bases).upper()
-            ):
-                self.error(
-                    self.fragment,
-                    "There is a conflict between the expected and reported"
-                    " sequence.",
-                )
-
-    def check_length(self):
-        intended_product = self.products[0][0]
-        reported_length = self.fragment.properties["Length"]
-        expected_length = len(intended_product.seq)
-        diff_length = abs(reported_length - expected_length)
-        if diff_length / reported_length > self.LENGTH_DIFF_RATIO_THRESHOLD:
-            self.error(
-                self.fragment,
-                "The reported length {} is more than"
-                " {}% different the the expected length {}".format(
-                    reported_length, self.LENGTH_DIFF_RATIO_THRESHOLD, expected_length
-                ),
-            )
-        elif diff_length:
-            self.warning(
-                self.fragment,
-                "The reported length {} is different than the"
-                " expected length {}".format(reported_length, expected_length),
-            )
+# TODO: Finish refactoring FragmentLinter
+# class FragmentLinter(object):
+#
+#     def __init__(self, fragment: Sample, registry):
+#         super().__init__()
+#         self.PRIMER_TM_FWD_REV_DIFF_THRESHOLD = 5
+#         self.PRIMER_TA_TO_TM = 3
+#         self.PRIMER_TA_DIFF_THRESHOLD = 3
+#         self.LOW_TA_THRESHOLD = 50
+#         self.LENGTH_DIFF_RATIO_THRESHOLD = 0.05
+#
+#         self.fragment = fragment
+#         self.registry = registry
+#         self.fwd = registry.get_primer_sequence(fragment.properties["Forward Primer"])
+#         self.rev = registry.get_primer_sequence(fragment.properties["Reverse Primer"])
+#         self.template = registry.get_sequence(fragment.properties["Template"])
+#         self.reported_sequence = registry.get_sequence(fragment)
+#
+#         template_record = self.registry.connector.convert(self.template, to="SeqRecord")
+#
+#         self.products, self.fwd_matches, self.rev_matches = biopython.pcr_amplify(
+#             (self.fwd, self.rev),
+#             template_record,
+#             cyclic=self.template.is_circular,
+#             name=self.fragment.name,
+#             return_matches=True,
+#         )
+#
+#     def check(self):
+#         self.check_reported_sequence_exists()
+#         self.check_primers()
+#         self.check_matches()
+#         self.check_t_anneal()
+#         self.check_products()
+#         self.check_reported_sequence_match()
+#         self.check_length()
+#
+#     def check_reported_sequence_exists(self):
+#         if not self.reported_sequence:
+#             self.warning(self.fragment, "There is no reported sequence")
+#
+#     def check_primers(self):
+#         self.lint_primer(self.fragment.properties["Forward Primer"])
+#         self.lint_primer(self.fragment.properties["Reverse Primer"])
+#
+#     def check_matches(self):
+#         # CHECK 3: Verify forward primer match
+#         if not self.fwd_matches:
+#             self.error(
+#                 self.fragment,
+#                 "There are no forward matches with '{}' and '{}'".format(
+#                     self.fragment.properties["Forward Primer"].name,
+#                     self.fragment.properties["Reverse Primer"].name,
+#                 ),
+#             )
+#
+#         # CHECK 4: Verify reverse primer match
+#         if not self.rev_matches:
+#             self.error(
+#                 self.fragment,
+#                 "There are no reverse anneal with '{}' and '{}'".format(
+#                     self.fragment.properties["Forward Primer"].name,
+#                     self.fragment.properties["Reverse Primer"].name,
+#                 ),
+#             )
+#
+#     def check_t_anneal(self):
+#         reported_fwd_ta = self.fragment.properties["Forward Primer"].properties["T Anneal"]
+#         reported_rev_ta = self.fragment.properties["Reverse Primer"].properties["T Anneal"]
+#
+#         for f, r in itertools.product(self.fwd_matches, self.rev_matches):
+#             fwd_anneal = f["anneal"]
+#             rev_anneal = r["anneal"]
+#             fwd_ta = primer3.calcTm(fwd_anneal[-60:]) - self.PRIMER_TA_TO_TM
+#             rev_ta = primer3.calcTm(rev_anneal[-60:]) - self.PRIMER_TA_TO_TM
+#             if abs(fwd_ta - rev_ta) > self.PRIMER_TM_FWD_REV_DIFF_THRESHOLD:
+#                 self.errors.append(
+#                     LintError.warning(
+#                         self.fragment,
+#                         "Forward and reverse primer have different "
+#                         "annealing temperatures: {} vs {}".format(fwd_ta, rev_ta),
+#                     )
+#                 )
+#             if abs(reported_fwd_ta - fwd_ta) > self.PRIMER_TA_DIFF_THRESHOLD:
+#                 self.errors.append(
+#                     LintError.warning(
+#                         self.fragment.properties["Forward Primer"],
+#                         "Reported 'T Anneal' {} does not match calculated T Anneal {}"
+#                         " for the specified template".format(reported_fwd_ta, fwd_ta),
+#                     )
+#                 )
+#             if abs(reported_rev_ta - rev_ta) > self.PRIMER_TA_DIFF_THRESHOLD:
+#                 self.errors.append(
+#                     LintError.warning(
+#                         self.fragment.properties["Reverse Primer"],
+#                         "Reported 'T Anneal' {} does not match calculated T Anneal {}"
+#                         " for the specified template".format(reported_rev_ta, rev_ta),
+#                     )
+#                 )
+#
+#     def check_products(self):
+#         # CHECK 7: Verify there are not more than 1 product
+#         if len(self.products) > 1:
+#             self.warning(
+#                 self.fragment,
+#                 "There is more than one product. Found {} products.".format(
+#                     len(self.products)
+#                 ),
+#             )
+#
+#         # CHECK 8: Verify that is at least 1 product
+#         elif len(self.products) == 0:
+#             self.error(self.fragment, "There are no products")
+#             return
+#
+#     def check_reported_sequence_match(self):
+#         intended_product = self.products[0][0]
+#         if self.reported_sequence:
+#             if (
+#                     str(intended_product.seq).upper()
+#                     != str(self.reported_sequence.bases).upper()
+#             ):
+#                 self.error(
+#                     self.fragment,
+#                     "There is a conflict between the expected and reported"
+#                     " sequence.",
+#                 )
+#
+#     def check_length(self):
+#         intended_product = self.products[0][0]
+#         reported_length = self.fragment.properties["Length"]
+#         expected_length = len(intended_product.seq)
+#         diff_length = abs(reported_length - expected_length)
+#         if diff_length / reported_length > self.LENGTH_DIFF_RATIO_THRESHOLD:
+#             self.error(
+#                 self.fragment,
+#                 "The reported length {} is more than"
+#                 " {}% different the the expected length {}".format(
+#                     reported_length, self.LENGTH_DIFF_RATIO_THRESHOLD, expected_length
+#                 ),
+#             )
+#         elif diff_length:
+#             self.warning(
+#                 self.fragment,
+#                 "The reported length {} is different than the"
+#                 " expected length {}".format(reported_length, expected_length),
+#             )
 
 
 class Linter:
