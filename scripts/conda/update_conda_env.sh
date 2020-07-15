@@ -1,6 +1,9 @@
 # updates the conda environment for the aqbt
+poetry install
+poetry build
+poetry export -f requirements.txt > requirements.txt
+#conda env create aqbt python=3.8
 conda activate aqbt
 pip install $(ls dist/aqbt*whl)
 conda env export > conda_environment.yml
-conda env update --prefix ./env --file conda_environment.yml --prune
-conda deactivate aqbt
+conda deactivate aqbtpip

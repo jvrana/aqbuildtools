@@ -1,5 +1,6 @@
 # Creates a new conda environment with the necessary aqbt requirments
 poetry install
+poetry build
 poetry export -f requirements.txt > requirements.txt
 conda env create aqbt python=3.8
 conda activate aqbt
