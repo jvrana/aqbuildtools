@@ -46,3 +46,7 @@ release:
 
 klocs:
 	find . -name '*.py' | xargs wc -l
+
+
+export:
+	./scripts/conda/update_conda_env.sh
