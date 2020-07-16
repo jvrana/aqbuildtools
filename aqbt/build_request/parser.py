@@ -11,7 +11,8 @@ from typing import TypeVar, Union, Callable, List, Iterable, Tuple, Optional, Di
 from itertools import tee
 import re
 from .cell_value import CellValue
-from .exceptions import parsing_location
+from .exceptions import parsing_location, BuildRequestParsingException
+from .validate import validate_part_list
 
 T = TypeVar("T")
 
@@ -177,6 +178,7 @@ def values_to_json(
     return data
 
 
+# TODO: rename this method
 def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     composite = extract_composite_parts(values)
 
@@ -196,11 +198,25 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     def _make_part_list(parsed_json):
         with parsing_location(parsed_json["Name:"][0][0]):
             names = transpose(parsed_json["Name:"])
-        with parsing_location(parsed_json["Parts:"][0][0]):
-            parts = transpose(parsed_json["Parts:"])
+
+        if 'Parts:' in parsed_json:
+            # TODO: should this be covered by the jsonschema?
+            # if 'Part Sequence:' in parsed_json:
+            #     with parsing_location(parsed_json['Parts:'][0][0]):
+            #         raise BuildRequestParsingException("Both 'Parts:' and 'Part Sequence:' cannot be "
+            #                                            "defined for a composite part")
+            with parsing_location(parsed_json["Parts:"][0][0]):
+                parts = transpose(parsed_json["Parts:"])
+            part_type = 'composite part'
+        # if 'Part Sequence:' in parsed_json:
+        #     with parsing_location(parsed_json['Part Sequence:'][0][0]):
+        #         parts = transpose(parsed_json['Part Sequence:'])
+        #     part_type = 'composite part'
         with parsing_location(parsed_json["Description:"][0][0]):
             descriptions = transpose(parsed_json["Description:"])
         collection_name = parsed_json["Collection Name:"][0][0]
+
+        parts = [[p for p in row if not _is_nan(p)] for row in parts]
 
         part_list = []
         for _name, _description, _parts in list(zip(names, descriptions, parts)):
@@ -208,7 +224,7 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
                 {
                     "name": _name[0],
                     "collection": collection_name,
-                    "partType": "composite part",
+                    "partType": part_type,
                     "description": _description[0],
                     "parts": _parts,
                 }
@@ -234,12 +250,16 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
 
     return part_list
 
+
 def _get_and_strip(d: Dict[str, str], k: str, default: T) -> Union[T, str]:
+    """Get value from dictionary and strip. Else, return default"""
     if k in d:
         if not isinstance(d[k], str):
             return default
         else:
-            return d[k].strip()
+            cv = CellValue(d[k].strip())
+            cv.add_rc(d[k].row, d[k].col)
+            return cv
 
 
 def parse_basic_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
@@ -252,8 +272,6 @@ def parse_basic_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
 
     part_json_list = []
     for data in part_json.values():
-        if data[Keys.Sequence] is None:
-            print("OK")
         new_data = {
             "name": _get_and_strip(data, Keys.Part_Name, None),
             "collection": "basic DNA parts",
@@ -284,4 +302,6 @@ def parse_basic_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
 def parse_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     basic_parts = parse_basic_parts(values)
     composite_parts = parse_composite_parts(values)
-    return basic_parts + composite_parts
+    all_parts = basic_parts + composite_parts
+    validate_part_list(all_parts)
+    return all_parts

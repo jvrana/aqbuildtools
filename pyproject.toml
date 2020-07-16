@@ -6,7 +6,7 @@ authors = ["Justin Vrana <justin.vrana@gmail.com>"]
 readme = 'README.md'
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.6.1"
 biopython = "^1.73"
 networkx = "^2.4"
 tqdm = "^4.36"

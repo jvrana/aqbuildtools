@@ -39,7 +39,6 @@ class RegistryCrawler:
         if hasattr(model, self.OP_SAMPLES_KEY):
             op_samples = getattr(model, self.OP_SAMPLES_KEY)
             for op_sample in op_samples:
-                print("OKOSDKJFLJSDF")
                 yield op_sample, {"from_operation": getattr(model, self.OP_KEY)}
 
     def op_selector(self, ops):

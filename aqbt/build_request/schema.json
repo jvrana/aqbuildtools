@@ -58,7 +58,7 @@
           ]
         },
     "composite_part": {
-      "description": "A composite DNA part composed of many basic_parts or composite_parts",
+      "description": "A composite DNA part composed of many basic_parts or composite_parts. A 'composite part' means it is a part comprised of other parts (i.e. a plasmid made of basic parts). A 'composite collection' means this part is a member of a collection taken as a whole (i.e. a strain that contains many plasmids)",
       "properties": {
             "partType": {
               "type": "string",
@@ -69,7 +69,8 @@
             "parts": {
               "type": "array",
               "items": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               },
               "minItems": 1
             }

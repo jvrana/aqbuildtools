@@ -39,7 +39,7 @@ def test_main():
     service = build('sheets', 'v4', credentials=creds)
 
     request = service.spreadsheets().values().get(
-        spreadsheetId='1PXnzERgnmdCsHtjy9EZN-ppB4VoMcvLGMCURiPCXjs8', range='Design')
+        spreadsheetId='1aDZv-A8JRGZbtVFugOsB6w-001pni8DDIoj1IXdRcMQ', range='Design')
 
     data = request.execute()
 
@@ -47,4 +47,8 @@ def test_main():
 
     values = CellValue.to_cell_values(data['values'])
 
-    parse_parts(values)
+    parsed = parse_parts(values)
+    for p in parsed:
+        print(p)
+
+    # TODO: create a graph, find leaves, find all intermediate strains

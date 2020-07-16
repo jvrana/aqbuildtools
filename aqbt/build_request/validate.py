@@ -52,30 +52,34 @@ def validate_part(part: Part):
 
 def validate_part_list(parts: List[Part], fast_fail: bool = True):
     for part in parts:
-        validate_part(part)
+        with parsing_location(part['name']):
+            validate_part(part)
 
     composite_parts = [part for part in parts if part["partType"] == "composite part"]
     basic_parts = [part for part in parts if part["partType"] == "basic part"]
 
+    # {name: part} dictionary
     part_dict = {}
 
     # check for name conflicts
     for part in basic_parts + composite_parts:
-        if part["name"] in part_dict:
+        if part["name"].lower() in part_dict:
             with parsing_location(part["name"]):
                 raise BuildRequestParsingError(
                     "Part name conflict for {}".format(part["name"])
                 )
         else:
-            part_dict[part["name"]] = part
+            part_dict[part["name"].lower()] = part
 
     # check for references
     for composite_part in composite_parts:
         for sub_part_name in composite_part["parts"]:
-            if sub_part_name not in part_dict:
+            if sub_part_name.lower() not in part_dict:
                 with parsing_location(composite_part["name"]):
                     raise BuildRequestParsingError(
                         "Subpart '{}.{}' is missing a definition".format(
                             composite_part["name"], sub_part_name
                         )
                     )
+
+
