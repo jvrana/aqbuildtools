@@ -1,0 +1,16 @@
+[aquarium.production]
+login = 'vrana'
+password = 'Mountain5'
+url = 'http://52.27.43.242'
+
+[benchling.production]
+apikey = 'sk_op57DfvaGDESTkPysNb57THFy5GO1'
+initials = 'UWBF'
+schema = 'Aquarium DNA'
+prefix = 'aq'
+folder_id = 'lib_T8kMFyhv'
+id = 'src_KE6uFvex'
+
+[session.default]
+aquarium = 'production'
+benchling = 'production'
