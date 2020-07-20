@@ -55,7 +55,7 @@ Name:,strong_exp_med_ad_tet,medium_exp_med_ad_tet,weak_exp_med_ad_tet,strong_exp
 Description:,Tet protein is driven by a strong promoter and has a medium strength activation domain,Tet protein is driven by a medium promoter and has a medium strength activation domain,Tet protein is driven by a weak promoter and has a medium strength activation domain,Tet protein is driven by a strong promoter and has a strong activation domain,Tet protein is driven by a medium promoter and has a strong activation domain
 Strain (optional),,,,,
 Integration Locus (optional),,,,,
-Parts:,pTDH3,pRPL18B,pREV1,pTDH3,pRPL18B
+Part Sequence:,pTDH3,pRPL18B,pREV1,pTDH3,pRPL18B
 "Add parts for each composite in a vertical list, from 5' top to 3' bottom; you can add more rows and more collections if you need",VP64,VP64,VP64,VPR,VPR
 ,rtTA,rtTA,rtTA,rtTA,rtTA
 ,tADH1,tADH1,tADH1,tADH1,tADH1
@@ -68,7 +68,7 @@ Name:,weak_exp_strong_ad_tet,strong_exp_med_ad_zev,medium_exp_med_ad_zev,weak_ex
 Description:,Tet protein is driven by a weak promoter and has a strong activation domain,Zev protein is driven by a strong promoter and has a medium strength activation domain,Zev protein is driven by a medium promoter and has a medium strength activation domain,Zev protein is driven by a weak promoter and has a medium strength activation domain,Zev protein is driven by a strong promoter and has a strong activation domain
 Strain (optional),,,,,
 Integration Locus (optional),,,,,
-Parts:,pREV1,pTDH3,pRPL18B,pREV1,pTDH3
+Part Sequence:,pREV1,pTDH3,pRPL18B,pREV1,pTDH3
 ,VPR,VP64,VP64,VP64,VPR
 ,rtTA,Zev4,Zev4,Zev4,Zev4
 ,tADH1,tADH1,tADH1,tADH1,tADH1
@@ -81,7 +81,7 @@ Name:,medium_exp_strong_ad_zev,weak_exp_strong_ad_zev,,,
 Description:,Zev protein is driven by a medium promoter and has a strong activation domain,Zev protein is driven by a weak promoter and has a strong activation domain,,,
 Strain (optional),,,,,
 Integration Locus (optional),,,,,
-Parts:,pRPL18B,pREV1,,,
+Part Sequence:,pRPL18B,pREV1,,,
 ,VPR,VPR,,,
 ,Zev4,Zev4,,,
 ,tADH1,tADH1,,,

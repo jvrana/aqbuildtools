@@ -11,7 +11,8 @@ from typing import TypeVar, Union, Callable, List, Iterable, Tuple, Optional, Di
 from itertools import tee
 import re
 from .cell_value import CellValue
-from .exceptions import parsing_location
+from .exceptions import parsing_location, BuildRequestParsingException
+from .validate import validate_part_list
 
 T = TypeVar("T")
 
@@ -35,6 +36,16 @@ class Keys:
 # Utilities
 ##########################
 
+def _is_nan(x: Union[str, CellValue]) -> bool:
+    if x is None:
+        return True
+    elif x.strip().lower() == 'nan':
+        return True
+    elif x.strip().lower() == 'None':
+        return True
+    elif x.strip() == '':
+        return True
+    return False
 
 def _dispatch_match_fxn(
     match: Union[Callable, str, re.Pattern]
@@ -91,18 +102,18 @@ def _partition(x: List, indices: Union[None, int]) -> List:
         yield x[a:b]
 
 
-def _cell_is_empty(cell: str):
-    return cell.strip() == "" or cell.strip() == "nan"
+def cell_is_empty(cell: str):
+    return _is_nan(cell)
 
 
-def _is_empty(row: List[str]) -> bool:
+def row_is_empty(row: List[str]) -> bool:
     """check that a row of string values is empty"""
-    return all(_cell_is_empty(c) for c in row)
+    return all(cell_is_empty(c) for c in row)
 
 
-def remove_empty(values: List[List[str]]) -> List[List[str]]:
+def remove_empties_from_row(values: List[List[str]]) -> List[List[str]]:
     """Remove empty rows"""
-    return [row for row in values if not _is_empty(row)]
+    return [row for row in values if not row_is_empty(row)]
 
 
 def is_square(values: List[List[T]]) -> bool:
@@ -130,20 +141,20 @@ def transpose(values: List[List[T]]) -> List[List[T]]:
 
 def extract_meta(values: List[List[CellValue]]) -> List[List[CellValue]]:
     r1 = find_value(values, Keys.Basic_DNA_Parts)[0][0]
-    return remove_empty(values[:r1])
+    return remove_empties_from_row(values[:r1])
 
 
 def extract_basic_parts(values: List[List[Union[str, int]]]) -> List[List[CellValue]]:
     r1 = find_value(values, Keys.Basic_DNA_Parts)[0][0]
     r2 = find_value(values, Keys.Composite_DNA_Parts)[0][0]
-    return remove_empty(values[r1:r2])
+    return remove_empties_from_row(values[r1:r2])
 
 
 def extract_composite_parts(
     values: List[List[Union[str, int]]]
 ) -> List[List[CellValue]]:
     r1 = find_value(values, Keys.Composite_DNA_Parts)[0][0]
-    return remove_empty(values[r1:])
+    return remove_empties_from_row(values[r1:])
 
 
 ########################
@@ -167,6 +178,7 @@ def values_to_json(
     return data
 
 
+# TODO: rename this method
 def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     composite = extract_composite_parts(values)
 
@@ -186,11 +198,25 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     def _make_part_list(parsed_json):
         with parsing_location(parsed_json["Name:"][0][0]):
             names = transpose(parsed_json["Name:"])
-        with parsing_location(parsed_json["Parts:"][0][0]):
-            parts = transpose(parsed_json["Parts:"])
+
+        if 'Parts:' in parsed_json:
+            # TODO: should this be covered by the jsonschema?
+            # if 'Part Sequence:' in parsed_json:
+            #     with parsing_location(parsed_json['Parts:'][0][0]):
+            #         raise BuildRequestParsingException("Both 'Parts:' and 'Part Sequence:' cannot be "
+            #                                            "defined for a composite part")
+            with parsing_location(parsed_json["Parts:"][0][0]):
+                parts = transpose(parsed_json["Parts:"])
+            part_type = 'composite part'
+        # if 'Part Sequence:' in parsed_json:
+        #     with parsing_location(parsed_json['Part Sequence:'][0][0]):
+        #         parts = transpose(parsed_json['Part Sequence:'])
+        #     part_type = 'composite part'
         with parsing_location(parsed_json["Description:"][0][0]):
             descriptions = transpose(parsed_json["Description:"])
         collection_name = parsed_json["Collection Name:"][0][0]
+
+        parts = [[p for p in row if not _is_nan(p)] for row in parts]
 
         part_list = []
         for _name, _description, _parts in list(zip(names, descriptions, parts)):
@@ -198,7 +224,7 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
                 {
                     "name": _name[0],
                     "collection": collection_name,
-                    "partType": "composite part",
+                    "partType": part_type,
                     "description": _description[0],
                     "parts": _parts,
                 }
@@ -214,9 +240,9 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     part_list = []
     for part in part_list_old:
         if (
-            part["name"] == "nan"
-            and part["description"] == "nan"
-            and part["parts"] in [[], ["nan"]]
+            _is_nan(part['name']) and
+            _is_nan(part['description']) and
+                part["parts"] in [[], ["nan"], ["none"], ["None"], [""]]
         ):
             continue
         else:
@@ -225,37 +251,48 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     return part_list
 
 
+def _get_and_strip(d: Dict[str, str], k: str, default: T) -> Union[T, str]:
+    """Get value from dictionary and strip. Else, return default"""
+    if k in d:
+        if not isinstance(d[k], str):
+            return default
+        else:
+            cv = CellValue(d[k].strip())
+            cv.add_rc(d[k].row, d[k].col)
+            return cv
+
+
 def parse_basic_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     basic = extract_basic_parts(values)
 
     # remove empty rows
-    basic = [b for b in basic if b[0] != "nan"]
+    basic = remove_empties_from_row(basic)
 
     part_json = pd.DataFrame(basic[2:], columns=basic[1]).T.to_dict()
 
     part_json_list = []
     for data in part_json.values():
         new_data = {
-            "name": data[Keys.Part_Name.strip()],
+            "name": _get_and_strip(data, Keys.Part_Name, None),
             "collection": "basic DNA parts",
             "partType": "basic part",
-            "description": data[Keys.Description].strip(),
-            "sequence": data[Keys.Sequence].strip(),
+            "description": _get_and_strip(data, Keys.Description, None),
+            "sequence": _get_and_strip(data, Keys.Sequence, None),
         }
 
         length = data[Keys.Length]
-        if length and not length == "nan":
+        if length and not _is_nan(length):
             try:
                 new_data["length"] = int(length)
             except ValueError:
                 pass
 
         source = data[Keys.Source]
-        if source and not source == "nan":
+        if source and not _is_nan(source):
             new_data["source"] = source.strip()
 
         role = data[Keys.Role]
-        if role and not role == "nan":
+        if role and not _is_nan(role):
             new_data["roles"] = [role.strip()]
 
         part_json_list.append(new_data)
@@ -265,4 +302,6 @@ def parse_basic_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
 def parse_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     basic_parts = parse_basic_parts(values)
     composite_parts = parse_composite_parts(values)
-    return basic_parts + composite_parts
+    all_parts = basic_parts + composite_parts
+    validate_part_list(all_parts)
+    return all_parts

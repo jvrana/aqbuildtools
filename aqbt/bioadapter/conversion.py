@@ -275,7 +275,7 @@ def benchling_to_json(dna: DNASequence) -> dict:
 def json_to_benchling(data: dict, benchling_session, benchling_folder_id=None):
     if benchling_folder_id:
         data = deepcopy(data)
-        data["folderId"] = benchling_folder_id
+        data["folder_id"] = benchling_folder_id
     return benchling_session.DNASequence.load(data)
 
 

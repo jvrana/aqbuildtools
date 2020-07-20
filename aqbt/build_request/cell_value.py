@@ -18,3 +18,21 @@ class CellValue(str):
                 cell_val.add_rc(r, c)
                 new_values[-1].append(cell_val)
         return new_values
+
+    def _apply(self, fxn_name: str, args = None, kwargs = None):
+        if args is None:
+            args = ()
+        if kwargs is None:
+            kwargs = {}
+        x = CellValue(getattr(super(), fxn_name)(*args, **kwargs))
+        x.add_rc(*self.rc())
+        return x
+
+    def lower(self):
+        return self._apply('lower')
+
+    def upper(self):
+        return self._apply('upper')
+
+    def strip(self):
+        return self._apply('strip')

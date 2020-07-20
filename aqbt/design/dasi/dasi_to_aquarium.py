@@ -29,14 +29,14 @@ def inventory_df(registry=None, force_new: bool = False, filepath: str = None):
         db = KlavinsLabDnaDb(registry)
         db.build(dna_limit=None, primer_limit=None)
 
-        df = db.df[db.df["is_available"] is True]
+        df = db.df[db.df["is_available"] == True]
         df.drop("benchling_sequence", axis=1, inplace=True)
         with open(filepath, "wb") as f:
             pickle.dump(df, f)
 
     # clean
     df["trashed"] = [s.name.lower().startswith("trashed") for s in df["sample"]]
-    df = df[df["is_available"] is True]
+    df = df[df["is_available"] == True]
     df = df[~df["trashed"]]
     return df
 
