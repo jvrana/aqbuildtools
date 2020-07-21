@@ -1,13 +1,13 @@
 {
   "metadata": {
     "program": "dasi",
-    "version": "0.0.21",
+    "version": "0.0.21a1",
     "execution_trace": {
       "compile": {
         "__name__": "compile",
         "__spec__": "FullArgSpec(args=['self', 'n_jobs', 'post_processing_kwargs'], varargs=None, varkw=None, defaults=(10, None), kwonlyargs=[], kwonlydefaults=None, annotations={'n_jobs': <class 'int'>, 'post_processing_kwargs': typing.Dict})",
-        "start": "2020-07-21 07:03:44.579428",
-        "end": "2020-07-21 07:06:49.781327",
+        "start": "2020-07-21 09:21:15.049728",
+        "end": "2020-07-21 09:24:17.769234",
         "args": {
           "n_jobs": 6,
           "post_processing_kwargs": null
@@ -17,8 +17,8 @@
       "optimize": {
         "__name__": "optimize",
         "__spec__": "FullArgSpec(args=['self', 'n_paths', 'n_jobs'], varargs=None, varkw=None, defaults=(3, 10), kwonlyargs=[], kwonlydefaults=None, annotations={'return': typing.Dict[str, dasi.design.design.DesignResult], 'n_paths': <class 'int'>, 'n_jobs': <class 'int'>})",
-        "start": "2020-07-21 07:06:49.781447",
-        "end": "2020-07-21 07:07:29.300317",
+        "start": "2020-07-21 09:24:17.769362",
+        "end": "2020-07-21 09:25:00.436235",
         "args": {
           "n_paths": 1,
           "n_jobs": 6
@@ -28,7 +28,7 @@
     }
   },
   "designs": {
-    "9456b123-0391-4a61-907a-4cf74f5c8028": {
+    "1088e2e5-196d-412f-8dc6-41308bdc2810": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -138,12 +138,7 @@
             }
           ],
           "final_assembly_reaction": [
-            4,
-            6,
-            9,
-            28,
-            29,
-            30
+            0
           ]
         }
       ],
@@ -486,7 +481,7 @@
         "isCircular": true
       }
     },
-    "0c694195-fcbb-43b3-93bc-7dd25626ab7f": {
+    "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -580,11 +575,7 @@
             }
           ],
           "final_assembly_reaction": [
-            34,
-            37,
-            47,
-            49,
-            52
+            32
           ]
         }
       ],
@@ -975,7 +966,7 @@
         "isCircular": true
       }
     },
-    "b428c862-c713-4f24-9662-5330dbef7179": {
+    "b6bf91eb-2b68-4478-9522-c9cf1a4cb1ea": {
       "compiled": true,
       "run": true,
       "success": false,
@@ -1367,7 +1358,7 @@
         "isCircular": true
       }
     },
-    "736e0add-9feb-40ba-ba35-672c55028b8c": {
+    "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -1445,10 +1436,7 @@
             }
           ],
           "final_assembly_reaction": [
-            11,
-            54,
-            55,
-            56
+            10
           ]
         }
       ],
@@ -1735,7 +1723,7 @@
         "isCircular": true
       }
     },
-    "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340": {
+    "1325c171-e6c9-4975-8c6d-c80bd44e1705": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -1813,10 +1801,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            57
+            12
           ]
         }
       ],
@@ -2103,7 +2088,7 @@
         "isCircular": true
       }
     },
-    "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3": {
+    "93a4af9a-c85e-461b-aec8-8593add6294a": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -2229,13 +2214,7 @@
             }
           ],
           "final_assembly_reaction": [
-            4,
-            53,
-            58,
-            9,
-            28,
-            29,
-            30
+            1
           ]
         }
       ],
@@ -2578,7 +2557,7 @@
         "isCircular": true
       }
     },
-    "181cc88d-dd0c-4669-87dc-0a2ee305d025": {
+    "169cbdf0-b9fa-4fcb-8445-7caf3b08338e": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -2704,13 +2683,7 @@
             }
           ],
           "final_assembly_reaction": [
-            59,
-            53,
-            58,
-            9,
-            28,
-            29,
-            31
+            7
           ]
         }
       ],
@@ -3053,7 +3026,7 @@
         "isCircular": true
       }
     },
-    "fdd21f70-9fac-4e95-85fa-38e2039a2a6d": {
+    "4a1345f5-7bd6-4d9e-a6b8-9d821c25c7bd": {
       "compiled": true,
       "run": true,
       "success": false,
@@ -3445,7 +3418,7 @@
         "isCircular": true
       }
     },
-    "11037f24-e5e8-470b-be76-75d6bd666de3": {
+    "764efb00-1842-4337-aae4-fe614fc28f3e": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -3539,11 +3512,7 @@
             }
           ],
           "final_assembly_reaction": [
-            34,
-            38,
-            60,
-            49,
-            52
+            33
           ]
         }
       ],
@@ -3934,7 +3903,7 @@
         "isCircular": true
       }
     },
-    "404641f9-5eac-4398-9294-e713113222cd": {
+    "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -4012,10 +3981,7 @@
             }
           ],
           "final_assembly_reaction": [
-            23,
-            54,
-            55,
-            61
+            22
           ]
         }
       ],
@@ -4302,7 +4268,7 @@
         "isCircular": true
       }
     },
-    "619562d0-7757-423f-baca-78c4008dcc3c": {
+    "e3714884-1c13-4cb9-ae9e-058a3c0f5550": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -4380,10 +4346,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            62
+            13
           ]
         }
       ],
@@ -4670,7 +4633,7 @@
         "isCircular": true
       }
     },
-    "6437060a-a427-45fb-9196-989fa124dae5": {
+    "4d50c363-7cb9-4f35-bf45-36a4d5598f71": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -4748,10 +4711,7 @@
             }
           ],
           "final_assembly_reaction": [
-            51,
-            63,
-            64,
-            65
+            50
           ]
         }
       ],
@@ -5142,7 +5102,7 @@
         "isCircular": true
       }
     },
-    "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7": {
+    "c79f1599-67cb-47a7-9cc5-fef8111e54b9": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -5236,11 +5196,7 @@
             }
           ],
           "final_assembly_reaction": [
-            66,
-            44,
-            60,
-            49,
-            52
+            43
           ]
         }
       ],
@@ -5631,7 +5587,7 @@
         "isCircular": true
       }
     },
-    "25410d5e-3aea-40c8-8b06-fd14e0ff0244": {
+    "cb707de5-21f9-4821-8cbb-43cf1cbd27db": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -5709,10 +5665,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            67
+            14
           ]
         }
       ],
@@ -5999,7 +5952,7 @@
         "isCircular": true
       }
     },
-    "71975728-05b5-48f0-b3ad-c8b7b7ee93eb": {
+    "0ea3b2a4-e5d4-4501-99ad-33145bbb6580": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -6077,10 +6030,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            68
+            15
           ]
         }
       ],
@@ -6367,7 +6317,7 @@
         "isCircular": true
       }
     },
-    "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f": {
+    "6242622f-7a42-4474-b11e-3c0fcb566f09": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -6461,11 +6411,7 @@
             }
           ],
           "final_assembly_reaction": [
-            69,
-            46,
-            60,
-            49,
-            52
+            45
           ]
         }
       ],
@@ -6856,7 +6802,7 @@
         "isCircular": true
       }
     },
-    "aad5a898-ad14-4aac-88cf-644739ce19cc": {
+    "c2e7b6d5-8eca-423b-8042-7f692209fc0b": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -6966,12 +6912,7 @@
             }
           ],
           "final_assembly_reaction": [
-            4,
-            71,
-            27,
-            72,
-            29,
-            30
+            2
           ]
         }
       ],
@@ -7314,7 +7255,7 @@
         "isCircular": true
       }
     },
-    "ad10d89e-ce5b-4622-a6d6-78a548d15227": {
+    "47a64231-947c-4e50-889c-68f3bae47425": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -7408,11 +7349,7 @@
             }
           ],
           "final_assembly_reaction": [
-            66,
-            40,
-            47,
-            49,
-            52
+            39
           ]
         }
       ],
@@ -7803,7 +7740,7 @@
         "isCircular": true
       }
     },
-    "e7816fab-89d3-4a1d-8e45-f404f7c09968": {
+    "4e718ac6-97fe-45ee-919f-f2266003ef85": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -7913,12 +7850,7 @@
             }
           ],
           "final_assembly_reaction": [
-            59,
-            73,
-            9,
-            28,
-            29,
-            31
+            8
           ]
         }
       ],
@@ -8261,7 +8193,7 @@
         "isCircular": true
       }
     },
-    "719052d1-70c8-4f52-96cb-bb8316d30724": {
+    "62092e02-859b-4995-a545-8253239c9fac": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -8339,10 +8271,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            74
+            16
           ]
         }
       ],
@@ -8629,7 +8558,7 @@
         "isCircular": true
       }
     },
-    "19b90e70-04b7-4d44-ac2a-d308f6ab7658": {
+    "fdeef2fd-1054-4467-9243-35cc7a501604": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -8739,12 +8668,7 @@
             }
           ],
           "final_assembly_reaction": [
-            59,
-            6,
-            9,
-            28,
-            29,
-            31
+            5
           ]
         }
       ],
@@ -9087,7 +9011,7 @@
         "isCircular": true
       }
     },
-    "37a9720a-87b3-470f-be62-5db7662ac8a6": {
+    "8c94767f-a1e3-4c56-b60a-00dcbc2f2147": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -9165,10 +9089,7 @@
             }
           ],
           "final_assembly_reaction": [
-            36,
-            75,
-            49,
-            52
+            35
           ]
         }
       ],
@@ -9559,7 +9480,7 @@
         "isCircular": true
       }
     },
-    "3ad1b43e-91ae-4947-a368-66a8448993b8": {
+    "669a6c40-0dfa-4b86-b8a2-3a65e3be13af": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -9637,10 +9558,7 @@
             }
           ],
           "final_assembly_reaction": [
-            70,
-            75,
-            49,
-            52
+            48
           ]
         }
       ],
@@ -10031,7 +9949,7 @@
         "isCircular": true
       }
     },
-    "1c6725d9-ec3f-4105-939d-07447684ac97": {
+    "da9d5672-a525-474c-8f1f-7e6909c1590b": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -10109,10 +10027,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            76
+            17
           ]
         }
       ],
@@ -10399,7 +10314,7 @@
         "isCircular": true
       }
     },
-    "a0d435bb-3485-4fce-8aea-f58fd7501734": {
+    "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -10509,12 +10424,7 @@
             }
           ],
           "final_assembly_reaction": [
-            4,
-            73,
-            9,
-            28,
-            29,
-            30
+            3
           ]
         }
       ],
@@ -10857,7 +10767,7 @@
         "isCircular": true
       }
     },
-    "c5a7233a-8748-4780-afc6-780edc1e6f50": {
+    "bfe95e60-5100-4641-a224-622e0e7bbe39": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -10935,10 +10845,7 @@
             }
           ],
           "final_assembly_reaction": [
-            25,
-            54,
-            55,
-            77
+            24
           ]
         }
       ],
@@ -11225,7 +11132,7 @@
         "isCircular": true
       }
     },
-    "fc7ad84e-934a-4851-ae38-d1a31d8f19cb": {
+    "f3bdca24-6606-4f37-b83b-1fe78bfb94eb": {
       "compiled": true,
       "run": true,
       "success": false,
@@ -11617,7 +11524,7 @@
         "isCircular": true
       }
     },
-    "f69c041c-281e-4eee-ad3b-6752a9a55fc4": {
+    "712ecc5c-134c-461d-b847-15feb8c3dcfa": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -11727,12 +11634,7 @@
             }
           ],
           "final_assembly_reaction": [
-            59,
-            71,
-            27,
-            72,
-            29,
-            31
+            26
           ]
         }
       ],
@@ -12075,7 +11977,7 @@
         "isCircular": true
       }
     },
-    "78ee1383-e45c-4fa7-b497-39cca9844653": {
+    "921ab6d5-ae07-4974-9fa9-a90f234a9471": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -12169,11 +12071,7 @@
             }
           ],
           "final_assembly_reaction": [
-            69,
-            42,
-            47,
-            49,
-            52
+            41
           ]
         }
       ],
@@ -12564,7 +12462,7 @@
         "isCircular": true
       }
     },
-    "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4": {
+    "b11e1757-064f-4a70-9828-16b3066eb967": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -12642,10 +12540,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            78
+            18
           ]
         }
       ],
@@ -12932,7 +12827,7 @@
         "isCircular": true
       }
     },
-    "eebf69e9-350a-493e-b574-72400b0f88f5": {
+    "3c4fc951-bd33-4a2e-b322-1ed94dce15b8": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -13010,10 +12905,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            79
+            19
           ]
         }
       ],
@@ -13300,7 +13192,7 @@
         "isCircular": true
       }
     },
-    "ce359d2b-1995-4ecf-a840-f9e2934cc567": {
+    "6471bc45-26d3-420b-9de4-ab865b4b8792": {
       "compiled": true,
       "run": true,
       "success": true,
@@ -13378,10 +13270,7 @@
             }
           ],
           "final_assembly_reaction": [
-            21,
-            54,
-            55,
-            80
+            20
           ]
         }
       ],
@@ -14009,7 +13898,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         }
       ],
@@ -14357,7 +14246,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -14705,7 +14594,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -15053,7 +14942,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         }
       ],
@@ -15119,19 +15008,19 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -15484,7 +15373,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -15550,11 +15439,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -15905,7 +15794,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         }
       ],
@@ -16253,7 +16142,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         }
       ],
@@ -16287,27 +16176,27 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -16341,7 +16230,7 @@
         "HAIRPIN_TH": 38.48822372520124,
         "END_STABILITY": 6.13,
         "OVERHANG": "",
-        "SUBJECT_KEY": "a7c9ac40-4941-4639-941c-ca082c6b9745"
+        "SUBJECT_KEY": "b96cfac2-4f4e-4487-bbd7-b6c0a1e6ea00"
       },
       "sequence": {
         "bases": "ATTAGTTATGTCACGCTTACATTCACGCCC",
@@ -16354,27 +16243,27 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -16666,7 +16555,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         }
       ],
@@ -16716,7 +16605,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         }
       ],
@@ -17010,7 +16899,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         }
       ],
@@ -17302,7 +17191,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -17594,7 +17483,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         }
       ],
@@ -17886,7 +17775,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         }
       ],
@@ -18178,7 +18067,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         }
       ],
@@ -18470,7 +18359,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         }
       ],
@@ -18762,7 +18651,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         }
       ],
@@ -19054,7 +18943,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         }
       ],
@@ -19346,7 +19235,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         }
       ],
@@ -19388,39 +19277,39 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -19722,7 +19611,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         }
       ],
@@ -19764,7 +19653,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         }
       ],
@@ -20058,7 +19947,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         }
       ],
@@ -20100,7 +19989,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         }
       ],
@@ -20129,7 +20018,7 @@
         "HAIRPIN_TH": 38.006257959698985,
         "END_STABILITY": 4.46,
         "OVERHANG": "",
-        "SUBJECT_KEY": "857430da-b061-44be-bc4a-206bb3f4ec1a"
+        "SUBJECT_KEY": "b9cd26c3-9739-4e5b-95cd-0bdf3bd46321"
       },
       "sequence": {
         "bases": "GGCGGGGTTATTACGACATcaaattaaagccttcgagcgtccc",
@@ -20142,75 +20031,75 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -20562,7 +20451,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         }
       ],
@@ -20612,11 +20501,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -20889,35 +20778,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21040,27 +20929,27 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21117,35 +21006,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21181,7 +21070,7 @@
         "HAIRPIN_TH": 30.525485133673783,
         "END_STABILITY": 4.94,
         "OVERHANG": "",
-        "SUBJECT_KEY": "935ffc4a-f0b7-47c3-8d54-7ed5c283980c"
+        "SUBJECT_KEY": "83a9e06d-95d4-4c61-9181-f404e5a24bf0"
       },
       "sequence": {
         "bases": "CCAGTGCTGCAATGATACCGCGAGACCCACG",
@@ -21194,35 +21083,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21249,7 +21138,7 @@
         "HAIRPIN_TH": 35.63421242404678,
         "END_STABILITY": 3.35,
         "OVERHANG": "GTTTAA",
-        "SUBJECT_KEY": "fcdbe17a-3ce1-4679-93bd-669d666c1ca6"
+        "SUBJECT_KEY": "1e4c6110-03ee-4f15-804f-939de90b70f8"
       },
       "sequence": {
         "bases": "GTTTAAACtatggtgcactctcagtacaatctgctctg",
@@ -21262,35 +21151,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21544,35 +21433,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21662,19 +21551,19 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -21769,19 +21658,19 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21813,7 +21702,7 @@
         "HAIRPIN_TH": 36.12398099615291,
         "END_STABILITY": 3.86,
         "OVERHANG": "attgtactgagagtgcaccatagtttaaac",
-        "SUBJECT_KEY": "e7209d26-d1f7-4c2f-bebf-d7d35eb57a58"
+        "SUBJECT_KEY": "9df271ab-095a-49f2-a397-9160aadc07ee"
       },
       "sequence": {
         "bases": "attgtactgagagtgcaccatagtttaaactgtggctgtggtttcagg",
@@ -21826,35 +21715,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -21896,19 +21785,19 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -22010,35 +21899,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -22435,7 +22324,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -22831,7 +22720,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         }
       ],
@@ -22873,11 +22762,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -23276,7 +23165,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -23326,7 +23215,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -23370,15 +23259,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -23421,11 +23310,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -23550,15 +23439,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -23601,7 +23490,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -23645,7 +23534,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         }
       ],
@@ -23689,11 +23578,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -24090,7 +23979,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         }
       ],
@@ -24132,7 +24021,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         }
       ],
@@ -24530,7 +24419,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -24572,7 +24461,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -24615,15 +24504,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -25021,7 +24910,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -25063,7 +24952,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -25461,7 +25350,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         }
       ],
@@ -25503,7 +25392,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         }
       ],
@@ -25679,27 +25568,27 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -25778,15 +25667,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -26186,7 +26075,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         }
       ],
@@ -26308,35 +26197,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -26741,7 +26630,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -26863,7 +26752,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -26892,7 +26781,7 @@
         "HAIRPIN_TH": 50.12887989517867,
         "END_STABILITY": 1.4,
         "OVERHANG": "",
-        "SUBJECT_KEY": "995aa51d-f8e1-4e4d-99ea-9456019539de"
+        "SUBJECT_KEY": "139936e7-d611-4005-95b8-2f926a40a302"
       },
       "sequence": {
         "bases": "TGATACCGTCGACCTCGAGTCAatta",
@@ -26905,75 +26794,75 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -27002,7 +26891,7 @@
         "HAIRPIN_TH": 35.24479120417743,
         "END_STABILITY": 4.4,
         "OVERHANG": "",
-        "SUBJECT_KEY": "38f680a5-3a85-4765-9627-2624a2403387"
+        "SUBJECT_KEY": "89394799-2741-4cfa-a81a-5f6227c8b97b"
       },
       "sequence": {
         "bases": "ACAGCTATGACCATGGTTTAAACTGGAGCCATAATGACAGC",
@@ -27015,35 +26904,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -27277,35 +27166,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -27424,39 +27313,39 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -27485,7 +27374,7 @@
         "HAIRPIN_TH": 0.0,
         "END_STABILITY": 3.82,
         "OVERHANG": "",
-        "SUBJECT_KEY": "3f393f04-f7e9-4835-b60c-1cb53f6c2aca"
+        "SUBJECT_KEY": "aa99ef61-0428-482f-88b6-cb20c23d4b4f"
       },
       "sequence": {
         "bases": "TGGCTCCAGTTTAAACCATGGTCATAGCTGTTTCCTGTGTG",
@@ -27498,35 +27387,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -27567,35 +27456,35 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -27636,7 +27525,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         }
       ],
@@ -27670,11 +27559,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -27979,59 +27868,59 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -28125,51 +28014,51 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -28209,7 +28098,7 @@
         "HAIRPIN_TH": 0.0,
         "END_STABILITY": 5.73,
         "OVERHANG": "CGCTCGAAGGCTTTAATTTG",
-        "SUBJECT_KEY": "b622e649-5e32-444d-9089-126aa3342d62"
+        "SUBJECT_KEY": "355b8761-19a6-4e01-95aa-fbe5aacd2554"
       },
       "sequence": {
         "bases": "CGCTCGAAGGCTTTAATTTGatgtcgtaataaccccgccccg",
@@ -28222,51 +28111,51 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -28293,7 +28182,7 @@
         "HAIRPIN_TH": 34.17384883092666,
         "END_STABILITY": 3.33,
         "OVERHANG": "",
-        "SUBJECT_KEY": "e20f1d1d-a912-4fe4-a1f9-6850b58cb5b4"
+        "SUBJECT_KEY": "ab38deaa-27d9-4dd7-8c5f-f0f145e513e3"
       },
       "sequence": {
         "bases": "CTATTAactggcgaactacttactctagcttcccggcaaca",
@@ -28306,51 +28195,51 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -28468,51 +28357,51 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -28654,51 +28543,51 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -28801,7 +28690,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         }
       ],
@@ -28901,7 +28790,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         }
       ],
@@ -28944,11 +28833,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -28989,11 +28878,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -29051,11 +28940,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -29124,19 +29013,19 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -29182,19 +29071,19 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -29235,15 +29124,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -29319,15 +29208,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -29372,7 +29261,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         }
       ],
@@ -29470,7 +29359,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         }
       ],
@@ -29570,7 +29459,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -29599,7 +29488,7 @@
         "HAIRPIN_TH": 39.39626593023098,
         "END_STABILITY": 3.06,
         "OVERHANG": "",
-        "SUBJECT_KEY": "7aba7d70-98ec-4257-94e5-1ede22b12303"
+        "SUBJECT_KEY": "1607ed39-cfe3-421a-926c-a7269503502c"
       },
       "sequence": {
         "bases": "GGATAACAATTTCACACAGGAAACAGCTATGAC",
@@ -29612,7 +29501,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -29722,7 +29611,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -29782,7 +29671,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -29811,7 +29700,7 @@
         "HAIRPIN_TH": 41.326652664546316,
         "END_STABILITY": 6.53,
         "OVERHANG": "CCTTAACCAGATTCGAAAAGCGG",
-        "SUBJECT_KEY": "3c8f7d6d-a7c6-4856-9fd1-e13e3f854deb"
+        "SUBJECT_KEY": "46c211b1-c20c-4297-9427-6dcca9751cb5"
       },
       "sequence": {
         "bases": "CCTTAACCAGATTCGAAAAGCGGCccttaaccagattcgaaaagcggc",
@@ -29824,7 +29713,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -29865,7 +29754,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -30295,7 +30184,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -30369,7 +30258,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -30413,11 +30302,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -30461,11 +30350,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -30506,11 +30395,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -30635,11 +30524,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -30681,11 +30570,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -30784,7 +30673,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         }
       ],
@@ -30884,7 +30773,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         }
       ],
@@ -30928,11 +30817,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -30985,7 +30874,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         }
       ],
@@ -31028,15 +30917,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -31078,11 +30967,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -31207,15 +31096,15 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -31258,11 +31147,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -31329,11 +31218,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -31377,11 +31266,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -31408,7 +31297,7 @@
         "HAIRPIN_TH": 38.006257959698985,
         "END_STABILITY": 4.46,
         "OVERHANG": "CGGGGCGGGGTTATTACGACAT",
-        "SUBJECT_KEY": "7e1addc9-ce2f-47a6-9f4d-2b2fd3a1592f"
+        "SUBJECT_KEY": "7cacf579-876a-40af-9a43-feacb1012b11"
       },
       "sequence": {
         "bases": "CGGGGCGGGGTTATTACGACATCAAATTAAAGCCTTCGAGCGTCCC",
@@ -31421,11 +31310,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -31547,11 +31436,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -31620,11 +31509,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         }
       ],
@@ -31725,7 +31614,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         }
       ],
@@ -31769,7 +31658,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -31843,11 +31732,11 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -31891,7 +31780,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         }
       ],
@@ -31989,7 +31878,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         }
       ],
@@ -32032,7 +31921,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         }
       ],
@@ -32122,7 +32011,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         }
       ],
@@ -32222,7 +32111,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         }
       ],
@@ -32322,7 +32211,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         }
       ],
@@ -32422,7 +32311,7 @@
       },
       "used_in_assemblies": [
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         }
       ],
@@ -32441,7 +32330,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         }
       ],
@@ -32468,7 +32357,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -32496,7 +32385,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -32523,7 +32412,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         }
       ],
@@ -32550,19 +32439,19 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -32582,7 +32471,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -32609,11 +32498,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -32633,7 +32522,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         }
       ],
@@ -32661,7 +32550,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         }
       ],
@@ -32688,27 +32577,27 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -32732,7 +32621,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         }
       ],
@@ -32757,7 +32646,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         }
       ],
@@ -32781,7 +32670,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         }
       ],
@@ -32806,7 +32695,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -32831,7 +32720,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         }
       ],
@@ -32856,7 +32745,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         }
       ],
@@ -32881,7 +32770,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         }
       ],
@@ -32906,7 +32795,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         }
       ],
@@ -32931,7 +32820,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         }
       ],
@@ -32956,7 +32845,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         }
       ],
@@ -32981,7 +32870,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         }
       ],
@@ -33006,39 +32895,39 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -33062,7 +32951,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         }
       ],
@@ -33087,7 +32976,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         }
       ],
@@ -33111,7 +33000,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         }
       ],
@@ -33136,7 +33025,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         }
       ],
@@ -33160,7 +33049,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         }
       ],
@@ -33187,11 +33076,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -33215,27 +33104,27 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -33255,35 +33144,35 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -33307,19 +33196,19 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "1088e2e5-196d-412f-8dc6-41308bdc2810",
           "assembly": 0
         },
         {
-          "design_key": "9456b123-0391-4a61-907a-4cf74f5c8028",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         },
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         },
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -33343,19 +33232,19 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -33379,7 +33268,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -33405,7 +33294,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         }
       ],
@@ -33431,11 +33320,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -33459,7 +33348,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -33484,7 +33373,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -33508,7 +33397,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         }
       ],
@@ -33532,7 +33421,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         }
       ],
@@ -33556,7 +33445,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         }
       ],
@@ -33582,7 +33471,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         }
       ],
@@ -33606,7 +33495,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -33632,7 +33521,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -33656,7 +33545,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -33682,7 +33571,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -33706,7 +33595,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         }
       ],
@@ -33732,7 +33621,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         }
       ],
@@ -33756,15 +33645,15 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -33784,7 +33673,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         }
       ],
@@ -33809,35 +33698,35 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -33861,7 +33750,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -33886,7 +33775,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -33910,35 +33799,35 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0c694195-fcbb-43b3-93bc-7dd25626ab7f",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "78acc573-6e18-4ab8-a66d-fb9a99ccf9c3",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -33962,11 +33851,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -33990,51 +33879,51 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -34058,51 +33947,51 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         },
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         },
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         },
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         },
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         },
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         },
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         },
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         },
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         },
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         },
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         },
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -34122,7 +34011,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "736e0add-9feb-40ba-ba35-672c55028b8c",
+          "design_key": "6f3dc5a2-2cbb-41f2-aa14-a64aa276b658",
           "assembly": 0
         }
       ],
@@ -34142,7 +34031,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "e64f8eb1-dcb5-4af4-833a-1e1f15e3d340",
+          "design_key": "1325c171-e6c9-4975-8c6d-c80bd44e1705",
           "assembly": 0
         }
       ],
@@ -34162,11 +34051,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0f70b3d0-c89c-4c0f-943e-7ef9b4d79cd3",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "93a4af9a-c85e-461b-aec8-8593add6294a",
           "assembly": 0
         }
       ],
@@ -34186,19 +34075,19 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "181cc88d-dd0c-4669-87dc-0a2ee305d025",
+          "design_key": "169cbdf0-b9fa-4fcb-8445-7caf3b08338e",
           "assembly": 0
         },
         {
-          "design_key": "19b90e70-04b7-4d44-ac2a-d308f6ab7658",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "fdeef2fd-1054-4467-9243-35cc7a501604",
           "assembly": 0
         }
       ],
@@ -34218,15 +34107,15 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "11037f24-e5e8-470b-be76-75d6bd666de3",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "764efb00-1842-4337-aae4-fe614fc28f3e",
           "assembly": 0
         },
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -34246,7 +34135,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "404641f9-5eac-4398-9294-e713113222cd",
+          "design_key": "ce54c92a-a051-40dc-ba4c-b8d9a98c2ccd",
           "assembly": 0
         }
       ],
@@ -34266,7 +34155,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "619562d0-7757-423f-baca-78c4008dcc3c",
+          "design_key": "e3714884-1c13-4cb9-ae9e-058a3c0f5550",
           "assembly": 0
         }
       ],
@@ -34286,7 +34175,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -34306,7 +34195,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -34330,7 +34219,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "6437060a-a427-45fb-9196-989fa124dae5",
+          "design_key": "4d50c363-7cb9-4f35-bf45-36a4d5598f71",
           "assembly": 0
         }
       ],
@@ -34350,11 +34239,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "4afb9f05-f01a-4fc6-b20b-ab4aaf3373a7",
+          "design_key": "47a64231-947c-4e50-889c-68f3bae47425",
           "assembly": 0
         },
         {
-          "design_key": "ad10d89e-ce5b-4622-a6d6-78a548d15227",
+          "design_key": "c79f1599-67cb-47a7-9cc5-fef8111e54b9",
           "assembly": 0
         }
       ],
@@ -34378,7 +34267,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "25410d5e-3aea-40c8-8b06-fd14e0ff0244",
+          "design_key": "cb707de5-21f9-4821-8cbb-43cf1cbd27db",
           "assembly": 0
         }
       ],
@@ -34398,7 +34287,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "71975728-05b5-48f0-b3ad-c8b7b7ee93eb",
+          "design_key": "0ea3b2a4-e5d4-4501-99ad-33145bbb6580",
           "assembly": 0
         }
       ],
@@ -34418,11 +34307,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "56a58c1d-07dc-4252-a0fc-ed81a6c9ca2f",
+          "design_key": "6242622f-7a42-4474-b11e-3c0fcb566f09",
           "assembly": 0
         },
         {
-          "design_key": "78ee1383-e45c-4fa7-b497-39cca9844653",
+          "design_key": "921ab6d5-ae07-4974-9fa9-a90f234a9471",
           "assembly": 0
         }
       ],
@@ -34446,7 +34335,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         }
       ],
@@ -34470,11 +34359,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -34494,11 +34383,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "aad5a898-ad14-4aac-88cf-644739ce19cc",
+          "design_key": "712ecc5c-134c-461d-b847-15feb8c3dcfa",
           "assembly": 0
         },
         {
-          "design_key": "f69c041c-281e-4eee-ad3b-6752a9a55fc4",
+          "design_key": "c2e7b6d5-8eca-423b-8042-7f692209fc0b",
           "assembly": 0
         }
       ],
@@ -34518,11 +34407,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "a0d435bb-3485-4fce-8aea-f58fd7501734",
+          "design_key": "4e718ac6-97fe-45ee-919f-f2266003ef85",
           "assembly": 0
         },
         {
-          "design_key": "e7816fab-89d3-4a1d-8e45-f404f7c09968",
+          "design_key": "5ab2337f-0a8a-496c-ad5d-7c6e87bdb39a",
           "assembly": 0
         }
       ],
@@ -34542,7 +34431,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "719052d1-70c8-4f52-96cb-bb8316d30724",
+          "design_key": "62092e02-859b-4995-a545-8253239c9fac",
           "assembly": 0
         }
       ],
@@ -34562,11 +34451,11 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "37a9720a-87b3-470f-be62-5db7662ac8a6",
+          "design_key": "669a6c40-0dfa-4b86-b8a2-3a65e3be13af",
           "assembly": 0
         },
         {
-          "design_key": "3ad1b43e-91ae-4947-a368-66a8448993b8",
+          "design_key": "8c94767f-a1e3-4c56-b60a-00dcbc2f2147",
           "assembly": 0
         }
       ],
@@ -34586,7 +34475,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "1c6725d9-ec3f-4105-939d-07447684ac97",
+          "design_key": "da9d5672-a525-474c-8f1f-7e6909c1590b",
           "assembly": 0
         }
       ],
@@ -34606,7 +34495,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "c5a7233a-8748-4780-afc6-780edc1e6f50",
+          "design_key": "bfe95e60-5100-4641-a224-622e0e7bbe39",
           "assembly": 0
         }
       ],
@@ -34626,7 +34515,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "0b57a0d8-bb08-4fd5-8cea-f760ca4adff4",
+          "design_key": "b11e1757-064f-4a70-9828-16b3066eb967",
           "assembly": 0
         }
       ],
@@ -34646,7 +34535,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "eebf69e9-350a-493e-b574-72400b0f88f5",
+          "design_key": "3c4fc951-bd33-4a2e-b322-1ed94dce15b8",
           "assembly": 0
         }
       ],
@@ -34666,7 +34555,7 @@
       "__type__": "reaction",
       "used_in_assemblies": [
         {
-          "design_key": "ce359d2b-1995-4ecf-a840-f9e2934cc567",
+          "design_key": "6471bc45-26d3-420b-9de4-ab865b4b8792",
           "assembly": 0
         }
       ],
