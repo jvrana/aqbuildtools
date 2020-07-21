@@ -1,0 +1,1214 @@
+{
+  "TRAIN": {
+    "method": "last",
+    "args": [
+      500
+    ]
+  },
+  "MODEL_PATH": "gibson.pkl",
+  "GOALS": [
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_be_jub1"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__4eafddae",
+          "pMOD6_backbone_Input_node_be_jub1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__2b82fcbb",
+          "pMOD6_backbone_Input_node_be_jub1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__75bf7a05",
+          "pMOD6_backbone_Input_node_be_jub1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_be_jub1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__aaae8903",
+          "pMOD6_backbone_Input_node_be_jub1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d0b310a2",
+          "pMOD6_backbone_Input_node_be_jub1"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_be_jub1"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_medium_exp_strong_ad_tet"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__706b91fe",
+          "pMOD8_Backbone_medium_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_medium_exp_strong_ad_tet"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__0629d7b0",
+          "pMOD8_Backbone_medium_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_medium_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__cb0e46b1",
+          "pMOD8_Backbone_medium_exp_strong_ad_tet"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_medium_exp_strong_ad_tet"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_4b2_anac102_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__3eb31b18",
+          "pMOD-HO-KanMX_output_node_4b2_anac102_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_4b2_anac102_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__8a44e29a",
+          "pMOD-HO-KanMX_output_node_4b2_anac102_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_4b2_anac102_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_4b2_anac102_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_6b2_ataf1_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_6b2_ataf1_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_6b2_ataf1_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__f69c8e5a",
+          "pMOD-HO-KanMX_output_node_6b2_ataf1_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_6b2_ataf1_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_6b2_ataf1_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_be_ataf1"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__4eafddae",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__a318cad2",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__75bf7a05",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__aaae8903",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__9957f279",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d0b310a2",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_be_ataf1"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_doxy_ataf1"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__19b58fa8",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__4eafddae",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__03bd62cb",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__a318cad2",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__aaae8903",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__9957f279",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_doxy_ataf1"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_medium_exp_strong_ad_zev"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_medium_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__5c9538dc",
+          "pMOD8_Backbone_medium_exp_strong_ad_zev"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__0672758a",
+          "pMOD8_Backbone_medium_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_medium_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__cb0e46b1",
+          "pMOD8_Backbone_medium_exp_strong_ad_zev"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_medium_exp_strong_ad_zev"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_4b2_ant_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_4b2_ant_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__9030f226",
+          "pMOD-HO-KanMX_output_node_4b2_ant_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__70fc4629",
+          "pMOD-HO-KanMX_output_node_4b2_ant_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_4b2_ant_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_4b2_ant_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_2b2_ant_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_2b2_ant_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__a733f02c",
+          "pMOD-HO-KanMX_output_node_2b2_ant_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_2b2_ant_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_2b2_ant_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_2b2_ant_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_weak_exp_med_ad_tet"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__eed640c4",
+          "pMOD8_Backbone_weak_exp_med_ad_tet"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__7df68bea",
+          "pMOD8_Backbone_weak_exp_med_ad_tet"
+        ],
+        [
+          "24c7bab2c0d5_fragment_19",
+          "pMOD8_Backbone_weak_exp_med_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__a7fb9fc3",
+          "pMOD8_Backbone_weak_exp_med_ad_tet"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_weak_exp_med_ad_tet"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_strong_exp_strong_ad_zev"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_strong_exp_strong_ad_zev"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__0672758a",
+          "pMOD8_Backbone_strong_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__1be71d34",
+          "pMOD8_Backbone_strong_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_strong_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__575353ae",
+          "pMOD8_Backbone_strong_exp_strong_ad_zev"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_strong_exp_strong_ad_zev"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_6b2_anac102_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_6b2_anac102_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_6b2_anac102_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_6b2_anac102_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__a9e71962",
+          "pMOD-HO-KanMX_output_node_6b2_anac102_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_6b2_anac102_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_6b2_jub1_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_6b2_jub1_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__9e26d786",
+          "pMOD-HO-KanMX_output_node_6b2_jub1_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_6b2_jub1_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_6b2_jub1_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_6b2_jub1_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_weak_exp_strong_ad_zev"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__1c96525c",
+          "pMOD8_Backbone_weak_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_weak_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__9f01e52f",
+          "pMOD8_Backbone_weak_exp_strong_ad_zev"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__0672758a",
+          "pMOD8_Backbone_weak_exp_strong_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_weak_exp_strong_ad_zev"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_weak_exp_strong_ad_zev"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_be_ant"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__591b8921",
+          "pMOD6_backbone_Input_node_be_ant"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__78db5686",
+          "pMOD6_backbone_Input_node_be_ant"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__2a7cbca2",
+          "pMOD6_backbone_Input_node_be_ant"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__75bf7a05",
+          "pMOD6_backbone_Input_node_be_ant"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_be_ant"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d0b310a2",
+          "pMOD6_backbone_Input_node_be_ant"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_be_ant"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_strong_exp_strong_ad_tet"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_strong_exp_strong_ad_tet"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__0629d7b0",
+          "pMOD8_Backbone_strong_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_strong_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__ede7d5a7",
+          "pMOD8_Backbone_strong_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__575353ae",
+          "pMOD8_Backbone_strong_exp_strong_ad_tet"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_strong_exp_strong_ad_tet"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_doxy_anac102"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__c6991eac",
+          "pMOD6_backbone_Input_node_doxy_anac102"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__19b58fa8",
+          "pMOD6_backbone_Input_node_doxy_anac102"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__4eafddae",
+          "pMOD6_backbone_Input_node_doxy_anac102"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__03bd62cb",
+          "pMOD6_backbone_Input_node_doxy_anac102"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_doxy_anac102"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__aaae8903",
+          "pMOD6_backbone_Input_node_doxy_anac102"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_doxy_anac102"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_6b2_ant_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_6b2_ant_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__abacc483",
+          "pMOD-HO-KanMX_output_node_6b2_ant_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_6b2_ant_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_6b2_ant_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_6b2_ant_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_doxy_jub1"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__19b58fa8",
+          "pMOD6_backbone_Input_node_doxy_jub1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__4eafddae",
+          "pMOD6_backbone_Input_node_doxy_jub1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__03bd62cb",
+          "pMOD6_backbone_Input_node_doxy_jub1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__2b82fcbb",
+          "pMOD6_backbone_Input_node_doxy_jub1"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_doxy_jub1"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__aaae8903",
+          "pMOD6_backbone_Input_node_doxy_jub1"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_doxy_jub1"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_medium_exp_med_ad_zev"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_medium_exp_med_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__23d83be1",
+          "pMOD8_Backbone_medium_exp_med_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_medium_exp_med_ad_zev"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__e4e1cfeb",
+          "pMOD8_Backbone_medium_exp_med_ad_zev"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_medium_exp_med_ad_zev"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_weak_exp_med_ad_zev"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_weak_exp_med_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__7848c9c1",
+          "pMOD8_Backbone_weak_exp_med_ad_zev"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_weak_exp_med_ad_zev"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__e4e1cfeb",
+          "pMOD8_Backbone_weak_exp_med_ad_zev"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_weak_exp_med_ad_zev"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_2b2_ataf1_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_2b2_ataf1_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_2b2_ataf1_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_2b2_ataf1_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__40a67f16",
+          "pMOD-HO-KanMX_output_node_2b2_ataf1_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_2b2_ataf1_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_be_anac102"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__c6991eac",
+          "pMOD6_backbone_Input_node_be_anac102"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__4eafddae",
+          "pMOD6_backbone_Input_node_be_anac102"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__75bf7a05",
+          "pMOD6_backbone_Input_node_be_anac102"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_be_anac102"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__aaae8903",
+          "pMOD6_backbone_Input_node_be_anac102"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d0b310a2",
+          "pMOD6_backbone_Input_node_be_anac102"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_be_anac102"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_4b2_jub1_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_4b2_jub1_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__56bdab7c",
+          "pMOD-HO-KanMX_output_node_4b2_jub1_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__7487bfdb",
+          "pMOD-HO-KanMX_output_node_4b2_jub1_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_4b2_jub1_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_4b2_jub1_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD6_backbone_Input_node_doxy_ant"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__19b58fa8",
+          "pMOD6_backbone_Input_node_doxy_ant"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__78db5686",
+          "pMOD6_backbone_Input_node_doxy_ant"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__2a7cbca2",
+          "pMOD6_backbone_Input_node_doxy_ant"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__03bd62cb",
+          "pMOD6_backbone_Input_node_doxy_ant"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__591b8921",
+          "pMOD6_backbone_Input_node_doxy_ant"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__bd8023eb",
+          "pMOD6_backbone_Input_node_doxy_ant"
+        ],
+        [
+          "DH5alpha",
+          "pMOD6_backbone_Input_node_doxy_ant"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD8_Backbone_weak_exp_strong_ad_tet"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__3d2a2a55",
+          "pMOD8_Backbone_weak_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__1c96525c",
+          "pMOD8_Backbone_weak_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__2d4ac560",
+          "pMOD8_Backbone_weak_exp_strong_ad_tet"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__0629d7b0",
+          "pMOD8_Backbone_weak_exp_strong_ad_tet"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__0748cceb",
+          "pMOD8_Backbone_weak_exp_strong_ad_tet"
+        ],
+        [
+          "DH5alpha",
+          "pMOD8_Backbone_weak_exp_strong_ad_tet"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_4b2_ataf1_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_4b2_ataf1_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__d4191b45",
+          "pMOD-HO-KanMX_output_node_4b2_ataf1_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_4b2_ataf1_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_4b2_ataf1_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_4b2_ataf1_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_2b2_anac102_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_2b2_anac102_stable_gfp"
+        ],
+        [
+          "Synthesized_PlantTF_2020_Campaign__502baf54",
+          "pMOD-HO-KanMX_output_node_2b2_anac102_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_2b2_anac102_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_2b2_anac102_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_2b2_anac102_stable_gfp"
+        ]
+      ]
+    },
+    {
+      "PLAN_ID": "Plant TF",
+      "SAMPLE": {
+        "model_class": "Sample",
+        "query": {
+          "name": "pMOD-HO-KanMX_output_node_2b2_jub1_stable_gfp"
+        }
+      },
+      "OBJECT_TYPE": {
+        "model_class": "ObjectType",
+        "query": {
+          "name": "Plasmid Glycerol Stock"
+        }
+      },
+      "EDGES": [
+        [
+          "Synthesized_PlantTF_2020_Campaign__3681276b",
+          "pMOD-HO-KanMX_output_node_2b2_jub1_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__88c9a9ef",
+          "pMOD-HO-KanMX_output_node_2b2_jub1_stable_gfp"
+        ],
+        [
+          "Fragment_PlantTF_2020_Campaign__d309e5c0",
+          "pMOD-HO-KanMX_output_node_2b2_jub1_stable_gfp"
+        ],
+        [
+          "Fragment_TetR_1d8e0e04",
+          "pMOD-HO-KanMX_output_node_2b2_jub1_stable_gfp"
+        ],
+        [
+          "DH5alpha",
+          "pMOD-HO-KanMX_output_node_2b2_jub1_stable_gfp"
+        ]
+      ]
+    }
+  ],
+  "GLOBAL_CONSTRAINTS": {
+    "EXCLUDE": [
+      {
+        "model_class": "OperationType",
+        "query": [
+          {
+            "category": [
+              "Control Blocks",
+              "Library Cloning",
+              ""
+            ]
+          },
+          {
+            "name": "Yeast Mating"
+          },
+          {
+            "name": "Yeast Auxotrophic Plate Mating"
+          },
+          {
+            "name": "Order Addgene Plasmid"
+          },
+          {
+            "name": "Assemble Golden Gate"
+          },
+          {
+            "name": "Transform Cells from Stripwell"
+          },
+          {
+            "name": "Anneal Oligos (Beta)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,6 @@
-CONTAINERID="4b940c5d726e"
-FILEPATH="/Users/justinvrana/Desktop/test.dirt"
+CCONTAINERID="4b940c5d726e"
+#CONTAINERID="091c9aa3d3ef"
+FILEPATH="/Users/justinvrana/Documents/Github/aqbuildtools/examples/dirt.io.json"
 BINDTO="/data/test.dirt"
 PASS="Mountain5"
 USERNAME="vrana"
