@@ -1,0 +1,5 @@
+
+# filter
+for _, row in df.iterrows():
+    if not (row['sample_id'] < 20000 and             row['sample_type'] in ['Fragment', 'Plasmid']) and row['sample_id'] > 1000:
+        filtered_rows.append(row) 
