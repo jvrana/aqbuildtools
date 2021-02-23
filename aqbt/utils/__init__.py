@@ -66,19 +66,16 @@ def sort_cycle(arr, key=None):
     return arr[i:] + arr[:i]
 
 
-def chunkify(arr: Iterable[T], chunk_size: int) -> Generator[List[T], None, None]:
 
+def chunkify(arr: Iterable[T], chunk_size: int) -> Generator[List[T], None, None]:
     new_list = []
-    counter = 0
     for x in tee(arr, 1)[0]:
-        if counter >= chunk_size:
+        new_list.append(x)
+        if len(new_list) == chunk_size:
             yield new_list
             new_list = []
-            counter = 0
-        else:
-            new_list.append(x)
-            counter += 1
-    yield new_list
+    if new_list:
+        yield new_list
 
 
 def merge_left(

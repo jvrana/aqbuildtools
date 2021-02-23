@@ -37,11 +37,12 @@ from aqbt.utils import random_slices
 from aqbt.utils import sort_cycle
 from aqbt.utils.region import Span
 
-
+# constants
 FWD_COLOR = "ApEinfo_fwdcolor"
 REV_COLOR = "ApEinfo_revcolor"
 CIRCULAR = "circular"
-LINEAR = "lienar"
+CIRCULAR = "circular"
+LINEAR = "linear"
 TOPOLOGY = "topology"
 DEFAULT_ANNOTATION_TYPE = "misc_feature"
 
