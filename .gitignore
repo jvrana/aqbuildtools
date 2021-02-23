@@ -237,6 +237,8 @@ dmypy.json
 
 tests/secrets/**/*
 
+*.secret*
+
 .idea/**/*
 tests/test_build_request/test_parser_with_google_sheets/token.pickle
 tests/test_build_request/test_parser_with_google_sheets/credentials.json
