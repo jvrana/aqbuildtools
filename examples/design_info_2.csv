@@ -1,0 +1,313 @@
+,query_start,query_end,subject_names,subject_keys,subject_starts,subject_ends,cost,material,span,type,internal_or_external,efficiency,complexity,notes,DESIGN_ID,DESIGN_KEY,ASSEMBLY_ID
+0,4,263,['prkl606-tcyc1_f'],['3169ddf6-20b4-4eee-8286-2853050798e4'],[0],[30],10.526315789473685,10.0,259.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",0,baabe288-8fca-4274-af42-b85684d9ac09,0
+1,263,2058,[],[],[],[],492.59259259259255,329.0,1795.0,GAP,external,0.81,1.837325905292479,,0,baabe288-8fca-4274-af42-b85684d9ac09,0
+2,2058,3194,['j5_0447_-pgp6_p32x_ubivenus-_forward'],['c417c606-f6dd-42d9-8f12-03a8eced6085'],[0],[31],10.526315789473685,10.0,1136.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",0,baabe288-8fca-4274-af42-b85684d9ac09,0
+3,3194,3194,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,0,baabe288-8fca-4274-af42-b85684d9ac09,0
+4,3194,4246,['ura-pp2_5-hom'],['450160e8-ee09-43b4-9352-c636c8dc966a'],[0],[1052],10.526315789473685,10.0,1052.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",0,baabe288-8fca-4274-af42-b85684d9ac09,0
+5,4246,4246,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,0,baabe288-8fca-4274-af42-b85684d9ac09,0
+6,4246,4608,['adh1-terminator-forward'],['285cd5e7-287a-4393-b95e-952f81a98c90'],[0],[53],10.526315789473685,10.0,362.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",0,baabe288-8fca-4274-af42-b85684d9ac09,0
+7,4608,5010,[],[],[],[],4405.430845771145,121.4,402.0,GAP,external,0.027556896078969013,36.28855721393035,{'highly_complex': True},0,baabe288-8fca-4274-af42-b85684d9ac09,0
+8,5010,4980,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,0,baabe288-8fca-4274-af42-b85684d9ac09,0
+9,4980,4,[],[],[],[],344.4444444444444,209.0,1152.0,GAP,external,0.81,4.78125,,0,baabe288-8fca-4274-af42-b85684d9ac09,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+4,4867,5629,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,762.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+5,5629,5652,[],[],[],[],47.5,42.75,23.0,GAP,external,0.9,1.4782608695652155,,1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+6,5652,7345,['fragment_tetr_671d0a42'],['a864dd3d-242d-4ab2-9155-051a203e2b3a'],[678],[2371],10.526315789473685,10.0,1693.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+7,7345,7344,[],[],[],[],40.833333333333336,36.75,-1.0,OVERLAP,external,0.9,,,1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+8,7344,8218,['pMOD8_Backbone_medium_exp_med_ad_tet'],['ee7cd806-5e02-4d54-8c72-fd94bca92c6e'],[5769],[6643],15.329218106995883,12.416666666666666,874.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,0.15560640732265427,{'n_clusters': 6},1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+9,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,1,ced4fcbc-c71a-4a25-bca7-9c8719400c05,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+4,4867,5623,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,756.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+5,5623,5595,[],[],[],[],0.0,0.0,-28.0,OVERLAP,external,0.8,,,2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+6,5595,6623,['pMOD8_Backbone_weak_exp_med_ad_tet'],['21d1be43-f3c2-4cae-9d90-ee7e020af752'],[5615],[6643],7.167352537722908,5.805555555555556,1028.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,2.066147859922181,{'n_clusters': 3},2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+7,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,2,f6a9746b-1730-42a3-9dba-f8848a656ae9,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+5,5648,5910,[],[],[],[],186.91358024691357,121.4,262.0,GAP,external,0.81,1.2977099236641216,,3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+6,5910,6119,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+7,6119,6128,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+8,6128,6845,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+9,6845,6842,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+10,6842,7107,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,3,685fb20f-a1a9-4e0c-a974-3ce02bcc8f66,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+5,5648,5946,[],[],[],[],186.91358024691357,121.4,298.0,GAP,external,0.81,0.6845637583892588,,4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+6,5946,6155,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+7,6155,6164,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+8,6164,6881,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+9,6881,6876,[],[],[],[],40.166666666666664,36.15,-5.0,OVERLAP,external,0.9,,,4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+10,6876,7143,['pMOD6_backbone_Input_node_doxy_anac102'],['ce355ef4-d191-4bfb-b248-3ea687c79d34'],[6534],[6801],0.14014865205341392,0.1135204081632653,267.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,8.022471910112364,{'n_clusters': 14},4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,4,e98db1ea-d74e-4c7d-875a-c317b45c9734,0
+0,1,266,['prkl723-t7eev-cyc1_rev'],['c1f0b7ae-dd8f-4e19-ad90-a6af5f89a236'],[0],[46],10.526315789473685,10.0,265.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+1,266,2058,[],[],[],[],492.59259259259255,329.0,1792.0,GAP,external,0.81,1.8973214285714273,,5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+2,2058,3194,['j5_0447_-pgp6_p32x_ubivenus-_forward'],['c417c606-f6dd-42d9-8f12-03a8eced6085'],[0],[31],10.526315789473685,10.0,1136.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+3,3194,3164,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+4,3164,3442,['ura3-for'],['7ac7d0b3-02fd-4698-a45c-c8f2de722bf6'],[0],[48],10.526315789473685,10.0,278.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+5,3442,4347,[],[],[],[],273.3333333333333,181.4,905.0,GAP,external,0.81,6.499447513812156,,5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+6,4347,4608,['tadh1-f-pp2-verif'],['0ef9d98e-1fb8-48d5-b2d2-5f7f59d17037'],[0],[29],10.526315789473685,10.0,261.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+7,4608,5010,[],[],[],[],4405.430845771145,121.4,402.0,GAP,external,0.027556896078969013,36.28855721393035,{'highly_complex': True},5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+8,5010,4980,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+9,4980,1,[],[],[],[],386.48148148148147,243.05,1191.0,GAP,external,0.81,3.7984886649874046,,5,b9f8c612-5aff-47ec-846b-f8d39b12c9a1,0
+0,1,266,['prkl723-t7eev-cyc1_rev'],['c1f0b7ae-dd8f-4e19-ad90-a6af5f89a236'],[0],[46],10.526315789473685,10.0,265.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+1,266,2058,[],[],[],[],492.59259259259255,329.0,1792.0,GAP,external,0.81,1.8973214285714273,,6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+2,2058,2237,['j5_0447_-pgp6_p32x_ubivenus-_forward'],['c417c606-f6dd-42d9-8f12-03a8eced6085'],[0],[31],10.526315789473685,10.0,179.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+3,2237,2201,[],[],[],[],0.0,0.0,-36.0,OVERLAP,external,0.9,,,6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+4,2201,3194,['j5_0381_-m468ln-_forward'],['66f2683a-6f80-485d-bbf5-a05a3e5f948e'],[0],[36],10.526315789473685,10.0,993.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+5,3194,3164,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+6,3164,4437,['ura3-for'],['7ac7d0b3-02fd-4698-a45c-c8f2de722bf6'],[0],[48],10.526315789473685,10.0,1273.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+7,4437,5192,[],[],[],[],12067.42119205298,149.0,755.0,GAP,external,0.01234729422539127,80.98940397350994,{'highly_complex': True},6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+8,5192,5162,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+9,5162,1,[],[],[],[],386.29629629629625,242.9,1190.0,GAP,external,0.81,3.828571428571432,,6,eee0ed16-4c1d-44fe-b56d-9a7008a71396,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+4,4867,5623,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,756.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+5,5623,5595,[],[],[],[],0.0,0.0,-28.0,OVERLAP,external,0.8,,,7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+6,5595,6350,['pMOD8_Backbone_weak_exp_med_ad_zev'],['8a8d961f-3f85-4c82-a2ac-917c649f7309'],[5615],[6370],30.658436213991767,24.833333333333332,755.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,3.1258278145695337,{'n_clusters': 3},7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+7,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,7,a8be990d-b268-4e26-9a95-a5b2b6555799,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",8,016ad861-af14-4b0c-b603-a81b405578b9,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,8,016ad861-af14-4b0c-b603-a81b405578b9,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,8,016ad861-af14-4b0c-b603-a81b405578b9,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,8,016ad861-af14-4b0c-b603-a81b405578b9,0
+4,4867,5629,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,762.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",8,016ad861-af14-4b0c-b603-a81b405578b9,0
+5,5629,5652,[],[],[],[],47.5,42.75,23.0,GAP,external,0.9,1.4782608695652155,,8,016ad861-af14-4b0c-b603-a81b405578b9,0
+6,5652,7344,['fragment_tetr_671d0a42'],['a864dd3d-242d-4ab2-9155-051a203e2b3a'],[678],[2370],10.526315789473685,10.0,1692.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",8,016ad861-af14-4b0c-b603-a81b405578b9,0
+7,7344,7344,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,8,016ad861-af14-4b0c-b603-a81b405578b9,0
+8,7344,7945,['pMOD8_Backbone_strong_exp_med_ad_zev'],['a8be990d-b268-4e26-9a95-a5b2b6555799'],[5749],[6350],1.1059670781893003,0.8958333333333334,601.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,1.7537437603993318,{'n_clusters': 6},8,016ad861-af14-4b0c-b603-a81b405578b9,0
+9,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,8,016ad861-af14-4b0c-b603-a81b405578b9,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+5,5648,5889,[],[],[],[],186.91358024691357,121.4,241.0,GAP,external,0.81,2.11618257261411,,9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+6,5889,6097,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,208.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+7,6097,6106,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+8,6106,6823,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+9,6823,6820,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+10,6820,7085,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,9,cfd3bfa9-03f9-484a-a57f-57830c61e15f,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+5,5648,5791,[],[],[],[],117.33333333333334,105.60000000000001,143.0,GAP,external,0.9,3.5664335664335725,,10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+6,5791,6000,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+7,6000,6009,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+8,6009,6726,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+9,6726,6721,[],[],[],[],40.166666666666664,36.15,-5.0,OVERLAP,external,0.9,,,10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+10,6721,6988,['pMOD6_backbone_Input_node_be_anac102'],['7ceacbf9-bb61-454d-9006-67e70ca6758d'],[6353],[6620],0.14014865205341392,0.1135204081632653,267.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,8.022471910112364,{'n_clusters': 14},10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,10,406db4ff-69b5-4ced-a075-c1ec89a8e5d5,0
+0,0,3713,['43604fda5c5f_fragment_2'],['7ece96f7-8e69-496d-a9f0-4a3ca2e184d6'],[30],[3743],10.526315789473685,10.0,3713.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+1,3713,3713,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+2,3713,4891,['his-pp2_5-hom'],['25acab7a-4f59-4449-bd86-ffce040d74e3'],[0],[1178],0.0,0.0,1178.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+4,4867,5643,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,776.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+5,5643,5615,[],[],[],[],0.0,0.0,-28.0,OVERLAP,external,0.8,,,11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+6,5615,6643,['pMOD8_Backbone_strong_exp_med_ad_tet'],['f6a9746b-1730-42a3-9dba-f8848a656ae9'],[5595],[6623],43.00411522633745,34.833333333333336,1028.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,2.066147859922181,{'n_clusters': 3},11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+7,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,11,21d1be43-f3c2-4cae-9d90-ee7e020af752,0
+0,0,1293,['43604fda5c5f_fragment_2'],['7ece96f7-8e69-496d-a9f0-4a3ca2e184d6'],[30],[1323],10.526315789473685,10.0,1293.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",12,865261e9-5893-4095-845d-aa129f94a928,0
+1,1293,1293,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,12,865261e9-5893-4095-845d-aa129f94a928,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,12,865261e9-5893-4095-845d-aa129f94a928,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,12,865261e9-5893-4095-845d-aa129f94a928,0
+4,4867,5609,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,742.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",12,865261e9-5893-4095-845d-aa129f94a928,0
+5,5609,5632,[],[],[],[],47.5,42.75,23.0,GAP,external,0.9,1.4782608695652155,,12,865261e9-5893-4095-845d-aa129f94a928,0
+6,5632,7324,['fragment_tetr_671d0a42'],['a864dd3d-242d-4ab2-9155-051a203e2b3a'],[678],[2370],10.526315789473685,10.0,1692.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",12,865261e9-5893-4095-845d-aa129f94a928,0
+7,7324,7324,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,12,865261e9-5893-4095-845d-aa129f94a928,0
+8,7324,7925,['pMOD8_Backbone_strong_exp_med_ad_zev'],['a8be990d-b268-4e26-9a95-a5b2b6555799'],[5749],[6350],1.1059670781893003,0.8958333333333334,601.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,1.7537437603993318,{'n_clusters': 6},12,865261e9-5893-4095-845d-aa129f94a928,0
+9,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,12,865261e9-5893-4095-845d-aa129f94a928,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+5,5648,6018,[],[],[],[],186.91358024691357,121.4,370.0,GAP,external,0.81,1.2864864864864884,,13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+6,6018,6227,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+7,6227,6236,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+8,6236,6953,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+9,6953,6950,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+10,6950,7215,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,13,8265cc41-02fc-4c19-b677-44087e8c2769,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",14,40b86672-9a67-4478-9fe9-4906253e708c,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,14,40b86672-9a67-4478-9fe9-4906253e708c,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",14,40b86672-9a67-4478-9fe9-4906253e708c,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,14,40b86672-9a67-4478-9fe9-4906253e708c,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,14,40b86672-9a67-4478-9fe9-4906253e708c,0
+5,5648,5994,[],[],[],[],186.91358024691357,121.4,346.0,GAP,external,0.81,2.1618497109826573,,14,40b86672-9a67-4478-9fe9-4906253e708c,0
+6,5994,6203,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",14,40b86672-9a67-4478-9fe9-4906253e708c,0
+7,6203,6212,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,14,40b86672-9a67-4478-9fe9-4906253e708c,0
+8,6212,6929,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",14,40b86672-9a67-4478-9fe9-4906253e708c,0
+9,6929,6924,[],[],[],[],40.166666666666664,36.15,-5.0,OVERLAP,external,0.9,,,14,40b86672-9a67-4478-9fe9-4906253e708c,0
+10,6924,7191,['pMOD6_backbone_Input_node_doxy_anac102'],['ce355ef4-d191-4bfb-b248-3ea687c79d34'],[6534],[6801],0.14014865205341392,0.1135204081632653,267.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,8.022471910112364,{'n_clusters': 14},14,40b86672-9a67-4478-9fe9-4906253e708c,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,14,40b86672-9a67-4478-9fe9-4906253e708c,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+4,4867,5629,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,762.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+5,5629,5652,[],[],[],[],47.5,42.75,23.0,GAP,external,0.9,1.4782608695652155,,15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+6,5652,7344,['fragment_tetr_671d0a42'],['a864dd3d-242d-4ab2-9155-051a203e2b3a'],[678],[2370],10.526315789473685,10.0,1692.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+7,7344,7344,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+8,7344,7945,['pMOD8_Backbone_strong_exp_med_ad_zev'],['a8be990d-b268-4e26-9a95-a5b2b6555799'],[5749],[6350],13.271604938271604,10.75,601.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,1.7537437603993318,{'n_clusters': 6},15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+9,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,15,d8b31f69-62f5-4b44-b98a-c628c5a95825,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+4,4867,5609,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,742.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+5,5609,5632,[],[],[],[],47.5,42.75,23.0,GAP,external,0.9,1.4782608695652155,,17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+6,5632,7325,['fragment_tetr_671d0a42'],['a864dd3d-242d-4ab2-9155-051a203e2b3a'],[678],[2371],10.526315789473685,10.0,1693.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+7,7325,7324,[],[],[],[],40.833333333333336,36.75,-1.0,OVERLAP,external,0.9,,,17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+8,7324,8198,['pMOD8_Backbone_medium_exp_med_ad_tet'],['ee7cd806-5e02-4d54-8c72-fd94bca92c6e'],[5769],[6643],15.329218106995883,12.416666666666666,874.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,0.15560640732265427,{'n_clusters': 6},17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+9,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,17,af70a746-1479-43b9-a342-7d191bdb45d1,0
+0,4,263,['prkl606-tcyc1_f'],['3169ddf6-20b4-4eee-8286-2853050798e4'],[0],[30],10.526315789473685,10.0,259.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+1,263,2058,[],[],[],[],492.59259259259255,329.0,1795.0,GAP,external,0.81,1.837325905292479,,18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+2,2058,3051,['j5_0447_-pgp6_p32x_ubivenus-_forward'],['c417c606-f6dd-42d9-8f12-03a8eced6085'],[0],[31],10.526315789473685,10.0,993.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+3,3051,3194,[],[],[],[],146.91358024691357,89.0,143.0,GAP,external,0.81,5.4685314685314665,,18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+4,3194,4452,['ura-pp2_5-hom'],['450160e8-ee09-43b4-9352-c636c8dc966a'],[0],[1258],0.0,0.0,1258.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+5,4452,5192,[],[],[],[],12092.356756756755,149.0,740.0,GAP,external,0.012321832955907821,81.15675675675675,{'highly_complex': True},18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+6,5192,5162,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+7,5162,4,[],[],[],[],443.2098765432099,289.0,1643.0,GAP,external,0.81,5.649421789409613,,18,ce355ef4-d191-4bfb-b248-3ea687c79d34,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+5,5648,5985,[],[],[],[],186.91358024691357,121.4,337.0,GAP,external,0.81,2.1186943620178056,,19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+6,5985,6194,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+7,6194,6203,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+8,6203,6920,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+9,6920,6917,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+10,6917,7182,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,19,7a01829c-5f72-4db1-8c54-e28116e4053c,0
+0,4,263,['prkl606-tcyc1_f'],['3169ddf6-20b4-4eee-8286-2853050798e4'],[0],[30],10.526315789473685,10.0,259.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+1,263,2058,[],[],[],[],492.59259259259255,329.0,1795.0,GAP,external,0.81,1.837325905292479,,20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+2,2058,3194,['j5_0447_-pgp6_p32x_ubivenus-_forward'],['c417c606-f6dd-42d9-8f12-03a8eced6085'],[0],[31],10.526315789473685,10.0,1136.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+3,3194,3194,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+4,3194,3223,['pytk096'],['c533efd4-cea0-4d58-8e61-0308d8f9703c'],[485],[514],10.526315789473685,10.0,29.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+5,3223,3194,[],[],[],[],36.166666666666664,32.55,-29.0,OVERLAP,external,0.9,,,20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+6,3194,4452,['ura-pp2_5-hom'],['450160e8-ee09-43b4-9352-c636c8dc966a'],[0],[1258],0.0,0.0,1258.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+7,4452,5192,[],[],[],[],12092.356756756755,149.0,740.0,GAP,external,0.012321832955907821,81.15675675675675,{'highly_complex': True},20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+8,5192,5162,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+9,5162,4,[],[],[],[],344.4444444444444,209.0,1151.0,GAP,external,0.81,4.8149435273675065,,20,10d49969-37c3-4723-9dbd-94bcae770be8,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+4,4867,5643,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,776.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+5,5643,5615,[],[],[],[],0.0,0.0,-28.0,OVERLAP,external,0.8,,,21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+6,5615,6370,['pMOD8_Backbone_weak_exp_med_ad_zev'],['8a8d961f-3f85-4c82-a2ac-917c649f7309'],[5615],[6370],30.658436213991767,24.833333333333332,755.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,3.1258278145695337,{'n_clusters': 3},21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+7,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,21,7b2d3ef9-4f15-4dd4-af8a-10e35c66a3f2,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+4,4867,5643,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,776.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+5,5643,5615,[],[],[],[],0.0,0.0,-28.0,OVERLAP,external,0.8,,,22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+6,5615,6370,['pMOD8_Backbone_strong_exp_med_ad_zev'],['a8be990d-b268-4e26-9a95-a5b2b6555799'],[5595],[6350],5.1097393689986275,4.138888888888888,755.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,3.1258278145695337,{'n_clusters': 3},22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+7,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,22,8a8d961f-3f85-4c82-a2ac-917c649f7309,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+5,5648,5778,[],[],[],[],111.55555555555556,100.4,130.0,GAP,external,0.9,0.0,,23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+6,5778,5987,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+7,5987,5996,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+8,5996,6713,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+9,6713,6710,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+10,6710,6975,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,23,3fa31e37-d911-4ff9-bc78-c5b070063391,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+5,5648,5894,[],[],[],[],186.91358024691357,121.4,246.0,GAP,external,0.81,3.593495934959352,,25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+6,5894,6103,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+7,6103,6112,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+8,6112,6829,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+9,6829,6826,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+10,6826,7091,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,25,fe3bb034-4745-4b79-be1e-d21cff3fd7d2,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+4,4867,5643,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,776.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+5,5643,5615,[],[],[],[],0.0,0.0,-28.0,OVERLAP,external,0.8,,,26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+6,5615,6643,['pMOD8_Backbone_weak_exp_med_ad_tet'],['21d1be43-f3c2-4cae-9d90-ee7e020af752'],[5615],[6643],7.167352537722908,5.805555555555556,1028.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,2.066147859922181,{'n_clusters': 3},26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+7,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,26,ee7cd806-5e02-4d54-8c72-fd94bca92c6e,0
+0,1,263,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,262.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+1,263,2058,[],[],[],[],492.59259259259255,329.0,1795.0,GAP,external,0.81,1.837325905292479,,27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+2,2058,3194,['j5_0447_-pgp6_p32x_ubivenus-_forward'],['c417c606-f6dd-42d9-8f12-03a8eced6085'],[0],[31],10.526315789473685,10.0,1136.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+3,3194,3164,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+4,3164,4452,['ura3-for'],['7ac7d0b3-02fd-4698-a45c-c8f2de722bf6'],[0],[48],10.526315789473685,10.0,1288.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+5,4452,4436,[],[],[],[],38.333333333333336,34.5,-16.0,OVERLAP,external,0.9,,,27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+6,4436,4789,['04ae508db6f2_primer_8'],['e57be24c-4e31-4834-91d9-78419d36815d'],[0],[62],42.10526315789474,10.0,353.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.2375,,"{'num_misprimings': 2, 'n_templates_eval': 0}",27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+7,4789,5192,[],[],[],[],4534.57617866005,121.4,403.0,GAP,external,0.026772072012223477,37.35235732009926,{'highly_complex': True},27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+8,5192,5162,[],[],[],[],0.0,0.0,-30.0,OVERLAP,external,0.9,,,27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+9,5162,1,[],[],[],[],571.1111111111111,392.6,1988.0,GAP,external,0.81,6.096579476861163,,27,b3bdfd52-a4f1-44fd-97df-7514bcc279f3,0
+0,0,1330,['m13-pgreen_h-r'],['1311e8a0-5a93-4c8f-93a8-ab09e65a6964'],[0],[33],10.526315789473685,10.0,1330.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",28,5529989d-50f5-4581-9f53-df47ed142931,0
+1,1330,1293,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,28,5529989d-50f5-4581-9f53-df47ed142931,0
+2,1293,4891,['24c7bab2c0d5_fragment_19'],['8a65cf85-32ca-4db2-8a86-9d16c6005e53'],[0],[3598],0.0,0.0,3598.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,28,5529989d-50f5-4581-9f53-df47ed142931,0
+3,4891,4867,[],[],[],[],0.0,0.0,-24.0,OVERLAP,external,0.8,,,28,5529989d-50f5-4581-9f53-df47ed142931,0
+4,4867,5629,['pr582'],['107cad3b-c508-4f6a-88bd-4057c3a4d77a'],[0],[48],10.526315789473685,10.0,762.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",28,5529989d-50f5-4581-9f53-df47ed142931,0
+5,5629,5652,[],[],[],[],47.5,42.75,23.0,GAP,external,0.9,1.4782608695652155,,28,5529989d-50f5-4581-9f53-df47ed142931,0
+6,5652,7345,['fragment_tetr_671d0a42'],['a864dd3d-242d-4ab2-9155-051a203e2b3a'],[678],[2371],10.526315789473685,10.0,1693.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",28,5529989d-50f5-4581-9f53-df47ed142931,0
+7,7345,7344,[],[],[],[],40.833333333333336,36.75,-1.0,OVERLAP,external,0.9,,,28,5529989d-50f5-4581-9f53-df47ed142931,0
+8,7344,8218,['pMOD8_Backbone_medium_exp_med_ad_tet'],['ee7cd806-5e02-4d54-8c72-fd94bca92c6e'],[5769],[6643],1.2774348422496569,1.034722222222222,874.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,0.15560640732265427,{'n_clusters': 6},28,5529989d-50f5-4581-9f53-df47ed142931,0
+9,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,28,5529989d-50f5-4581-9f53-df47ed142931,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+5,5648,5862,[],[],[],[],186.91358024691357,121.4,214.0,GAP,external,0.81,0.953271028037388,,29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+6,5862,6071,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+7,6071,6080,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+8,6080,6797,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+9,6797,6794,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+10,6794,7059,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,29,29786f88-8e96-46ff-b35b-3d890f2a5613,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+4,2617,5649,['j5_0373_-t154s-d170en-_forward'],['ab4889a5-56fb-43f5-9ef3-a5eed1cc9598'],[0],[48],10.526315789473685,10.0,3032.0,PCR_PRODUCT_WITH_LEFT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+5,5649,5803,[],[],[],[],112.94444444444444,101.65,154.0,GAP,external,0.9,1.3246753246753245,,30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+6,5803,5832,['dbdc500f0d5a_fragment_35'],['a53c321c-8423-467a-88cd-877ed57bba70'],[162],[191],10.526315789473685,10.0,29.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+7,5832,5802,[],[],[],[],38.666666666666664,34.8,-30.0,OVERLAP,external,0.9,,,30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+8,5802,6011,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+9,6011,6020,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+10,6020,6737,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+11,6737,6732,[],[],[],[],40.166666666666664,36.15,-5.0,OVERLAP,external,0.9,,,30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+12,6732,6999,['pMOD6_backbone_Input_node_doxy_anac102'],['ce355ef4-d191-4bfb-b248-3ea687c79d34'],[6534],[6801],0.14014865205341392,0.1135204081632653,267.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,8.022471910112364,{'n_clusters': 14},30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+13,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,30,c04f5ad4-8e78-4bf7-a534-a2e140977a0a,0
+0,0,281,['j5_0439_-pgpd-tpl100-iaa3-tcyc1-_reverse'],['a3512e01-c0c4-4073-b2b8-27ef81ca7e6f'],[0],[43],10.526315789473685,10.0,281.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+1,281,242,[],[],[],[],0.0,0.0,-39.0,OVERLAP,external,0.9,,,31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+2,242,2654,['j5_0436_-pmodkan-ho-_forward'],['777f2764-47d3-4636-a9d0-2c89e887ff77'],[0],[42],10.526315789473685,10.0,2412.0,PCR_PRODUCT_WITH_PRIMERS,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+3,2654,2617,[],[],[],[],0.0,0.0,-37.0,OVERLAP,external,0.9,,,31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+4,2617,5648,['fragment_tetr_1d8e0e04'],['5446362b-38bd-4042-a0ae-bb14c6782aed'],[0],[3031],0.0,0.0,3031.0,PRE-MADE DNA FRAGMENT,internal,0.98,,,31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+5,5648,5794,[],[],[],[],118.66666666666667,106.80000000000001,146.0,GAP,external,0.9,4.657534246575345,,31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+6,5794,6003,['aapr_276'],['abd7e077-652b-49ce-b881-2582bca0130c'],[0],[50],10.526315789473685,10.0,209.0,PCR_PRODUCT_WITH_RIGHT_PRIMER,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+7,6003,6012,[],[],[],[],42.5,38.25,9.0,GAP,external,0.9,3.777777777777779,,31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+8,6012,6729,['pmod8-ataf1-pmincyc1-yegfp'],['946701a8-26d0-4ad9-bb4d-b5ec7cef3019'],[2785],[3502],10.526315789473685,10.0,717.0,PCR_PRODUCT,internal,0.95,,"{'num_misprimings': 0, 'n_templates_eval': 0}",31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+9,6729,6726,[],[],[],[],40.5,36.45,-3.0,OVERLAP,external,0.9,,,31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+10,6726,6991,['pMOD6_backbone_Input_node_be_ataf1'],['b9f8c612-5aff-47ec-846b-f8d39b12c9a1'],[5905],[6170],2.7469135802469133,2.225,265.0,SHARED_SYNTHESIZED_FRAGMENT,internal,0.81,7.8264150943396205,{'n_clusters': 20},31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
+11,0,0,[],[],[],[],41.0,36.9,0.0,GAP,external,0.9,,,31,5f2e56d5-105c-44ae-b4c9-7106faa9bc40,0
