@@ -7,8 +7,6 @@ readme = 'README.md'
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-biopython = "^1.73"
-networkx = "^2.4"
 tqdm = "^4.36"
 primer3plus = "^1.0"
 loggable-jdv = "^0.1.7"
@@ -16,13 +14,15 @@ benchlingapi = "^2.1.11"
 colour = "^0.1.5"
 validators = "^0.14.1"
 bcbio-gff = "^0.6.6"
-pyblastbio = "^0.6.3"
 google-api-python-client = "^1.7"
 google-auth-httplib2 = "^0.0.3"
 google-auth-oauthlib = "^0.4.1"
 toml = "^0.10.0"
-dasi = "^0.0.20"
-pydent = "1.0.2"
+pydent = "^1.0.6"
+pyblastbio = "^0.9"
+biopython = "^1.78"
+networkx = "^2.5"
+dasi = "^0.2.1"
 
 [tool.poetry.dev-dependencies]
 black = { version = "^19.3b0", python = "^3.6" }

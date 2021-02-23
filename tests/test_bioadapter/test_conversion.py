@@ -4,7 +4,6 @@ import dictdiffer
 import networkx as nx
 import pytest
 from benchlingapi import Session
-from Bio.Alphabet import generic_dna
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from pydent import AqSession

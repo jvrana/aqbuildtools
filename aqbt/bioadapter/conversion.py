@@ -5,7 +5,6 @@ from BCBio import GFF
 from benchlingapi.models import Annotation
 from benchlingapi.models import DNASequence
 from Bio import SeqIO
-from Bio.Alphabet import generic_dna
 from Bio.Seq import Seq
 from Bio.SeqFeature import CompoundLocation
 from Bio.SeqFeature import FeatureLocation
@@ -121,7 +120,7 @@ def json_to_seqrecord(data: dict) -> SeqRecord:
     annotations = _get_benchling_dna_json_annotations(data)
     annotations["topology"] = topology
     return SeqRecord(
-        Seq(data["bases"], alphabet=generic_dna),
+        Seq(data["bases"]),
         name=data["name"],
         id=data.get("id", None),
         annotations=annotations,
@@ -192,7 +191,6 @@ def seqrecord_to_fasta(record: SeqRecord, path: str) -> str:
 @bioadapter("fasta", "SeqRecord", weight=15)
 def fasta_to_seqrecord(path: str) -> SeqRecord:
     record = SeqIO.read(path, format="fasta")
-    record.seq.alphabet = generic_dna
     return record
 
 
