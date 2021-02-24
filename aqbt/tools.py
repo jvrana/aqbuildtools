@@ -49,6 +49,11 @@ def parse_config(config: Dict[str, Union[str, dict, int]]) -> Dict[str, Dict[str
                     )
                 )
 
+            sessions[session_name] = {
+                "aquarium": config["aquarium"][aquarium_scope],
+                "benchling": config["benchling"][benchling_scope],
+            }
+
     if errors:
         raise ConfigParsingException(
             "Could not parse config due to the following errors:\n{}".format(
@@ -57,12 +62,6 @@ def parse_config(config: Dict[str, Union[str, dict, int]]) -> Dict[str, Dict[str
                 )
             )
         )
-
-    for session_name, session_info in config["session"].items():
-        sessions[session_name] = {
-            "aquarium": config["aquarium"][aquarium_scope],
-            "benchling": config["benchling"][benchling_scope],
-        }
     return sessions
 
 
