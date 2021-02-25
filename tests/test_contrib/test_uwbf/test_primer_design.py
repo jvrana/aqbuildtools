@@ -1,93 +1,140 @@
-from aqbt.contrib.uwbf import primers
-
+from aqbt.contrib.uwbf import primer_utils
+from pprint import pprint
 
 def test_primer_df():
-    template = primers.Templates.eyfp
+    template = primer_utils.Templates.eyfp
 
     fwd_primers = [
         template[:20],
         template[:19],
-        primers.rc(template[:30]),
+        primer_utils.rc(template[:30]),
         'agagataga',
-        primers.rc(template[:30]),
+        primer_utils.rc(template[:30]),
     ]
 
-    df = primers.create_anneal_df(template, primers=fwd_primers, names=list(range(5)))
+    df = primer_utils.create_anneal_df(template, primers=fwd_primers, names=list(range(5)))
     assert(len(df) == 4)
 
 
 def test_primer_design():
-    primer_design = primers.PrimerDesign()
+    primer_design = primer_utils.PrimerDesign()
 
-    template = primers.Templates.eyfp
+    template = primer_utils.Templates.eyfp
 
-    pairs = primer_design.design_primers(template, fwd_primer='gtgagcaagggcgaggag')
+    pairs = primer_design.design_cloning_primers(template, fwd_primer='gtgagcaagggcgaggag')
     print(pairs)
 
 
 def test_primer_design2():
-    primer_design = primers.PrimerDesign()
+    primer_design = primer_utils.PrimerDesign()
 
-    template = primers.Templates.eyfp
+    template = primer_utils.Templates.eyfp
 
-    pairs = primer_design.design_primers(template, start=200, length=200)
+    pairs = primer_design.design_cloning_primers(template, start=200, length=200)
     print(pairs)
     assert pairs[0]['PAIR']['PRODUCT_SIZE'] == 200
 
 
-def test_primer_design_from_list():
-    primer_design = primers.PrimerDesign()
-
-    template = primers.Templates.eyfp
-
-    fwd_primers = [
-        template[:20],
-        template[:19],
-        rc(template[:30])
-    ]
-
-    all_pairs = []
-    for fwd in fwd_primers:
-        pairs = primer_design.design_primers(template, fwd_primer=fwd)
-        all_pairs += pairs
-    print(all_pairs)
-
 
 def test_anneal():
-    template = primers.Templates.eyfp
+    template = primer_utils.Templates.eyfp
     fwd_primers = [
         template[:20],
         template[:19],
         template[:30]
     ]
-    df = primers.create_anneal_df(template, fwd_primers, list(range(3)))
+    df = primer_utils.create_anneal_df(template, fwd_primers, list(range(3)))
     df = df[df['strand'] == 1]
     print(df)
 
 
 def test_primer_anneal_mask():
-    template = primers.Templates.eyfp
+    template = primer_utils.Templates.eyfp
     fwd_primers = [
         template[:20],
         template[:19],
         template[:30],
         'agagaga'
     ]
-    mask = primers.primer_anneal_mask(template, fwd_primers)
+    mask = primer_utils.primer_anneal_mask(template, fwd_primers)
     print(mask)
 
 
 def test_primer_anneal_mask():
-    template = primers.Templates.eyfp
+    template = primer_utils.Templates.eyfp
     fwd_primers = [
         template[:20],
         template[:19],
-        primers.rc(template[:30]),
+        primer_utils.rc(template[:30]),
         'agagataga',
-        primers.rc(template[:30]),
+        primer_utils.rc(template[:30]),
     ]
 
-    mask, fwd_mask, rev_mask = primers.primer_anneal_mask(template, fwd_primers, ret_fwd_and_rev=True)
+    mask, fwd_mask, rev_mask = primer_utils.primer_anneal_mask(template, fwd_primers, ret_fwd_and_rev=True)
     assert mask == [True, True, True, False, True]
     assert fwd_mask == [True, True, False, False, False]
     assert rev_mask == [False, False, True, False, True]
+
+
+def test_design_primers_from_list_1():
+    template = primer_utils.Templates.eyfp
+    primers = [
+        'aaaaaaaaa', primer_utils.rc(template[-30:]),
+    ]
+
+    design = primer_utils.PrimerDesign()
+    pairs = design.design_and_pick_primer(template, primers)
+    assert not pairs[0]
+    assert pairs[1]
+
+
+def test_design_primers_from_list_2():
+    template = primer_utils.Templates.eyfp
+    primers = [
+        'aaaaaaaaa', template[:30],
+    ]
+
+    design = primer_utils.PrimerDesign()
+    pairs = design.design_and_pick_primer(template, primers)
+    assert pairs[0]
+    assert not pairs[1]
+
+
+def test_design_primers_from_list_3():
+    template = primer_utils.Templates.eyfp
+    primers = [
+        'aaaaaaaaa'
+    ]
+
+    design = primer_utils.PrimerDesign()
+    pairs = design.design_and_pick_primer(template, primers)
+    assert not pairs[0]
+    assert not pairs[1]
+
+
+def test_design_fwd_primers_from_list():
+    template = primer_utils.Templates.eyfp
+    primers = [
+        'aaaaaaaaa', primer_utils.rc(template[-30:]),
+    ]
+
+    design = primer_utils.PrimerDesign()
+    pairs = design.design_fwd_and_pick_rev_primer(template, primers)
+    assert pairs
+    assert pairs[0]['RIGHT']['META']
+    assert not pairs[0]['LEFT']['META']
+    assert not design.design_rev_and_pick_fwd_primer(template, primers)
+
+
+def test_design_rev_primers_from_list():
+    template = primer_utils.Templates.eyfp
+    primers = [
+        'aaaaaaaaa', template[:30]
+    ]
+
+    design = primer_utils.PrimerDesign()
+    pairs = design.design_rev_and_pick_fwd_primer(template, primers)
+    assert pairs
+    assert pairs[0]['LEFT']['META']
+    assert not pairs[0]['RIGHT']['META']
+    assert not design.design_fwd_and_pick_rev_primer(template, primers)

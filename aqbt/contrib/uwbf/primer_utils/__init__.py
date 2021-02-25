@@ -1,5 +1,5 @@
 from typing import List, Optional, Tuple, Union, Dict, Any
-
+import functools
 from tqdm.auto import tqdm
 import re
 from json import JSONDecodeError
@@ -9,6 +9,11 @@ import primer3plus
 import pydent
 from pydent import AqSession
 from primer3plus.utils import reverse_complement as rc
+from primer3plus.exceptions import Primer3PlusRunTimeError
+from collections import namedtuple
+
+bindings = namedtuple('Bindings', 'fwd_picked rev_picked')
+binding_mask = namedtuple('BindingMask', 'mask fwd_mask rev_mask')
 
 
 class Templates(object):
@@ -147,7 +152,9 @@ def create_anneal_df(template: str, primers: List[str], names: List[str], n_base
         p['tm'] = tm
         rows.append(p)
 
-    df = pd.DataFrame(rows)
+    df = pd.DataFrame(rows,
+                      columns=['name', 'anneal', 'overhang', 'primer', 'start', 'length', 'top_strand_slice', 'strand',
+                               'tm'])
     if strand is not None:
         assert strand in [1, -1]
         df = df[df['strand'] == strand]
@@ -174,8 +181,8 @@ def _element_wise_and(a, b):
 
 def primer_anneal_mask(template, primers, ret_fwd_and_rev: bool = False, **kwargs) -> List[bool]:
     df = create_anneal_df(template, primers, list(range(len(primers))), **kwargs)
-    mask = [False]*len(primers)
-    fwd_mask = [False]*len(primers)
+    mask = [False] * len(primers)
+    fwd_mask = [False] * len(primers)
     rev_mask = fwd_mask[:]
 
     for _, row in df.iterrows():
@@ -186,7 +193,7 @@ def primer_anneal_mask(template, primers, ret_fwd_and_rev: bool = False, **kwarg
         elif row.strand == -1:
             rev_mask[idx] = True
     if ret_fwd_and_rev:
-        return mask, fwd_mask, rev_mask
+        return binding_mask(mask, fwd_mask, rev_mask)
     return mask
 
 
@@ -208,6 +215,7 @@ def parse_primer3_explain_flag(explain: dict):
             groups = re.search('(.+?)\s(\d+)', token).groups()
             d.append(groups)
         return dict(d)
+
     flag = {}
     for k, v in explain.items():
         if isinstance(v, str):
@@ -218,16 +226,16 @@ def parse_primer3_explain_flag(explain: dict):
 
 class PrimerDesign(object):
     default_params = dict(
-            PRIMER_MAX_END_GC=3,
-            PRIMER_MAX_POLY_X=4,
-            PRIMER_WT_TM_LT=0.1,
-            PRIMER_PAIR_WT_DIFF_TM=0.3,
-            PRIMER_WT_HAIRPIN_TH=2.0,
-            PRIMER_WT_SELF_ANY_TH=1.0,
-            PRIMER_WT_SELF_END_TH=2.0,
-            PRIMER_PAIR_WT_COMPL_ANY_TH=1.0,
-            PRIMER_PAIR_WT_COMPL_END_TH=2.0
-        )
+        PRIMER_MAX_END_GC=3,
+        PRIMER_MAX_POLY_X=4,
+        PRIMER_WT_TM_LT=0.1,
+        PRIMER_PAIR_WT_DIFF_TM=0.3,
+        PRIMER_WT_HAIRPIN_TH=2.0,
+        PRIMER_WT_SELF_ANY_TH=1.0,
+        PRIMER_WT_SELF_END_TH=2.0,
+        PRIMER_PAIR_WT_COMPL_ANY_TH=1.0,
+        PRIMER_PAIR_WT_COMPL_END_TH=2.0
+    )
 
     def __init__(self, params: Optional[dict] = None):
         if params is None:
@@ -258,18 +266,18 @@ class PrimerDesign(object):
             region = (0, template_len)
         return region
 
-    def new_primer_design(self,
-                          template,
-                          params=None,
-                          start=None,
-                          length=None,
-                          end=None,
-                          fwd_primer=None,
-                          rev_primer=None,
-                          lflank=None,
-                          rflank=None,
-                          min_anneal: int = 15
-                          ):
+    def new_cloning_primer_design(self,
+                                  template,
+                                  params=None,
+                                  start=None,
+                                  length=None,
+                                  end=None,
+                                  fwd_primer=None,
+                                  rev_primer=None,
+                                  lflank=None,
+                                  rflank=None,
+                                  min_anneal: int = 15
+                                  ):
         # if fwd_primer and lflank:
         #     raise ValueError
         # if rev_primer and rflank:
@@ -309,14 +317,17 @@ class PrimerDesign(object):
         design.settings.long_ok()
         return design
 
-    def design_primers(self, template, start=None, length=None, end=None,
-                       fwd_primer=None,
-                       rev_primer=None,
-                       fwd_primer_meta=None,
-                       rev_primer_meta=None,
-                       lflank=None, rflank=None,
-                       min_anneal: int = 15, max_optimization_iterations: int = 3, n_return: int = 1
-                       ) -> List[dict]:
+    def design_cloning_primers(self, template, start=None, length=None, end=None,
+                               fwd_primer=None,
+                               rev_primer=None,
+                               fwd_primer_meta=None,
+                               rev_primer_meta=None,
+                               lflank=None,
+                               rflank=None,
+                               min_anneal: int = 15,
+                               max_optimization_iterations: int = 3,
+                               n_return: int = 1
+                               ) -> List[dict]:
         """
         Design primers for a specific region of a template. If no region information is provided, it will
         be assumed that the region includes the entire template.
@@ -336,6 +347,11 @@ class PrimerDesign(object):
             The primer should bind to the template on the *top* strand; in other words, some portion of the
             right-hand side of the provided primer sequence should be found in the reverse complement of
             the template sequence. This is in the same orientation as you would provide to a synthesis vendor (e.g. IDT)
+        :param fwd_primer_meta: additional meta data to attach to the forward primer ("LEFT")
+        :param rev_primer_meta: additional meta data to attach to the reverse primer ("RIGHT")
+        :param min_anneal: minimum number of bases to anneal
+        :param max_optimization_iterations: maximum number of optimization iterations to perform
+        :param n_return: number of primers to return
         :param lflank: (optional) For primer design, design primers such that this sequence flanks the left-hand
             side of the forward primer. If fwd_primer is also provided, the fwd_primer sequence *MUST* start with
             this lflank sequence.
@@ -344,7 +360,7 @@ class PrimerDesign(object):
             reverse complement of the rflank.
         :return:
         """
-        design = self.new_primer_design(
+        design = self.new_cloning_primer_design(
             template=template,
             start=start,
             length=length,
@@ -370,16 +386,56 @@ class PrimerDesign(object):
         # explain = parse_primer3_explain_flag(explain)
         return results
 
-    def foo(self, template, primer_seqs, primer_meta_list, start=None, end=None, length=None, **kwargs):
+    def design_and_pick_primer(self, template, primer_seqs, primer_meta_list=None, start=None, end=None, length=None,
+                               **kwargs):
+        if primer_meta_list is None:
+            primer_meta_list = [{'index': i} for i in list(range(len(primer_seqs)))]
         r = self._resolve_region(len(template), start=start, end=end, length=length)
-        mask = primer_anneal_mask(template[r[0]: r[0]+r[1]])
-        primer_seqs = _mask_filter(primer_seqs, mask)
-        primer_meta_list = _mask_filter(primer_meta_list, mask)
+        _, fwd_mask, rev_mask = primer_anneal_mask(template[r[0]: r[0] + r[1]], primer_seqs, ret_fwd_and_rev=True)
 
-        all_pairs = []
-        for seq, meta in zip(primer_seqs, primer_meta_list):
-            pairs = self.design_primers(template, start=start, end=end, length=length, fwd_primer=seq, fwd_primer_meta=meta, **kwargs)
-            all_pairs += pairs
-        all_pairs.sort(key=lambda x: x['PAIR']['PENALTY'])
+        all_pairs = bindings([], [])
+        for i, (primer_key, meta_key, mask) in enumerate(
+                [('fwd_primer', 'fwd_primer_meta', fwd_mask), ('rev_primer', 'rev_primer_meta', rev_mask)]):
+            mfilter = functools.partial(_mask_filter, mask=mask)
+            _kwargs = dict(kwargs)
+            for seq, meta in zip(mfilter(primer_seqs), mfilter(primer_meta_list)):
+                _kwargs[primer_key] = seq
+                _kwargs[meta_key] = meta
+                try:
+                    pairs = self.design_cloning_primers(template, start=start, end=end, length=length, **_kwargs)
+                    all_pairs[i].extend(pairs)
+                except Primer3PlusRunTimeError:
+                    pass
+        all_pairs[0].sort(key=lambda x: x['PAIR']['PENALTY'])
+        all_pairs[1].sort(key=lambda x: x['PAIR']['PENALTY'])
         return all_pairs
 
+    def design_fwd_and_pick_rev_primer(self, template, primer_seqs, primer_meta_list=None, start=None, end=None, length=None,
+                                       **kwargs):
+        result = self.design_and_pick_primer(template, primer_seqs, primer_meta_list, start=start, end=end, length=length, **kwargs)
+        return result.rev_picked
+
+    def design_rev_and_pick_fwd_primer(self, template, primer_seqs, primer_meta_list=None, start=None, end=None, length=None,
+                                       **kwargs):
+        result = self.design_and_pick_primer(template, primer_seqs, primer_meta_list, start=start, end=end, length=length, **kwargs)
+        return result.fwd_picked
+
+
+# class AqPrimerDesign(PrimerDesign):
+#
+#     def __init__(self, session, params=None):
+#         super().__init__(params)
+#         self.session = session
+#         self._primer_df = None
+#
+#     def create_primer_df(self, **kwargs):
+#         get_aq_primers(self.session, **kwargs)
+#
+#     @property
+#     def primer_df(self):
+#         if self._primer_df is None:
+#             self._primer_df = get_aq_primers_df(self.session)
+#         return self._primer_df
+#
+#     def pick_fwd_aq_primer(self):
+#         self.design_cloning_primers(template, self.primer_df.sequence, self.primer_df.name)
