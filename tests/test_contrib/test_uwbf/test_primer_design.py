@@ -129,7 +129,7 @@ def test_design_fwd_primers_from_list():
 def test_design_rev_primers_from_list():
     template = primer_utils.Templates.eyfp
     primers = [
-        'aaaaaaaaa', template[:30]
+        'aaaaaaaaa', template[:30], 'a'
     ]
 
     design = primer_utils.PrimerDesign()
@@ -138,3 +138,53 @@ def test_design_rev_primers_from_list():
     assert pairs[0]['LEFT']['META']
     assert not pairs[0]['RIGHT']['META']
     assert not design.design_fwd_and_pick_rev_primer(template, primers)
+
+
+class TestAqPrimerDesign():
+
+    def test_aq_primer_design__design_fwd_pick_rev(self, tools):
+        aq = tools.sessions['default']['aquarium']
+        df = primer_utils.get_aq_primers_df(aq, limit=100)
+
+        design = primer_utils.PrimerDesign()
+        template = primer_utils.Templates.eyfp + primer_utils.rc(list(df.sequence)[-1])
+
+        pairs = design.design_fwd_and_pick_rev_primer(template, primer_seqs=df)
+        assert pairs
+        pprint(pairs)
+
+    def test_aq_primer_design__design_rev_pick_fwd(self, tools):
+        aq = tools.sessions['default']['aquarium']
+        df = primer_utils.get_aq_primers_df(aq, limit=100)
+
+        design = primer_utils.PrimerDesign()
+        template = list(df.sequence)[-1] + primer_utils.Templates.eyfp
+
+        pairs = design.design_rev_and_pick_fwd_primer(template, primer_seqs=df)
+        assert pairs
+        pprint(pairs)
+
+    def test_aq_primer_design__design_fwd_pick_rev_with_overhang(self, tools):
+        aq = tools.sessions['default']['aquarium']
+        df = primer_utils.get_aq_primers_df(aq, limit=100)
+
+        design = primer_utils.PrimerDesign()
+        template = primer_utils.Templates.eyfp + primer_utils.rc(list(df.sequence)[-1])
+
+        pairs = design.design_fwd_and_pick_rev_primer(template, primer_seqs=df, lflank='gaggattagata')
+        assert pairs
+        assert pairs[0]['LEFT']['OVERHANG'] == 'gaggattagata'
+        assert not pairs[0]['RIGHT']['OVERHANG']
+        pprint(pairs)
+
+    def test_aq_primer_design__design_rev_pick_fwd_with_overhang(self, tools):
+        aq = tools.sessions['default']['aquarium']
+        df = primer_utils.get_aq_primers_df(aq, limit=100)
+
+        design = primer_utils.PrimerDesign()
+        template = list(df.sequence)[-1] + primer_utils.Templates.eyfp
+        pairs = design.design_rev_and_pick_fwd_primer(template, primer_seqs=df, rflank='gaggattagata')
+        assert pairs
+        assert pairs[0]['RIGHT']['OVERHANG'] == primer_utils.rc('gaggattagata')
+        assert not pairs[0]['LEFT']['OVERHANG']
+        pprint(pairs)

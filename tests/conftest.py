@@ -7,6 +7,7 @@ import toml
 
 from aqbt.tools import config_to_sessions
 from aqbt.tools import parse_config
+from aqbt import AquariumBuildTools
 
 here = abspath(dirname(__file__))
 
@@ -14,6 +15,7 @@ here = abspath(dirname(__file__))
 @pytest.fixture(scope="session")
 def config_path():
     return join(here, "secrets", "test_config.toml")
+
 
 @pytest.fixture(scope="session")
 def config_alt_path():
@@ -49,3 +51,8 @@ def benchling(sessions):
 @pytest.fixture(scope="session")
 def aquarium(sessions):
     return sessions["default"]["aquarium"]
+
+
+@pytest.fixture(scope='session')
+def tools(config):
+    return AquariumBuildTools(config)

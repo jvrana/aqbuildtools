@@ -15,6 +15,9 @@ from collections import namedtuple
 bindings = namedtuple('Bindings', 'fwd_picked rev_picked')
 binding_mask = namedtuple('BindingMask', 'mask fwd_mask rev_mask')
 
+class PrimerException(Exception):
+    ...
+
 
 class Templates(object):
     eyfp = 'gtgagcaagggcgaggagctgttcaccggggtggtgcccatcctggtcgagctggacggcgacgtaaacggccacaagttcagcgtgtccggcgagggcgagggcgatgccacctacggcaagctgaccctgaagttcatctgcaccaccggcaagctgcccgtgccctggcccaccctcgtgaccaccttcggctacggcctgcagtgcttcgcccgctaccccgaccacatgaagcagcacgacttcttcaagtccgccatgcccgaaggctacgtccaggagcgcaccatcttcttcaaggacgacggcaactacaagacccgcgccgaggtgaagttcgagggcgacaccctggtgaaccgcatcgagctgaagggcatcgacttcaaggaggacggcaacatcctggggcacaagctggagtacaactacaacagccacaacgtctatatcatggccgacaagcagaagaacggcatcaaggtgaacttcaagatccgccacaacatcgaggacggcagcgtgcagctcgccgaccactaccagcagaacacccccatcggcgacggccccgtgctgctgcccgacaaccactacctgagctaccagtccgccctgagcaaagaccccaacgagaagcgcgatcacatggtcctgctggagttcgtgaccgccgccgggatcactctcggcatggacgagctg'
@@ -100,6 +103,7 @@ def create_primer_df(primers: List[pydent.models.Sample]) -> pd.DataFrame:
     """
     primer_rows = _primer_rows(primers)
     df = pd.DataFrame(primer_rows)
+    df = df[df['sequence'] != '']
     return df
 
 
@@ -282,6 +286,10 @@ class PrimerDesign(object):
         #     raise ValueError
         # if rev_primer and rflank:
         #     raise ValueError
+        if fwd_primer is not None:
+            assert fwd_primer != ''
+        if rev_primer is not None:
+            assert rev_primer != ''
         start, product_length = self._resolve_region(len(template), start, length, end)
         region = (start, product_length)
 
@@ -299,13 +307,15 @@ class PrimerDesign(object):
             design.settings.right_sequence(rev_primer)
         if lflank:
             if fwd_primer:
-                assert fwd_primer.startswith(lflank), 'fwd_primer must start with lflank'
+                if not fwd_primer.startswith(lflank):
+                    raise PrimerException('fwd_primer must start with lflank')
             left_overhang = lflank
         else:
             left_overhang = ''
         if rflank:
             if rev_primer:
-                assert rev_primer.startswith(rc(rflank)), 'rev_primer must start with rc(rflank)'
+                if not rev_primer.startswith(rc(rflank)):
+                    raise PrimerException('rev_primer must start with rc(rflank)')
             right_overhang = rc(rflank)
         else:
             right_overhang = ''
@@ -388,6 +398,10 @@ class PrimerDesign(object):
 
     def design_and_pick_primer(self, template, primer_seqs, primer_meta_list=None, start=None, end=None, length=None,
                                **kwargs):
+        if isinstance(primer_seqs, pd.DataFrame):
+            df = primer_seqs
+            primer_seqs = df.sequence
+            primer_meta_list = df.T.to_dict().values()
         if primer_meta_list is None:
             primer_meta_list = [{'index': i} for i in list(range(len(primer_seqs)))]
         r = self._resolve_region(len(template), start=start, end=end, length=length)
@@ -406,6 +420,8 @@ class PrimerDesign(object):
                     all_pairs[i].extend(pairs)
                 except Primer3PlusRunTimeError:
                     pass
+                except PrimerException:
+                    pass
         all_pairs[0].sort(key=lambda x: x['PAIR']['PENALTY'])
         all_pairs[1].sort(key=lambda x: x['PAIR']['PENALTY'])
         return all_pairs
@@ -421,21 +437,21 @@ class PrimerDesign(object):
         return result.fwd_picked
 
 
-# class AqPrimerDesign(PrimerDesign):
-#
-#     def __init__(self, session, params=None):
-#         super().__init__(params)
-#         self.session = session
-#         self._primer_df = None
-#
-#     def create_primer_df(self, **kwargs):
-#         get_aq_primers(self.session, **kwargs)
-#
-#     @property
-#     def primer_df(self):
-#         if self._primer_df is None:
-#             self._primer_df = get_aq_primers_df(self.session)
-#         return self._primer_df
-#
-#     def pick_fwd_aq_primer(self):
-#         self.design_cloning_primers(template, self.primer_df.sequence, self.primer_df.name)
+class AqPrimerDesign(PrimerDesign):
+
+    def __init__(self, session, params=None):
+        super().__init__(params)
+        self.session = session
+        self._primer_df = None
+
+    @property
+    def primer_df(self):
+        if self._primer_df is None:
+            self._primer_df = get_aq_primers_df(self.session)
+        return self._primer_df
+
+    def reset(self):
+        self._primer_df = None
+
+    def pick_fwd_aq_primer(self):
+        self.design_cloning_primers(template, self.primer_df.sequence, self.primer_df.name)
