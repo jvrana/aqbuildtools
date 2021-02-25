@@ -15,6 +15,10 @@ here = abspath(dirname(__file__))
 def config_path():
     return join(here, "secrets", "test_config.toml")
 
+@pytest.fixture(scope="session")
+def config_alt_path():
+    return join(here, "secrets", "test_config.alt.toml")
+
 
 @pytest.fixture(scope="session")
 def config(config_path):
