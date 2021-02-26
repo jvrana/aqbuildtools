@@ -307,3 +307,20 @@ def _get_haploid_by_mating_types(
 def get_haploid_by_mating_types(sample: Sample) -> List[Sample]:
     mata, matalpha, neither = _get_haploid_by_mating_types(sample)
     return {Constants.MATa: mata, Constants.MATalpha: matalpha, "Neither": neither}
+
+
+def prettify_plan(plan, save=False, draw=False, prog='dot'):
+    planner = Planner(plan)
+    g = planner.layout.nxgraph
+    pos = nx.nx_agraph.graphviz_layout(g, prog=prog)
+    if draw:
+        nx.draw(g, pos=pos)
+    for op in planner.operations:
+        x, y = pos[op.id]
+        op.x = x * 2
+        op.y = y
+    if save:
+        planner.save()
+    print(planner.url)
+    return planner
+
