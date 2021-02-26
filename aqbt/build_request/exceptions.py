@@ -1,12 +1,13 @@
-from .cell_value import CellValue
 from typing import Union
+
+from .cell_value import CellValue
 
 
 class BuildRequestParsingException(Exception):
     """Generic parsing exception."""
 
 
-class LocationContext(object):
+class LocationContext:
     """Context manager that relays the location of the parse error."""
 
     def __init__(self, row, col):
@@ -26,7 +27,7 @@ class LocationContext(object):
             raise exception
 
 
-class EmptyContext(object):
+class EmptyContext:
     def __enter__(self):
         pass
 

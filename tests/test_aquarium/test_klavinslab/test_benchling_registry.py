@@ -1,6 +1,7 @@
 from aqbt.aquarium import Linter
 from aqbt.aquarium.registry import LabDNARegistry
 
+
 def test_registry_connector_find(registry, aquarium):
     sample = aquarium.Sample.find(26889)
     seq = registry.connector.find(26889)
@@ -20,21 +21,28 @@ def test_fake_registry(registry):
 # TODO: find a valid fragment
 def test_make_pcr_fragment(registry: LabDNARegistry):
     production = registry.session
-    fragment = production.Sample.one(query={'sample_type_id': production.SampleType.find_by_name('Fragment').id})
-    primer1, primer2 = production.Sample.last(2,
-        query={'sample_type_id': production.SampleType.find_by_name('Primer').id})
-    template = production.Sample.one(query={'sample_type_id': production.SampleType.find_by_name('Plasmid').id})
+    fragment = production.Sample.one(
+        query={"sample_type_id": production.SampleType.find_by_name("Fragment").id}
+    )
+    primer1, primer2 = production.Sample.last(
+        2, query={"sample_type_id": production.SampleType.find_by_name("Primer").id}
+    )
+    template = production.Sample.one(
+        query={"sample_type_id": production.SampleType.find_by_name("Plasmid").id}
+    )
 
     # add properties to make fragment valid
-    template.update_properties({
-        'Sequence': 'www.benchling.com/' + registry.benchling.DNASequence.one().url
-    })
+    template.update_properties(
+        {"Sequence": "www.benchling.com/" + registry.benchling.DNASequence.one().url}
+    )
 
-    fragment.update_properties({
-        'Forward Primer': primer1,
-        'Reverse Primer': primer2,
-        'Template': template,
-    })
+    fragment.update_properties(
+        {
+            "Forward Primer": primer1,
+            "Reverse Primer": primer2,
+            "Template": template,
+        }
+    )
 
     linter = Linter()
     linter.lint_fragment(registry, fragment)

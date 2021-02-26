@@ -3,8 +3,9 @@ from typing import List
 
 from primer3plus.design import primer3
 from pydent.models import Sample
-from aqbt.aquarium.registry import LabDNARegistry
+
 from aqbt import biopython
+from aqbt.aquarium.registry import LabDNARegistry
 
 
 class LintError:
@@ -34,6 +35,7 @@ class LintError:
             sample_name=self.sample.name,
             msg=self.msg,
         )
+
 
 # TODO: Linters should inherit LinterABC
 # from abc import ABC, abstractmethod
@@ -284,7 +286,6 @@ class Linter:
 
     def lint_fragment(self, registry: LabDNARegistry, fragment: Sample):
         """Check the validity of a given Aquarium fragment.
-
 
         Checks::
 

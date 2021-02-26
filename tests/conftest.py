@@ -5,9 +5,9 @@ from os.path import join
 import pytest
 import toml
 
+from aqbt import AquariumBuildTools
 from aqbt.tools import config_to_sessions
 from aqbt.tools import parse_config
-from aqbt import AquariumBuildTools
 
 here = abspath(dirname(__file__))
 
@@ -24,7 +24,7 @@ def config_alt_path():
 
 @pytest.fixture(scope="session")
 def config(config_path):
-    with open(config_path, "r") as f:
+    with open(config_path) as f:
         return parse_config(toml.load(f))
 
 
@@ -53,6 +53,6 @@ def aquarium(sessions):
     return sessions["default"]["aquarium"]
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def tools(config):
     return AquariumBuildTools(config)

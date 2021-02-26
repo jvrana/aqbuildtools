@@ -1,5 +1,4 @@
-"""
-design.py
+"""design.py.
 
 DNA Design Module
 """

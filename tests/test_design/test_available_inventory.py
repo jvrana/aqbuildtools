@@ -1,12 +1,16 @@
+import json
+
+import pytest
+
+from aqbt.bioadapter.conversion import json_to_seqrecord
 from aqbt.design.components.aq_to_dna_inventory_json import (
     available_sample_json_from_aquarium_session,
+)
+from aqbt.design.components.aq_to_dna_inventory_json import (
     dna_json_from_benchling_connector,
-    sample_ids_from_dna_json,
 )
 from aqbt.design.components.aq_to_dna_inventory_json import generate_inventory_json
-import pytest
-import json
-from aqbt.bioadapter.conversion import json_to_seqrecord
+from aqbt.design.components.aq_to_dna_inventory_json import sample_ids_from_dna_json
 
 
 @pytest.mark.parametrize(
@@ -56,7 +60,10 @@ def test_available_inventory(registry, aquarium):
         connector,
         aquarium,
         {
-            "Fragment": {"object_types": ["Fragment Stock"], "topology": "linear",},
+            "Fragment": {
+                "object_types": ["Fragment Stock"],
+                "topology": "linear",
+            },
             "Plasmid": {
                 "object_types": ["Plasmid Glycerol Stock"],
                 "topology": "circular",
@@ -78,7 +85,10 @@ def test_inventory_to_seq_records(registry, aquarium):
         connector,
         aquarium,
         {
-            "Fragment": {"object_types": ["Fragment Stock"], "topology": "linear",},
+            "Fragment": {
+                "object_types": ["Fragment Stock"],
+                "topology": "linear",
+            },
             "Plasmid": {
                 "object_types": ["Plasmid Glycerol Stock"],
                 "topology": "circular",

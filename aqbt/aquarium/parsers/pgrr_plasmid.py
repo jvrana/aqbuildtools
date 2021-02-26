@@ -76,7 +76,7 @@ def wsetdict():
     :return:
     """
     path = os.path.join(data_dir, "wset_conversion.json")
-    with open(path, "r") as f:
+    with open(path) as f:
         wset = json.load(f)
     return wset
 
@@ -236,8 +236,10 @@ def parse_NOR_gate(name: str) -> re.Match:
     )
 
     cassette_match = r"(?P<grna>[iU]?RGR)-(?P<k>[WF]\d+)|[y]?eGFP"
-    pattern = r"pMOD-?({marker})-?(?P<prom>{promoter})-(?P<cassette>{cassette})$".format(
-        cassette=cassette_match, marker=marker_match, promoter=promoter_match
+    pattern = (
+        r"pMOD-?({marker})-?(?P<prom>{promoter})-(?P<cassette>{cassette})$".format(
+            cassette=cassette_match, marker=marker_match, promoter=promoter_match
+        )
     )
     m = re.match(pattern, name, re.IGNORECASE)
     return m

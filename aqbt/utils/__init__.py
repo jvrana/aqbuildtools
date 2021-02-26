@@ -66,7 +66,6 @@ def sort_cycle(arr, key=None):
     return arr[i:] + arr[:i]
 
 
-
 def chunkify(arr: Iterable[T], chunk_size: int) -> Generator[List[T], None, None]:
     new_list = []
     for x in tee(arr, 1)[0]:

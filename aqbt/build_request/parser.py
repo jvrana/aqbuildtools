@@ -1,17 +1,25 @@
-"""
-Methods for parsing a build request document.
+"""Methods for parsing a build request document.
 
-The primary input for this is a List[List[str]] representing the
-excel or csv sheet. This can be obtained by parsing an excel sheet, using
-the google sheet API, etc.
+The primary input for this is a List[List[str]] representing the excel
+or csv sheet. This can be obtained by parsing an excel sheet, using the
+google sheet API, etc.
 """
+import re
+from itertools import tee
+from typing import Callable
+from typing import Dict
+from typing import Iterable
+from typing import List
+from typing import Optional
+from typing import Tuple
+from typing import TypeVar
+from typing import Union
 
 import pandas as pd
-from typing import TypeVar, Union, Callable, List, Iterable, Tuple, Optional, Dict
-from itertools import tee
-import re
+
 from .cell_value import CellValue
-from .exceptions import parsing_location, BuildRequestParsingException
+from .exceptions import BuildRequestParsingException
+from .exceptions import parsing_location
 from .validate import validate_part_list
 
 T = TypeVar("T")
@@ -36,16 +44,18 @@ class Keys:
 # Utilities
 ##########################
 
+
 def _is_nan(x: Union[str, CellValue]) -> bool:
     if x is None:
         return True
-    elif x.strip().lower() == 'nan':
+    elif x.strip().lower() == "nan":
         return True
-    elif x.strip().lower() == 'None':
+    elif x.strip().lower() == "None":
         return True
-    elif x.strip() == '':
+    elif x.strip() == "":
         return True
     return False
+
 
 def _dispatch_match_fxn(
     match: Union[Callable, str, re.Pattern]
@@ -65,7 +75,7 @@ def _dispatch_match_fxn(
 
 
 def match_value(match: Union[Callable, str, re.Pattern], value: str) -> bool:
-    """Match a string, Callable, or regex pattern with a value"""
+    """Match a string, Callable, or regex pattern with a value."""
     fxn = _dispatch_match_fxn(match)
     return fxn(value)
 
@@ -76,8 +86,8 @@ def find_value(
     only_rows: Optional[List[int]] = None,
     only_cols: Optional[List[int]] = None,
 ) -> List[Tuple[int, int]]:
-    """Return the indices [(int, int), ...] of the cells that match the provided
-    matching string, function, regex pattern."""
+    """Return the indices [(int, int), ...] of the cells that match the
+    provided matching string, function, regex pattern."""
     found = []
 
     for r, row in enumerate(values):
@@ -90,7 +100,7 @@ def find_value(
 
 
 def pairwise(iterable: Iterable[T]) -> Iterable[Tuple[T, T]]:
-    "s -> (s0,s1), (s1,s2), (s2, s3), ..."
+    """s -> (s0,s1), (s1,s2), (s2, s3), ..."""
     a, b = tee(iterable)
     next(b, None)
     return zip(a, b)
@@ -107,23 +117,23 @@ def cell_is_empty(cell: str):
 
 
 def row_is_empty(row: List[str]) -> bool:
-    """check that a row of string values is empty"""
+    """check that a row of string values is empty."""
     return all(cell_is_empty(c) for c in row)
 
 
 def remove_empties_from_row(values: List[List[str]]) -> List[List[str]]:
-    """Remove empty rows"""
+    """Remove empty rows."""
     return [row for row in values if not row_is_empty(row)]
 
 
 def is_square(values: List[List[T]]) -> bool:
-    """Check that 2D list is square"""
+    """Check that 2D list is square."""
     row_sizes = [len(r) for r in values]
     return len(set(row_sizes)) == 1
 
 
 def transpose(values: List[List[T]]) -> List[List[T]]:
-    """Try to 'transpose' a list of lists"""
+    """Try to 'transpose' a list of lists."""
     num_rows = max([len(r) for r in values])
     transposed = [[] for _ in range(num_rows)]
     for r in range(num_rows):
@@ -187,7 +197,7 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     rows = [None] + [i[0] for i in indices] + [None]
 
     # partition the values on the indices
-    partitioned = list((_partition(composite, rows)))[1:]
+    partitioned = list(_partition(composite, rows))[1:]
     parsed_json_arr = []
     for p in partitioned:
         with parsing_location(p[0][0]):
@@ -199,7 +209,7 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
         with parsing_location(parsed_json["Name:"][0][0]):
             names = transpose(parsed_json["Name:"])
 
-        if 'Parts:' in parsed_json:
+        if "Parts:" in parsed_json:
             # TODO: should this be covered by the jsonschema?
             # if 'Part Sequence:' in parsed_json:
             #     with parsing_location(parsed_json['Parts:'][0][0]):
@@ -207,7 +217,7 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
             #                                            "defined for a composite part")
             with parsing_location(parsed_json["Parts:"][0][0]):
                 parts = transpose(parsed_json["Parts:"])
-            part_type = 'composite part'
+            part_type = "composite part"
         # if 'Part Sequence:' in parsed_json:
         #     with parsing_location(parsed_json['Part Sequence:'][0][0]):
         #         parts = transpose(parsed_json['Part Sequence:'])
@@ -240,9 +250,9 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
     part_list = []
     for part in part_list_old:
         if (
-            _is_nan(part['name']) and
-            _is_nan(part['description']) and
-                part["parts"] in [[], ["nan"], ["none"], ["None"], [""]]
+            _is_nan(part["name"])
+            and _is_nan(part["description"])
+            and part["parts"] in [[], ["nan"], ["none"], ["None"], [""]]
         ):
             continue
         else:
@@ -252,7 +262,10 @@ def parse_composite_parts(values: List[List[Union[str, int]]]) -> List[Dict]:
 
 
 def _get_and_strip(d: Dict[str, str], k: str, default: T) -> Union[T, str]:
-    """Get value from dictionary and strip. Else, return default"""
+    """Get value from dictionary and strip.
+
+    Else, return default
+    """
     if k in d:
         if not isinstance(d[k], str):
             return default

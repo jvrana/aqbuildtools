@@ -1,5 +1,6 @@
-from aqbt.aquarium.registry import FakeRegistryConnector
 import pytest
+
+from aqbt.aquarium.registry import FakeRegistryConnector
 
 
 def test_fake_registry_connector():

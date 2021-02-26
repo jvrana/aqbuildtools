@@ -8,13 +8,17 @@ Outputs:
 
 (1) Inventory JSON for available DNA and their sequences
 """
+import re
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Union
+
+from pydent import AqSession
 
 from aqbt.aquarium.registry import BenchlingRegistryConnector
-from pydent import AqSession
-from typing import List, Dict, Any, Union
-from aqbt.utils import merge_left
 from aqbt.bioadapter.conversion import benchling_to_json
-import re
+from aqbt.utils import merge_left
 
 
 def dna_json_from_benchling_connector(
@@ -40,7 +44,10 @@ def available_sample_json_from_aquarium_session(
         "__query__": {
             "sample_type": {"__query__": {"name": sample_type_names}},
             "__options__": {"pageSize": page_size, "limit": sample_limit},
-            "__return__": {"field_values": [], "sample_type": [],},
+            "__return__": {
+                "field_values": [],
+                "sample_type": [],
+            },
         },
     }
     if sample_ids:
@@ -75,7 +82,7 @@ def available_sample_json_from_aquarium_session(
 
 
 def sample_ids_from_dna_json(dna_json: List[Dict[str, Any]]):
-    pattern = "aqUWBF(?P<aquarium_id>\d+)"
+    pattern = r"aqUWBF(?P<aquarium_id>\d+)"
     expected_re_key = "aquarium_id"
     registry_key = "entityRegistryId"
     sample_ids = []
@@ -117,8 +124,7 @@ def generate_inventory_json(
     sample_limit: int = -1,
     item_limit: int = -1,
 ):
-    """
-    Generate inventory JSON.
+    """Generate inventory JSON.
 
     .. code-block:: python
 

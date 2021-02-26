@@ -1,11 +1,14 @@
 import random
 import re
-from abc import ABC, abstractmethod, abstractproperty
+from abc import ABC
+from abc import abstractmethod
+from abc import abstractproperty
 from copy import deepcopy
 from functools import partial
 from typing import List
 from typing import Tuple
-from typing import Union, Type
+from typing import Type
+from typing import Union
 from uuid import uuid4
 
 import validators
@@ -19,10 +22,8 @@ from pydent.models import Sample
 from aqbt import bioadapter
 from aqbt import biopython
 from aqbt import sequence
-from aqbt.logger import logger
 from aqbt.bioadapter.conversion import seqrecord_to_json
-
-import random
+from aqbt.logger import logger
 
 # TODO: move connector and registry to new module? This isn't specific to aquarium
 
@@ -68,8 +69,7 @@ class FakeRegistryConnector(RegistryConnectorABC):
         feature_length_range: Tuple[int, int],
         name: str = "FakeRegistry",
     ):
-        """
-        Constructor for a connector to a faked DNA registry.
+        """Constructor for a connector to a faked DNA registry.
 
         Usage:
 
@@ -440,7 +440,9 @@ class LabDNARegistry:
             )
 
     def get_primer_sequence(
-        self, sample: Sample, keys: Tuple[Union[str, Tuple[str, str]]] = None,
+        self,
+        sample: Sample,
+        keys: Tuple[Union[str, Tuple[str, str]]] = None,
     ) -> SeqRecord:
         """Return the primer sequence as a SeqRecord sequence from an Aquarium
         sample using its properties.
@@ -572,8 +574,8 @@ class LabDNARegistry:
         return self.get_sequence(sample) is not None
 
     def fast_is_registered(self, sample: Sample) -> bool:
-        """Quickly check if an Aquarium sample has a registered DNA sequence
-        by checking the cached sequences."""
+        """Quickly check if an Aquarium sample has a registered DNA sequence by
+        checking the cached sequences."""
         if not self._using_cache:
             raise ValueError(
                 "`registry.use_cache` must be True to use '{}'."

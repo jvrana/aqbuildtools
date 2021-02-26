@@ -860,8 +860,7 @@ class Span(Container, Iterable, Sized):
         return sum([r[1] - r[0] for r in self.ranges()])
 
     def __iter__(self) -> Generator[int, None, None]:
-        for i in chain(*[range(*x) for x in self.ranges()]):
-            yield i
+        yield from chain(*[range(*x) for x in self.ranges()])
 
     def __invert__(self):
         return self.invert()

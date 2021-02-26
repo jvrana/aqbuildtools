@@ -1,16 +1,16 @@
-import pytest
-import pandas as pd
 from os.path import join
-from aqbt.build_request.parser import (
-    parse_composite_parts,
-    parse_basic_parts,
-    parse_parts,
-    CellValue,
-)
-from aqbt.build_request.validate import validate_part, validate_part_list
-from aqbt.build_request.exceptions import LocationContext
 
+import pandas as pd
+import pytest
+
+from aqbt.build_request.exceptions import LocationContext
+from aqbt.build_request.parser import CellValue
+from aqbt.build_request.parser import parse_basic_parts
+from aqbt.build_request.parser import parse_composite_parts
+from aqbt.build_request.parser import parse_parts
 from aqbt.build_request.parser import row_is_empty
+from aqbt.build_request.validate import validate_part
+from aqbt.build_request.validate import validate_part_list
 
 
 @pytest.fixture()

@@ -124,7 +124,9 @@ def test_aq_to_gff_example(registry, cenpk, tmp_path):
             s.name = short_name
             s.id = short_name
             SeqIO.write(
-                [s], handle=join(tmp_path, "{}.gb".format(long_name)), format="genbank",
+                [s],
+                handle=join(tmp_path, "{}.gb".format(long_name)),
+                format="genbank",
             )
             print(
                 {
@@ -149,7 +151,12 @@ def test_aq_to_gff_diploid(sample_id, cenpk, registry):
 
 
 @pytest.mark.parametrize(
-    "sample_id", [27351, 27673, 27674,],
+    "sample_id",
+    [
+        27351,
+        27673,
+        27674,
+    ],
 )
 def test_aq_to_gff(sample_id, registry, cenpk):
     records = cenpk

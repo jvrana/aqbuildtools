@@ -5,8 +5,8 @@ import toml
 from benchlingapi import Session as BenchlingSession
 from pydent import AqSession
 
-from aqbt.aquarium.registry import LabDNARegistry
 from aqbt.aquarium.registry import BenchlingRegistryConnector
+from aqbt.aquarium.registry import LabDNARegistry
 
 
 class ConfigParsingException(Exception):
@@ -90,7 +90,8 @@ def config_to_sessions(config: Dict[str, Dict[str, str]]):
         )  #: klavins lab Benchling registry connector
 
         sessions[session_name]["registry"] = LabDNARegistry(
-            connector=registry_connector, aqsession=sessions[session_name]["aquarium"],
+            connector=registry_connector,
+            aqsession=sessions[session_name]["aquarium"],
         )  #: klavins lab Benchling registry
     return sessions
 
@@ -121,7 +122,7 @@ class AquariumBuildTools:
 
     @classmethod
     def from_toml(cls, path: str):
-        with open(path, "r") as f:
+        with open(path) as f:
             config_dict = toml.load(f)
         config = parse_config(config_dict)
         return cls(config)

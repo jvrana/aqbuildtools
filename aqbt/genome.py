@@ -302,7 +302,7 @@ def parse_result_to_span(data, inclusive=True, input_index=1, output_index=None)
     return span
 
 
-class IntegrationSite(object):
+class IntegrationSite:
     def __init__(
         self,
         chr: SeqRecord,
@@ -355,15 +355,13 @@ class GenomeIntegrator:
         """
 
         self.logger.debug(
-            (
-                "Integration Validation:\n"
-                "Left subject:  {}\n"
-                "Right subject: {}\n"
-                "Left query:   {}\n"
-                "Right query:  {}\n"
-                "Direction:    {}".format(
-                    left.subject, right.subject, left.query, right.query, left.direction
-                )
+            "Integration Validation:\n"
+            "Left subject:  {}\n"
+            "Right subject: {}\n"
+            "Left query:   {}\n"
+            "Right query:  {}\n"
+            "Direction:    {}".format(
+                left.subject, right.subject, left.query, right.query, left.direction
             )
         )
 
@@ -656,7 +654,9 @@ class GenomeIntegrator:
         return integration_sites
 
     def integrate(
-        self, chromosomes: List[SeqRecord], integrants: List[SeqRecord],
+        self,
+        chromosomes: List[SeqRecord],
+        integrants: List[SeqRecord],
     ) -> List[Dict[str, Any]]:
         """From a list of chromosomes and list of integrants, generate a new
         engineered genome.

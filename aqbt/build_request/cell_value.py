@@ -1,6 +1,8 @@
 class CellValue(str):
-    """String class that maintains 2-dimensional index. Primarily used for
-    relaying parsing errors."""
+    """String class that maintains 2-dimensional index.
+
+    Primarily used for relaying parsing errors.
+    """
 
     def add_rc(self, r, c):
         self.row = r
@@ -19,7 +21,7 @@ class CellValue(str):
                 new_values[-1].append(cell_val)
         return new_values
 
-    def _apply(self, fxn_name: str, args = None, kwargs = None):
+    def _apply(self, fxn_name: str, args=None, kwargs=None):
         if args is None:
             args = ()
         if kwargs is None:
@@ -29,10 +31,10 @@ class CellValue(str):
         return x
 
     def lower(self):
-        return self._apply('lower')
+        return self._apply("lower")
 
     def upper(self):
-        return self._apply('upper')
+        return self._apply("upper")
 
     def strip(self):
-        return self._apply('strip')
+        return self._apply("strip")
