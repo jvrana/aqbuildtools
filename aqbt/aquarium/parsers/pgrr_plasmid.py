@@ -326,6 +326,8 @@ def parse_nor_gate_name_to_sequence(name: str) -> Union[SeqRecord, None]:
     record = record + amp_ori
     biopython.remove_duplicate_features(record)
 
+    record.name = name
+    record.annotations['name'] = name
     return record
 
 
