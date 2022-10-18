@@ -28,6 +28,18 @@ def test_resolve_fragment(aquarium, registry):
     for a in seq.annotations:
         print(a.name, a.start, a.end, len(seq.bases))
 
+def test_resolve_fragment2(aquarium, registry):
+    resolver = Resolver(aquarium, registry)
+    resolver.force_build_at_depths = [0]
+    seq = resolver.resolve_sequence(aquarium.Sample.find(36469))
+    # seq = resolver.resolve_sequence(aquarium.Sample.find(36415))
+    # seq = resolver.resolve_sequence(aquarium.Sample.find(36278))
+
+    for a in seq.annotations:
+        print(a.name, a.start, a.end, len(seq.bases))
+
+
+
 
 def test_unregistered(aquarium, registry):
     resolver = Resolver(aquarium, registry)

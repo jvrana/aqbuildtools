@@ -127,49 +127,58 @@ class Resolver:
             seq = self.build_plasmid(sample, current_depth)
         return seq
 
+    def make_linear_assembly_pcr_product(self, sample: Sample):
+        fragment_samples = sample.properties['Fragment Mix Array']
+        fragment_dna = [self.resolve_sequence(s) for s in fragment_samples]
+        records = [self.registry.connector.convert(d, to="SeqRecord", frm="DNASequence") for d in fragment_dna]
+        assemblies = biopython.make_linear_assemblies(records)
+        return assemblies
+
     def build_fragment(self, sample: Sample) -> t.Union[None, DNASequence]:
+        sample_iden = f"{sample.id}:{sample.name}"
         self.info(f"building fragment sample={sample.id}:{sample.name}")
 
-        products = self.make_pcr_product(sample)
+        if sample.properties.get('Fragment Mix Array', list()):
+            products = self.make_linear_assembly_pcr_product(sample)
+        else:
+            products = [p[0] for p in self.make_pcr_product(sample)]
 
         size_select_perc_diff_threshold = 10  # select products within 10% of expected length
         if len(products) > 1:
 
             # then select the one closest to the given length
-            self.info("Found more than one product. Lengths=" + ','.join(str(len(p[0].seq)) for p in products))
+            self.info(f"{sample_iden}: Found more than one product. Lengths=" + ','.join(str(len(p.seq)) for p in products))
             expected_length = sample.properties['Length']
             if not expected_length:
-                self.info("No expected length found. Cannot size select multiple products without a length")
+                self.info(f"{sample_iden}: No expected length found. Cannot size select multiple products without a length")
                 return None
             else:
                 size_selected_products = []
                 for p in products:
-                    diff = len(p[0].seq) - expected_length
+                    diff = len(p.seq) - expected_length
                     perc_diff = (diff / expected_length) * 100
                     x = size_select_perc_diff_threshold
                     if perc_diff <= x and perc_diff >= -x:
                         size_selected_products.append(p)
                 if len(size_selected_products) > 1:
-                    self.info(f"Multiple products found within 10% of expected length {expected_length}bp")
+                    self.info(f"{sample_iden}: Multiple products found within 10% of expected length {expected_length}bp")
                 elif len(size_selected_products) == 0:
-                    self.info(f"fNo products found within 10% of expected lenght {expected_length}bp")
+                    self.info(f"{sample_iden}: No products found within 10% of expected length {expected_length}bp")
                 else:
-                    dna_product = self.registry.connector.convert(
-                        p[0], to="DNASequence"
-                    )
+                    self.info(f"{sample_iden}: Found product within expected length {expected_length}")
+                    dna_product = self.registry.connector.convert(size_selected_products[0], to="DNASequence")
                     dna_product.is_circular = False
                     return dna_product
-            self.info("ERROR: more than one product")
+
+            self.info(f"{sample_iden}: ERROR -- more than one product")
             return None
         elif len(products) == 1:
-            dna_product = self.registry.connector.convert(
-                products[0][0], to="DNASequence"
-            )
+            dna_product = self.registry.connector.convert(products[0], to="DNASequence")
             dna_product.is_circular = False
-            self.info("SUCCESS: Build fragment from primers and template.")
+            self.info(f"{sample_iden}: SUCCESS -- Build fragment from primers and template.")
             return dna_product
         else:
-            self.info("ERROR: no products")
+            self.info(f"{sample_iden}: ERROR -- no products")
             return None
 
     def resolve_fragment(self, sample, current_depth: int) -> t.Union[None, DNASequence]:
@@ -178,19 +187,19 @@ class Resolver:
             seq = self.build_fragment(sample)
         return seq
 
-    def make_pcr_product(self, fragment) -> t.List[t.Tuple[SeqRecord, int, int]]:
+    def make_pcr_product(self, fragment) -> t.List[SeqRecord]:
         fwd_primer_sample = fragment.properties["Forward Primer"]
         rev_primer_sample = fragment.properties["Reverse Primer"]
         template_sample = fragment.properties["Template"]
-
+        sample_iden = f"{fragment.id}:{fragment.name}"
         if not fwd_primer_sample:
-            self.info("ERROR: no 'Forward Primer' found in sample")
+            self.info(f"ERROR: no 'Forward Primer' found in sample {sample_iden}")
             return []
         if not rev_primer_sample:
-            self.info("ERROR: no 'Reverse Primer' found in sample")
+            self.info(f"ERROR: no 'Reverse Primer' found in sample {sample_iden}")
             return []
         if not template_sample:
-            self.info("ERROR: no 'Template' found in sample")
+            self.info(f"ERROR: no 'Template' found in sample {sample_iden}")
             return []
 
         fwd = self.registry.get_primer_sequence(fwd_primer_sample)
@@ -198,13 +207,13 @@ class Resolver:
         template = self.registry.get_sequence(template_sample)
 
         if not fwd:
-            self.info("ERROR: no fwd primer")
+            self.info(f"ERROR: no fwd primer {fwd_primer_sample.id}:{fwd_primer_sample.name}")
             return []
         if not rev:
-            self.info("ERROR: no rev primer")
+            self.info(f"ERROR: no rev primer {rev_primer_sample.id}:{rev_primer_sample.name}")
             return []
         if not template:
-            self.info("ERROR: no template")
+            self.info(f"ERROR: no template {template_sample.id}:{template_sample.name}")
             return []
 
         template_record = self.registry.connector.convert(template, to="SeqRecord")

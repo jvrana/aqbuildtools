@@ -327,7 +327,7 @@ def pcr_amplify(
     return_matches: bool = False,
     annotate_product: bool = False,
     annotate_primers: bool = False,
-) -> Union[List[SeqRecord], Tuple[List[SeqRecord], List[dict], List[dict]]]:
+) -> Union[List[Tuple[SeqRecord, int, int]], Tuple[List[Tuple[SeqRecord, int, int]], List[dict], List[dict]]]:
     """
 
     :param primers: list of primers to use for the amplification. Typically, a
