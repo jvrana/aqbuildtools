@@ -1,0 +1,17 @@
+{
+  "strains": [
+    {
+      "yeast": "Yeast Strain:36566:Dual Inducible OR circuit (DSGRN topology, low performance CDM)",
+      "integrants": [
+        "Fragment:36469:URA-URA<pGRR-W10W8-URGR-W5> (v2)",
+        "Fragment:36332:HIS-HIS<7XTetO-pMinCyc1-URGR-W8>",
+        "Plasmid:33580:pMOD-HO-KanMX-pRPL18B-rtTA-VP16",
+        "Plasmid:1380:pMOD4G-dcas9-mxi1",
+        "Fragment:36471:ARS314-bleo<pGRR-W10W8-URGR-W36> (v2)",
+        "Fragment:36449:URA-URA<pGRR-W36W5-yeGFP> (v2)",
+        "Plasmid:5533:pMOD8-pGALZ4-URGR-W10",
+        "Plasmid:1096:pMODKan_HO_pACT1_Zev4"
+      ]
+    }
+  ]
+}

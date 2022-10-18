@@ -1,0 +1,16 @@
+{
+  "strains": [
+    {
+      "yeast": "Yeast Strain:36570:Dual Inducible OR circuit (GANDER topology, low performance CDM)",
+      "integrants": [
+        "Fragment:36468:URA-URA<pGRR-W5W8-URGR-W36> (v2)",
+        "Fragment:36332:HIS-HIS<7XTetO-pMinCyc1-URGR-W8>",
+        "Plasmid:33580:pMOD-HO-KanMX-pRPL18B-rtTA-VP16",
+        "Plasmid:1380:pMOD4G-dcas9-mxi1",
+        "Fragment:36447:URA-URA<pGRR-W36W36-yeGFP> (v2)",
+        "Plasmid:5535:pMOD8-pGALZ4-URGR-W5",
+        "Plasmid:1096:pMODKan_HO_pACT1_Zev4"
+      ]
+    }
+  ]
+}
