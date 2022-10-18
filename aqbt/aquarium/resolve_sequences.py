@@ -1,10 +1,14 @@
 import networkx as nx
+from benchlingapi.models import DNASequence
 from pydent.models import Sample
 
 from aqbt import biopython
 from aqbt.aquarium import pydent_utils
 from aqbt.aquarium.pydent_utils import Constants as C
-
+import logging
+import typing as t
+from Bio.SeqRecord import SeqRecord
+logger = logging.getLogger(__file__)
 
 class Resolver:
     def __init__(self, session, registry):
@@ -18,6 +22,10 @@ class Resolver:
         self.force_build_at_depths = []
         self.force_build_types = []
         self.force_build_sample_ids = []
+
+    def info(self, msg):
+        print(msg)
+        logger.info(msg)
 
     @staticmethod
     def keystone_ops(session, sample):
@@ -45,7 +53,7 @@ class Resolver:
         ops = self.keystone_ops(self.session, sample)
         op = self.select_ops(ops)
         if not op:
-            print("ERROR: no operations produce '{}'".format(sample.name))
+            self.info("ERROR: no operations produce '{}'".format(sample.name))
             return {}
         self.session.browser.get([op], {"field_values": {"sample": "field_values"}})
         input_samples = self.get_input_samples(op)
@@ -60,24 +68,24 @@ class Resolver:
 
     def _try_find(self, sample, current_depth):
         if sample.id in self.resolved_sequences:
-            print("sequence already resolved")
+            self.info("sequence already resolved")
             return self.resolved_sequences[sample.id]
         if current_depth in self.force_build_at_depths:
-            print(
+            self.info(
                 "registry ignored at depth. Depth {} is in {}".format(
                     current_depth, self.force_build_at_depths
                 )
             )
             return None
         elif sample.sample_type.name in self.force_build_types:
-            print(
+            self.info(
                 "registry ignored. Type {} is in {}".format(
                     sample.sample_type.name, self.force_build_types
                 )
             )
             return None
         elif sample.id in self.force_build_sample_ids:
-            print(
+            self.info(
                 "registry ignored. Sample id {} is in {}".format(
                     sample.id, self.force_build_sample_ids
                 )
@@ -86,19 +94,19 @@ class Resolver:
         return self.registry.get_sequence(sample)
 
     def build_plasmid(self, sample, current_depth):
-        print('WARNING: No sequence. Looking for how to build "{}"'.format(sample.name))
+        self.info('WARNING: No sequence. Looking for how to build "{}"'.format(sample.name))
         input_sequences = self.get_input_sequences(sample, current_depth)
 
         failed = False
         for sid, input_seq in input_sequences.items():
             if input_seq is None:
-                print('ERROR: no sequence for "{}"'.format(sid))
+                self.info('ERROR: no sequence for "{}"'.format(sid))
                 failed = True
         if failed:
             return
 
         if not input_sequences:
-            print('ERROR: no input sequences found for "{}"'.format(sample.id))
+            self.info('ERROR: no input sequences found for "{}"'.format(sample.id))
             return
 
         input_records = self.registry.connector.convert(
@@ -106,55 +114,83 @@ class Resolver:
         )
         assemblies = biopython.make_cyclic_assemblies(input_records)
         if not assemblies:
-            print("ERROR: no cyclic assembly for '{}'".format(sample.name))
+            self.info("ERROR: no cyclic assembly for '{}'".format(sample.name))
         elif len(assemblies) == 1:
-            print("SUCCESS: Resolved plasmid from gibson assembly!")
+            self.info("SUCCESS: Resolved plasmid from gibson assembly!")
             return self.registry.connector.convert(assemblies[0], to="DNASequence")
         else:
-            print("ERROR: more than one sequence")
+            self.info("ERROR: more than one sequence")
 
-    def resolve_plasmid(self, sample, current_depth):
+    def resolve_plasmid(self, sample, current_depth) -> t.Union[None, DNASequence]:
         seq = self._try_find(sample, current_depth)
         if not seq:
             seq = self.build_plasmid(sample, current_depth)
         return seq
 
-    def build_fragment(self, sample):
-        print("building fragment")
+    def build_fragment(self, sample: Sample) -> t.Union[None, DNASequence]:
+        self.info(f"building fragment sample={sample.id}:{sample.name}")
+
         products = self.make_pcr_product(sample)
+
+        size_select_perc_diff_threshold = 10  # select products within 10% of expected length
         if len(products) > 1:
-            print("ERROR: more than one product")
+
+            # then select the one closest to the given length
+            self.info("Found more than one product. Lengths=" + ','.join(str(len(p[0].seq)) for p in products))
+            expected_length = sample.properties['Length']
+            if not expected_length:
+                self.info("No expected length found. Cannot size select multiple products without a length")
+                return None
+            else:
+                size_selected_products = []
+                for p in products:
+                    diff = len(p[0].seq) - expected_length
+                    perc_diff = (diff / expected_length) * 100
+                    x = size_select_perc_diff_threshold
+                    if perc_diff <= x and perc_diff >= -x:
+                        size_selected_products.append(p)
+                if len(size_selected_products) > 1:
+                    self.info(f"Multiple products found within 10% of expected length {expected_length}bp")
+                elif len(size_selected_products) == 0:
+                    self.info(f"fNo products found within 10% of expected lenght {expected_length}bp")
+                else:
+                    dna_product = self.registry.connector.convert(
+                        p[0], to="DNASequence"
+                    )
+                    dna_product.is_circular = False
+                    return dna_product
+            self.info("ERROR: more than one product")
             return None
         elif len(products) == 1:
             dna_product = self.registry.connector.convert(
                 products[0][0], to="DNASequence"
             )
             dna_product.is_circular = False
-            print("SUCCESS: Build fragment from primers and template.")
+            self.info("SUCCESS: Build fragment from primers and template.")
             return dna_product
         else:
-            print("ERROR: no products")
+            self.info("ERROR: no products")
             return None
 
-    def resolve_fragment(self, sample, current_depth: int):
+    def resolve_fragment(self, sample, current_depth: int) -> t.Union[None, DNASequence]:
         seq = self._try_find(sample, current_depth)
         if not seq:
             seq = self.build_fragment(sample)
         return seq
 
-    def make_pcr_product(self, fragment):
+    def make_pcr_product(self, fragment) -> t.List[t.Tuple[SeqRecord, int, int]]:
         fwd_primer_sample = fragment.properties["Forward Primer"]
         rev_primer_sample = fragment.properties["Reverse Primer"]
         template_sample = fragment.properties["Template"]
 
         if not fwd_primer_sample:
-            print("ERROR: no 'Forward Primer' found in sample")
+            self.info("ERROR: no 'Forward Primer' found in sample")
             return []
         if not rev_primer_sample:
-            print("ERROR: no 'Reverse Primer' found in sample")
+            self.info("ERROR: no 'Reverse Primer' found in sample")
             return []
         if not template_sample:
-            print("ERROR: no 'Template' found in sample")
+            self.info("ERROR: no 'Template' found in sample")
             return []
 
         fwd = self.registry.get_primer_sequence(fwd_primer_sample)
@@ -162,13 +198,13 @@ class Resolver:
         template = self.registry.get_sequence(template_sample)
 
         if not fwd:
-            print("ERROR: no fwd primer")
+            self.info("ERROR: no fwd primer")
             return []
         if not rev:
-            print("ERROR: no rev primer")
+            self.info("ERROR: no rev primer")
             return []
         if not template:
-            print("ERROR: no template")
+            self.info("ERROR: no template")
             return []
 
         template_record = self.registry.connector.convert(template, to="SeqRecord")
@@ -181,8 +217,8 @@ class Resolver:
     def _add_edge(self, src, dest):
         pass
 
-    def _resolve(self, source_sample, dest_sample, depth: int):
-        print("Resolving sequence for '{}'".format(dest_sample.name))
+    def _resolve(self, source_sample, dest_sample, depth: int) -> t.Union[None, DNASequence]:
+        self.info("Resolving sequence for '{}'".format(dest_sample.name))
         self._add_edge(source_sample, dest_sample)
         if dest_sample.sample_type_id == self.plasmid_type.id:
             seq = self.resolve_plasmid(dest_sample, current_depth=depth)
@@ -200,7 +236,7 @@ class Resolver:
                 seq.primers = []
             return seq
 
-    def resolve_sequence(self, sample: Sample):
+    def resolve_sequence(self, sample: Sample) -> t.Union[None, DNASequence]:
         return self._resolve(None, sample, 0)
 
     def register_new_sequences(self):
@@ -228,7 +264,7 @@ class Resolver:
                 unregistered.append(s)
         return unregistered
 
-        # print("Resolving sequence for '{}'".format(sample.name))
+        # self.info("Resolving sequence for '{}'".format(sample.name))
         # if sample.sample_type_id == self.plasmid_type.id:
         #     seq = self.resolve_plasmid(sample)
         # elif sample.sample_type_id == self.fragment_type.id:

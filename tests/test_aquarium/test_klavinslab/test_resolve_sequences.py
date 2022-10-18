@@ -23,7 +23,7 @@ def test_resolve_plasmid(aquarium, registry):
 def test_resolve_fragment(aquarium, registry):
     resolver = Resolver(aquarium, registry)
     resolver.force_build_at_depths = [0]
-    seq = resolver.resolve_sequence(aquarium.Sample.find(32868))
+    seq = resolver.resolve_sequence(aquarium.Sample.find(36268))
 
     for a in seq.annotations:
         print(a.name, a.start, a.end, len(seq.bases))

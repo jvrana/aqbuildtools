@@ -156,10 +156,54 @@ def test_make_cyclic_assemblies_fail():
     assert not assemblies
 
 
-def test_():
-    record = biopython.random_record(1000, name="random")
+def test_make_linear_assemblies_1_frag():
+    expected_sequence = biopython.random_record(2000, name="total")
 
-    record = biopython.slice_with_features(record, slice(4, 900))
+    r1 = expected_sequence
 
-    for f in record.features:
-        print(f)
+    records = [r1]
+    assemblies = biopython.make_linear_assemblies(records)
+    print(assemblies)
+    assert len(assemblies) == 1
+    assert str(assemblies[0].seq) == str(expected_sequence.seq)
+
+def test_make_linear_assemblies_2_frags():
+    expected_sequence = biopython.random_record(2000, name="total")
+
+    r1 = expected_sequence[:1000]
+    r2 = expected_sequence[1000-25:2000]
+
+    records = [r1, r2]
+    assemblies = biopython.make_linear_assemblies(records)
+    print(assemblies)
+    assert len(assemblies) == 1
+    assert str(assemblies[0].seq) == str(expected_sequence.seq)
+
+
+def test_make_linear_assemblies_3_frags():
+    expected_sequence = biopython.random_record(2000, name="total")
+
+    r1 = expected_sequence[:1000]
+    r2 = expected_sequence[1000-25:1500]
+    r3 = expected_sequence[1500-30:]
+
+    records = [r1, r2, r3]
+    assemblies = biopython.make_linear_assemblies(records)
+    print(assemblies)
+    assert len(assemblies) == 1
+    assert str(assemblies[0].seq) == str(expected_sequence.seq)
+
+
+def test_make_linear_assemblies_4_frags():
+    expected_sequence = biopython.random_record(3000, name="total")
+
+    r1 = expected_sequence[:1000]
+    r2 = expected_sequence[1000-25:1500]
+    r3 = expected_sequence[1500-30:2000]
+    r4 = expected_sequence[2000-30:]
+
+    records = [r1, r2, r3, r4]
+    assemblies = biopython.make_linear_assemblies(records)
+    print(assemblies)
+    assert len(assemblies) == 1
+    assert str(assemblies[0].seq) == str(expected_sequence.seq)

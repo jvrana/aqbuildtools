@@ -556,6 +556,39 @@ class GibsonAssembler:
         return record
 
     @classmethod
+    def assemble_record_from_linear_path(
+        cls,
+        path: List[str],
+        graph: nx.DiGraph,
+        annotate_sources: bool = False,
+        annotate_junctions: bool = False,
+    ) -> SeqRecord:
+
+        source_indices = []
+        i = 0
+
+        records = [graph.nodes[n]["record"] for n in path]
+        stored_features = cls._collect_features(records)
+
+        record = SeqRecord(Seq(""))
+
+        prev_overlap_len = 0
+        for n1, n2 in zip(path[:-1], path[1:]):
+            frag: SeqRecord = graph.nodes[n1]['record']
+            next_frag: SeqRecord = graph.nodes[n2]['record']
+
+            edge_data = graph.get_edge_data(n1, n2)
+            overlap_start, overlap_end = edge_data['match']['top_strand_slice']
+            current_overlap = frag[overlap_start:overlap_end]
+            truncated_record = slice_with_features(frag, slice(prev_overlap_len, -len(current_overlap)))
+            if annotate_junctions:
+                annotate(current_overlap, "junction: tm {}".format(format_float(edge_data["tm"])))
+            record += truncated_record
+            record + current_overlap
+        record += next_frag
+        return record
+
+    @classmethod
     def make_cyclic_assemblies(
         cls,
         records: List[SeqRecord],
@@ -582,6 +615,31 @@ class GibsonAssembler:
             assembled_records.append(record)
         make_cyclic(assembled_records)
         return assembled_records
+
+    @classmethod
+    def make_linear_assemblies(cls, records: List[SeqRecord], annotate_sources: bool = False,
+        annotate_junctions: bool = False) -> List[SeqRecord]:
+        if len(records) == 1:
+            return [records[0]]
+        g = cls.interaction_graph(records)
+        roots = [x for x in g.nodes() if g.out_degree(x) == 1 and g.in_degree(x) == 0]
+        leaves = [x for x in g.nodes() if g.out_degree(x) == 0 and g.in_degree(x) == 1]
+        paths = []
+        import itertools
+        for a, b in itertools.product(roots, leaves):
+            _paths = nx.all_simple_paths(g, a, b)
+            paths.extend(_paths)
+
+        assemblies = []
+        for _path in paths:
+            assemblies.append(cls.assemble_record_from_linear_path(
+                _path,
+                g,
+                annotate_sources=annotate_sources,
+                annotate_junctions=annotate_junctions,
+            ))
+        return assemblies
+
 
 
 def digest(record: SeqRecord, restriction_enzyme: str):
@@ -681,3 +739,4 @@ def from_gffs(paths: List[str]) -> List[SeqRecord]:
 
 
 make_cyclic_assemblies = GibsonAssembler.make_cyclic_assemblies
+make_linear_assemblies = GibsonAssembler.make_linear_assemblies
