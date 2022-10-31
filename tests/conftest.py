@@ -4,10 +4,14 @@ from os.path import join
 
 import pytest
 import toml
+from pydent import AqSession
 
 from aqbt import AquariumBuildTools
+from aqbt.aquarium.registry import LabDNARegistry
 from aqbt.tools import config_to_sessions
 from aqbt.tools import parse_config
+from benchlingapi import Session as BenchlingSession
+
 
 here = abspath(dirname(__file__))
 
@@ -39,17 +43,17 @@ def fixtures_path():
 
 
 @pytest.fixture(scope="session")
-def registry(sessions):
+def registry(sessions) -> LabDNARegistry:
     return sessions["default"]["registry"]
 
 
 @pytest.fixture(scope="session")
-def benchling(sessions):
+def benchling(sessions) -> BenchlingSession:
     return sessions["default"]["benchling"]
 
 
 @pytest.fixture(scope="session")
-def aquarium(sessions):
+def aquarium(sessions) -> AqSession:
     return sessions["default"]["aquarium"]
 
 

@@ -1,0 +1,28 @@
+LOCUS       UWBF_36263              1013 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  ARS314-pp2_5'hom__v3.
+ACCESSION   UWBF_36263
+VERSION     UWBF_36263
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 tgaatgtgtc tctgatgtac cagaaataat ttctcttaaa ggaggcaatg cttgaatttc
+       61 aggattgaaa gtttcattca atcttgttac aatgccttcc ttctccaaat cattaatcaa
+      121 gtggtcaaat ctttcataga acttagcttc cattcttttg tagaaatcat ctactttcaa
+      181 tttctcgtcg ctcaggttag ttacgaatgt atcataagaa ctgaagagcg tctttccctc
+      241 gctactcaca gatgagctgc gtgattcaaa gaatttctta cgtataaaat tcttattgaa
+      301 agaggtggtt ttcccttgag gagataactc gtctaactca attgtttcct cgttaatatt
+      361 gttcccatct atggcctttt cgtcggagtc tccccttttg cttcctgaag gtgttttaga
+      421 accaaagagc ttacgcttga gtttatgtgt aaatcttctt ttcgatgaag atggttctcc
+      481 tgcagctatg ttgctttcta tatcagcgat tggacctgga gtctgagagt cagcgtcatc
+      541 gtttaagtca ccggttggcg tttcttgttt caattcatct gtctgtaatg tgtagatcaa
+      601 atttttcaat tcgttataat ctaggtaatg attctgccat tcagggacag cgttgtattt
+      661 gagaaagtgt gagaatctca tttcgaggca caataatagc cgcctttacc gtagttttgc
+      721 tgcaccttta tctgagagct gactgctttt ttggtgtgaa acactgtttt ctggtaataa
+      781 tttttcaatg catcggatta cttttcccac gtgcgaaatc atcaattaat tagattgaaa
+      841 aaagggtaag ggaaaataag aaagaggcgg tagcctaaag atacggtaat tgaaacgttt
+      901 cctatgcaca atcttaaacc tttttaggta attgattaag ttgactgtaa tatctgtaaa
+      961 agattacatc taatttacgt ctggtttctc cttaaccaga ttcgaaaagc ggc
+//

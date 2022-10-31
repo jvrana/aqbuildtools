@@ -1,0 +1,30 @@
+LOCUS       UWBF_36269               604 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  (SD2) pp2-pGRR-W5.
+ACCESSION   UWBF_36269
+VERSION     UWBF_36269
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     promoter        25..584
+                     /label="pGRR"
+                     /ApEinfo_fwdcolor="#3d02d0"
+                     /ApEinfo_revcolor="#3d02d0"
+     misc_feature    1..24
+                     /label="PP2"
+                     /ApEinfo_fwdcolor="#60cbfb"
+                     /ApEinfo_revcolor="#60cbfb"
+ORIGIN
+        1 ccttaaccag attcgaaaag cggcagttta tcattatcaa tactcgccat ttcaaagaat
+       61 acgtaaataa ttaatagtag tgattttcct aactttattt agtcaaaaaa ttagcctttt
+      121 aattctgctg taacccgtac atgcccaaaa tagggggcgg gttacacaga atatataaca
+      181 tcgtaggtgt ctgggtgaac agtttattcc tggcatccac taaatataat ggagcccgct
+      241 ttttaagctg gcatccagaa aaaaaaagaa tcccagcacc aaaatattgt tttcttcacc
+      301 aaccatcagt tcataggtcc attctcttag cgcaactaca gagaacaggg gcacaaacag
+      361 gcaaaaaacg ggcacaacct caatggagtg atgcaacctg cctggagtaa atgatgacac
+      421 aaggcaattg acccacgcat gtatctatct cattttctta caccttctat taccttctgc
+      481 tctctctgat ttggaaaaag ctgaaaaaaa aggttgaaac cagttccctg aaattattcc
+      541 cctacttgac taataagtaa attcctgcag cccgggtact gtatggaacg tgattgaata
+      601 actt
+//

@@ -1,0 +1,189 @@
+LOCUS       UWBF_36339              3438 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  HIS-HIS<7XTetO-pMinCyc1-URGR-W34>.
+ACCESSION   UWBF_36339
+VERSION     UWBF_36339
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    1127..1154
+                     /label="Primer 1560_R"
+                     /ApEinfo_fwdcolor="#FFEF86"
+                     /ApEinfo_revcolor="#FFEF86"
+     CDS             313..972
+                     /label="HIS3"
+                     /ApEinfo_fwdcolor="#FFEF86"
+                     /ApEinfo_revcolor="#FFEF86"
+     terminator      973..1154
+                     /label="ADH1 terminator"
+                     /ApEinfo_fwdcolor="#85DAE9"
+                     /ApEinfo_revcolor="#85DAE9"
+     misc_feature    1..1154
+                     /label="HIS"
+                     /ApEinfo_fwdcolor="#84B0DC"
+                     /ApEinfo_revcolor="#84B0DC"
+     promoter        1..312
+                     /label="pHIS3"
+                     /ApEinfo_fwdcolor="#B1FF67"
+                     /ApEinfo_revcolor="#B1FF67"
+     gene            313..969
+                     /label="HIS3"
+                     /ApEinfo_fwdcolor="#B1FF67"
+                     /ApEinfo_revcolor="#B1FF67"
+     responsive_eleme1530..1548
+                     /label="TetO"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /ApEinfo_revcolor="#d59687"
+     http://identifie1704..1863
+                     /label="CYC1 minimal promoter"
+                     /ApEinfo_fwdcolor="#515616"
+                     /ApEinfo_revcolor="#515616"
+     responsive_eleme1637..1655
+                     /label="TetO"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /ApEinfo_revcolor="#d59687"
+     misc_feature    1204..1391
+                     /label="TRE 5'"
+                     /ApEinfo_fwdcolor="#FAAC61"
+                     /ApEinfo_revcolor="#FAAC61"
+     responsive_eleme1459..1477
+                     /label="TetO"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /ApEinfo_revcolor="#d59687"
+     misc_feature    1778..1797
+                     /label="c3 site"
+                     /ApEinfo_fwdcolor="#C7B0E3"
+                     /ApEinfo_revcolor="#C7B0E3"
+     responsive_eleme1423..1441
+                     /label="TetO"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /ApEinfo_revcolor="#d59687"
+     responsive_eleme1601..1619
+                     /label="TetO"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /ApEinfo_revcolor="#d59687"
+     responsive_eleme1494..1512
+                     /label="TetO"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /ApEinfo_revcolor="#d59687"
+     misc_feature    1179..1203
+                     /label="UTP1"
+                     /ApEinfo_fwdcolor="#FFEF86"
+                     /ApEinfo_revcolor="#FFEF86"
+     responsive_eleme1566..1584
+                     /label="TetO"
+                     /ApEinfo_fwdcolor="#d59687"
+                     /ApEinfo_revcolor="#d59687"
+     misc_feature    1155..1719
+                     /label="15d042653dc9_fragment_10"
+                     /ApEinfo_fwdcolor="#a75cf7"
+                     /ApEinfo_revcolor="#a75cf7"
+     misc_feature    1155..1178
+                     /label="24c7bab2c0d5_fragment_19"
+                     /ApEinfo_fwdcolor="#8895c1"
+                     /ApEinfo_revcolor="#8895c1"
+     misc_feature    1155..1178
+                     /label="PP2"
+                     /ApEinfo_fwdcolor="#FAAC61"
+                     /ApEinfo_revcolor="#FAAC61"
+     operator        1892..1911
+                     /label="r9"
+                     /ApEinfo_fwdcolor="#aedb9a"
+                     /ApEinfo_revcolor="#aedb9a"
+     misc_feature    1919..1998
+                     /label="ASBV1 Ribozyme"
+                     /ApEinfo_fwdcolor="#2dd9c2"
+                     /ApEinfo_revcolor="#2dd9c2"
+     misc_feature    2006..2085
+                     /label="spCas9 gRNA Handle"
+                     /ApEinfo_fwdcolor="#24551a"
+                     /ApEinfo_revcolor="#24551a"
+     misc_feature    2154..2175
+                     /label="TP"
+                     /ApEinfo_fwdcolor="#324b89"
+                     /ApEinfo_revcolor="#324b89"
+     misc_feature    1870..1891
+                     /label="PS"
+                     /ApEinfo_fwdcolor="#a99668"
+                     /ApEinfo_revcolor="#a99668"
+     misc_feature    1912..1918
+                     /label="ASBV1 pGAL1_INS1"
+                     /ApEinfo_fwdcolor="#3b023a"
+                     /ApEinfo_revcolor="#3b023a"
+     misc_feature    1999..2005
+                     /label="ASBV1 pGAL1_INS2"
+                     /ApEinfo_fwdcolor="#04bce9"
+                     /ApEinfo_revcolor="#04bce9"
+     misc_feature    2086..2153
+                     /label="HDV Ribozyme"
+                     /ApEinfo_fwdcolor="#05544f"
+                     /ApEinfo_revcolor="#05544f"
+     3'UTR           2438..3438
+                     /label="HIS3 3'UTR"
+                     /ApEinfo_fwdcolor="#0d437f"
+                     /ApEinfo_revcolor="#0d437f"
+     misc_feature    2416..2437
+                     /label="TS"
+                     /ApEinfo_fwdcolor="#804611"
+                     /ApEinfo_revcolor="#804611"
+ORIGIN
+        1 cgttttaaga gcttggtgag cgctaggagt cactgccagg tatcgtttga acacggcatt
+       61 agtcagggaa gtcataacac agtcctttcc cgcaattttc tttttctatt actcttggcc
+      121 tcctctagta cactctatat ttttttatgc ctcggtaatg attttcattt ttttttttcc
+      181 acctagcgga tgactctttt tttttcttag cgattggcat tatcacataa tgaattatac
+      241 attatataaa gtaatgtgat ttcttcgaag aatatactaa aaaatgagca ggcaagataa
+      301 acgaaggcaa agatgacaga gcagaaagcc ctagtaaagc gtattacaaa tgaaaccaag
+      361 attcagattg cgatctcttt aaagggtggt cccctagcga tagagcactc gatcttccca
+      421 gaaaaagagg cagaagcagt agcagaacag gccacacaat cgcaagtgat taacgtccac
+      481 acaggtatag ggtttctgga ccatatgata catgctctgg ccaagcattc cggctggtcg
+      541 ctaatcgttg agtgcattgg tgacttacac atagacgacc atcacaccac tgaagactgc
+      601 gggattgctc tcggtcaagc ttttaaagag gccctactgg cgcgtggagt aaaaaggttt
+      661 ggatcaggat ttgcgccttt ggatgaggca ctttccagag cggtggtaga tctttcgaac
+      721 aggccgtacg cagttgtcga acttggtttg caaagggaga aagtaggaga tctctcttgc
+      781 gagatgatcc cgcattttct tgaaagcttt gcagaggcta gcagaattac cctccacgtt
+      841 gattgtctgc gaggcaagaa tgatcatcac cgtagtgaga gtgcgttcaa ggctcttgcg
+      901 gttgccataa gagaagccac ctcgcccaat ggtaccaacg atgttccctc caccaaaggt
+      961 gttcttatgt aggcgaattt cttatgattt atgattttta ttattaaata agttataaaa
+     1021 aaaataagtg tatacaaatt ttaaagtgac tcttaggttt taaaacgaaa attcttattc
+     1081 ttgagtaact ctttcctgta ggtcaggttg ctttctcagg tatagcatga ggtcgctctt
+     1141 attgaccaca cctcccttaa ccagattcga aaagcggcgc cgatacgaag gttttctcca
+     1201 gcgaattctc gacctcgaga caaatggcag tattcatcca caattttaaa agaaaagggg
+     1261 ggattggggg gtacagtgca ggggaaagaa tagtagacat aatagcaaca gacatacaaa
+     1321 ctaaagaatt acaaaaacaa attacaaaaa ttcaaaattt tcgggtttat tacagggaca
+     1381 gcagagatcc actttggccg cgaatcgata tgtcgagttt actccctatc agtgatagag
+     1441 aacgtatgtc gagtttactc cctatcagtg atagagaacg atgtcgagtt tactccctat
+     1501 cagtgataga gaacgtatgt cgagtttact ccctatcagt gatagagaac gtatgtcgag
+     1561 tttactccct atcagtgata gagaacgtat gtcgagttta tccctatcag tgatagagaa
+     1621 cgtatgtcga gtttactccc tatcagtgat agagaacgta tgtcgaggta ggcgtgtacg
+     1681 aaagtgaaag tcgagctcgg tacgatccta tggcatgcat gtgctctgta tgtatataaa
+     1741 actcttgttt tcttcttttc tctaaatatt ctttccttat acattaggac ctttgcagca
+     1801 taaattacta tacttctata gacacacaaa cacaaataca cacactaatc tagatattgg
+     1861 attcggattc tagaactagt ggatctacaa agcaacccac aaatatccag tgcttagtgg
+     1921 gacgggccat catctatccc tgaagagacg aaggcttcgg ccaagtcgaa acggaaacgt
+     1981 cggatagtcg cccgtcccat ctcccgtttt agagctagaa atagcaagtt aaaataaggc
+     2041 tagtccgtta tcaacttgaa aaagtggcac cgagtcggtg cttttggccg gcatggtccc
+     2101 agcctcctcg ctggcgccgg ctgggcaaca tgcttcggca tggcgaatgg gactgatacc
+     2161 gtcgacctcg agtcaattag ttatgtcacg cttacattca cgccctcccc ccacatccgc
+     2221 tctaaccgaa aaggaaggag ttagacaacc tgaagtctag gtccctattt atttttttat
+     2281 agttatgtta gtattaagaa cgttatttat atttcaaatt tttctttttt ttctgtacag
+     2341 acgcgtgtac gcatgtaaca ttatactgaa aaccttgctt gagaaggttt tgggacgctc
+     2401 gaaggcttta atttgatgtc gtaataaccc cgccccgtga caccgattat ttaaagctgc
+     2461 agcatacgat atatatacat gtgtatatat gtatacctat gaatgtcagt aagtatgtat
+     2521 acgaacagta tgatactgaa gatgacaagg taatgcatca ttctatacgt gtcattctga
+     2581 acgaggcgcg ctttcctttt ttctttttgc tttttctttt tttttctctt gaactcgaga
+     2641 aaaaaaatat aaaagagatg gaggaacggg aaaaagttag ttgtggtgat aggtggcaag
+     2701 tggtattccg taagaacaac aagaaaagca tttcatatta tggctgaact gagcgaacaa
+     2761 gtgcaaaatt taagcatcaa cgacaacaac gagaatggtt atgttcctcc tcacttaaga
+     2821 ggaaaaccaa gaagtgccag aaataacagt agcaactaca ataacaacaa cggcggctac
+     2881 aacggtggcc gtggcggtgg cagcttcttt agcaacaacc gtcgtggtgg ttacggcaac
+     2941 ggtggtttct tcggtggaaa caacggtggc agcagatcta acggccgttc tggtggtaga
+     3001 tggatcgatg gcaaacatgt cccagctcca agaaacgaaa aggccgagat cgccatattt
+     3061 ggtgtccccg aggatccaaa tttccaatct tctggtatta acttcgataa ctacgatgat
+     3121 attccagtgg acgcctctgg taaggatgtt cctgaaccaa tcacagaatt tacctcacct
+     3181 ccattggacg gattgttatt ggaaaacatc aaattggccc gtttcaccaa gccaacacct
+     3241 gtgcaaaaat actccgtccc tatcgttgcc aacggcagag atttgatggc ctgtgcgcag
+     3301 accggttctg gtaagactgg tgggttttta ttcccagtgt tgtccgaatc atttaagact
+     3361 ggaccatctc ctcaaccaga gtctcaaggc tccttttacc aaagaaaggc ctacccaact
+     3421 gctgtcatta tggctcca
+//

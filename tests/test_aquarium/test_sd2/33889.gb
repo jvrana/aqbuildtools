@@ -1,0 +1,65 @@
+LOCUS       UWBF_33889               574 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  PS-URGR-W20-tCyc1-TS.
+ACCESSION   UWBF_33889
+VERSION     UWBF_33889
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     operator        29..48
+                     /label="r7"
+                     /ApEinfo_fwdcolor="#2bd89a"
+                     /ApEinfo_revcolor="#2bd89a"
+     misc_feature    291..312
+                     /label="TP"
+                     /ApEinfo_fwdcolor="#324b89"
+                     /ApEinfo_revcolor="#324b89"
+     misc_feature    56..135
+                     /label="ASBV1 Ribozyme"
+                     /ApEinfo_fwdcolor="#2dd9c2"
+                     /ApEinfo_revcolor="#2dd9c2"
+     misc_feature    1..6
+                     /label="PS_F(DY)_overhang"
+                     /ApEinfo_fwdcolor="#d610b6"
+                     /ApEinfo_revcolor="#d610b6"
+     misc_feature    143..222
+                     /label="spCas9 gRNA Handle"
+                     /ApEinfo_fwdcolor="#24551a"
+                     /ApEinfo_revcolor="#24551a"
+     misc_feature    49..55
+                     /label="ASBV1 pGAL1_INS1"
+                     /ApEinfo_fwdcolor="#3b023a"
+                     /ApEinfo_revcolor="#3b023a"
+     misc_feature    223..290
+                     /label="HDV Ribozyme"
+                     /ApEinfo_fwdcolor="#05544f"
+                     /ApEinfo_revcolor="#05544f"
+     misc_feature    553..574
+                     /label="TS"
+                     /ApEinfo_fwdcolor="#804611"
+                     /ApEinfo_revcolor="#804611"
+     misc_feature    136..142
+                     /label="ASBV1 pGAL1_INS2"
+                     /ApEinfo_fwdcolor="#04bce9"
+                     /ApEinfo_revcolor="#04bce9"
+     misc_feature    7..28
+                     /label="PS"
+                     /ApEinfo_fwdcolor="#a99668"
+                     /ApEinfo_revcolor="#a99668"
+     terminator      313..552
+                     /label="tCYC1"
+                     /ApEinfo_fwdcolor="#f6eef6"
+                     /ApEinfo_revcolor="#f6eef6"
+ORIGIN
+        1 cggattctag aactagtgga tctacaaact ttacgtatag gtttagaggc ttagtgggac
+       61 gggccatcat ctatccctga agagacgaag gcttcggcca agtcgaaacg gaaacgtcgg
+      121 atagtcgccc gtcccatctc ccgttttaga gctagaaata gcaagttaaa ataaggctag
+      181 tccgttatca acttgaaaaa gtggcaccga gtcggtgctt ttggccggca tggtcccagc
+      241 ctcctcgctg gcgccggctg ggcaacatgc ttcggcatgg cgaatgggac tgataccgtc
+      301 gacctcgagt caattagtta tgtcacgctt acattcacgc cctcccccca catccgctct
+      361 aaccgaaaag gaaggagtta gacaacctga agtctaggtc cctatttatt tttttatagt
+      421 tatgttagta ttaagaacgt tatttatatt tcaaattttt cttttttttc tgtacagacg
+      481 cgtgtacgca tgtaacatta tactgaaaac cttgcttgag aaggttttgg gacgctcgaa
+      541 ggctttaatt tgatgtcgta ataaccccgc cccg
+//
